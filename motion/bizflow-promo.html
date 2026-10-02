@@ -5,7 +5,7 @@
 <title>BizFlow motion promo</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  :root { --ink:#14183D; --navy:#1F2A6B; --saffron:#FF8A1F; --cream:#FFF6EA; --mint:#1FB57A; --muted:#6B7196; }
+  :root { --ink:#0A1230; --navy:#05070F; --saffron:#0A6CF0; --cream:#F2F6FF; --mint:#1FB57A; --muted:#6B7196; }
   html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
   body { font-family:'Poppins','Inter',sans-serif; -webkit-font-smoothing:antialiased; }
   #stage { position:absolute; left:0; top:0; width:1080px; height:1920px; overflow:hidden; }
@@ -16,12 +16,12 @@
   #head { left:90px; top:250px; width:900px; }
   #head .ln { overflow:hidden; height:140px; }
   #head .ln span { display:block; font-size:104px; font-weight:800; line-height:140px; color:#fff; letter-spacing:-1px; }
-  #head .ln.b span { color:var(--saffron); }
+  #head .ln.b span { color:#3D95FF; }
 
   /* step pill */
   #pill { left:0; top:210px; width:1080px; text-align:center; }
   #pill .p { display:inline-block; padding:18px 44px; border-radius:999px; font-size:44px; font-weight:700; letter-spacing:1px; }
-  #pill .p b { color:var(--saffron); margin-right:14px; }
+  #pill .p b { color:#6FB0FF; margin-right:14px; }
 
   /* hero */
   #hero { overflow:hidden; box-shadow:0 40px 90px rgba(10,14,50,.35); }
@@ -48,7 +48,7 @@
   .row .q2 { color:var(--muted); font-size:34px; font-weight:500; margin-left:14px; }
   .tot { display:flex; justify-content:space-between; font-size:38px; font-weight:600; color:var(--muted); padding:16px 6px 0; }
   .tot.big { font-size:66px; font-weight:800; color:var(--ink); padding-top:20px; }
-  .tot.big .amt { color:var(--navy); }
+  .tot.big .amt { color:#00298D; }
   #sendBtn { position:absolute; left:60px; right:60px; bottom:60px; height:124px; border-radius:36px; background:var(--mint); color:#fff;
     font-size:48px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:18px; }
 
@@ -59,7 +59,7 @@
   #bubbleL .tick { font-size:38px; font-weight:800; letter-spacing:-8px; }
 
   #chatHead { left:0; top:0; width:1080px; height:300px; background:var(--navy); color:#fff; padding:150px 60px 0; display:flex; gap:28px; align-items:flex-start; }
-  #chatHead .av { width:104px; height:104px; border-radius:50%; background:var(--saffron); color:var(--navy); font-size:52px; font-weight:800; display:grid; place-items:center; }
+  #chatHead .av { width:104px; height:104px; border-radius:50%; background:var(--saffron); color:#fff; font-size:52px; font-weight:800; display:grid; place-items:center; }
   #chatHead .nm { font-size:50px; font-weight:700; line-height:1.15; }
   #chatHead .on { font-size:32px; font-weight:500; opacity:.75; }
   .reply { left:70px; background:#fff; color:var(--ink); border-radius:14px 56px 56px 56px; padding:34px 46px; font-size:50px; font-weight:600;
@@ -68,9 +68,9 @@
   /* dashboard */
   #dashL { width:900px; height:1040px; margin:-520px 0 0 -450px; padding:64px 60px; color:var(--ink); }
   #dashL .lab { font-size:40px; font-weight:600; color:var(--muted); }
-  #dashL .num { font-size:124px; font-weight:800; color:var(--navy); line-height:1.15; letter-spacing:-2px; }
+  #dashL .num { font-size:124px; font-weight:800; color:#00298D; line-height:1.15; letter-spacing:-2px; }
   #bars { position:absolute; left:60px; right:60px; top:330px; height:420px; display:flex; align-items:flex-end; gap:26px; border-bottom:3px solid #E3E6F5; }
-  #bars .bar { flex:1; border-radius:18px 18px 0 0; background:#FFD2A6; transform-origin:bottom; position:relative; }
+  #bars .bar { flex:1; border-radius:18px 18px 0 0; background:#BBD5FF; transform-origin:bottom; position:relative; }
   #bars .bar.hot { background:var(--saffron); }
   #days { position:absolute; left:60px; right:60px; top:766px; display:flex; gap:26px; }
   #days span { flex:1; text-align:center; font-size:28px; font-weight:600; color:var(--muted); }
@@ -89,8 +89,8 @@
   #end { left:0; top:860px; width:1080px; text-align:center; color:#fff; }
   #end .mask { overflow:hidden; }
   #end .name { font-size:108px; font-weight:800; line-height:150px; letter-spacing:-1px; }
-  #end .tag { font-size:60px; font-weight:600; color:var(--saffron); line-height:100px; }
-  #end .cta { display:inline-block; margin-top:70px; background:#fff; color:var(--navy); border-radius:40px; padding:32px 64px; font-size:76px; font-weight:800; }
+  #end .tag { font-size:60px; font-weight:600; color:#6FB0FF; line-height:100px; }
+  #end .cta { display:inline-block; margin-top:70px; background:#fff; color:#00298D; border-radius:40px; padding:32px 64px; font-size:76px; font-weight:800; }
   #end .sub { margin-top:36px; font-size:46px; font-weight:600; opacity:.85; }
 
   /* touch cursor */
@@ -152,7 +152,7 @@
       <div class="chipx" id="chipB">बाकी ₹4,200</div>
     </div>
 
-    <div id="tileL" class="layer">B</div>
+    <div id="tileL" class="layer"><img src="../assets/mark-white.png" style="width:150px;display:block"></div>
   </div>
 
   <div id="words" class="abs">
@@ -196,7 +196,7 @@ const mix = (a, b, p) => a.map((v, i) => lerp(v, b[i], p));
 const seg = s => [...new Intl.Segmenter('mr', { granularity: 'grapheme' }).segment(s)].map(x => x.segment);
 const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
 
-const NAVY = [31, 42, 107], SAFF = [255, 138, 31], CREAM = [255, 246, 234], CHAT = [239, 231, 221], WHITE = [255, 255, 255];
+const NAVY = [5, 7, 15], SAFF = [10, 108, 240], CREAM = [242, 246, 255], CHAT = [239, 231, 221], WHITE = [255, 255, 255];
 
 // ---------- the one persistent shape ----------
 const S = {
@@ -333,7 +333,7 @@ function seek(t) {
   if (pt) {
     const dark = pt[2] === '01';
     pe.innerHTML = `<b>${pt[2]}</b>${pt[3]}`;
-    pe.style.background = dark ? 'rgba(255,255,255,.12)' : '#1F2A6B'; pe.style.color = '#fff';
+    pe.style.background = dark ? 'rgba(255,255,255,.12)' : '#0A1230'; pe.style.color = '#fff';
     const pin = spring(t - pt[0], 18, 0.7), pout = inCubic(pr(t, pt[1], 0.25));
     pe.style.opacity = pr(t, pt[0], 0.12) * (1 - pout);
     pe.style.transform = `translateY(${lerp(60, 0, pin) - pout * 60}px)`;
@@ -360,7 +360,7 @@ function seek(t) {
     const p = outExpo(pr(t, WT[i], 0.38));
     el.style.transform = `translateY(${lerp(215, 0, p) - wOut * 215}px)`;
     const next = i < 3 ? pr(t, WT[i + 1], 0.2) : 0;
-    el.style.color = rgb(mix(WHITE, [20, 24, 61], next));
+    el.style.color = rgb(mix(WHITE, [10, 18, 48], next));
   });
   $('words').style.visibility = (t > 10.6 && t < 13.05) ? 'visible' : 'hidden';
 

@@ -1,0 +1,17 @@
+{
+  "week": "2026-W40",
+  "posts": [
+    {
+      "id": "2026-10-03-team-bizflow",
+      "date": "2026-10-03T18:00:00",
+      "slides": [
+        {"kind": "photo", "theme": "dark", "kicker": "Behind the scenes", "src": "photos/team-desk-smiles.jpg", "title": "ही आहे [[Team BizFlow]] 👋", "body": "संगमनेरमधून, तुमच्या business साठी."},
+        {"kind": "photo", "theme": "light", "src": "photos/team-at-work-1.jpg", "title": "इथे बनतं तुमचं [[software]]", "body": "Billing, CRM, inventory… रोज थोडं अजून सोपं करतोय."},
+        {"kind": "photo", "theme": "light", "src": "photos/team-at-work-2.jpg", "title": "तुमच्या भाषेत [[support]]", "body": "मराठी, हिंदी आणि English मध्ये."},
+        {"kind": "photo", "theme": "light", "src": "photos/office-front-desk.jpg", "pos": "center 28%", "title": "संगमनेरमधलं आमचं [[office]]", "body": "छोटं office, मोठं काम. 🙂"},
+        {"kind": "cta", "theme": "accent", "kicker": "बोलूया?", "title": "तुमच्या business साठी\nआम्ही [[एक call दूर]]", "body": "Free demo बुक करा."}
+      ],
+      "caption": "ही आहे Team BizFlow 👋\n\nसंगमनेरमधलं आमचं छोटंसं office, आणि इथे रोज तुमच्या दुकानासाठी, hotel साठी, business साठी software बनवणारी आमची team. 💻\n\nGST billing, CRM, inventory, WhatsApp automation… आणि support तुमच्या भाषेत: मराठी, हिंदी, English.\n\nतुम्ही संगमनेर किंवा आसपासचे असाल तर comment मध्ये 👋 पाठवा!\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #teambizflow #sangamner #behindthescenes #marathibusiness #maharashtrabusiness #smallbusinessindia"
+    }
+  ]
+}

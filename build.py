@@ -5,53 +5,58 @@ Outputs JPGs to media/<post-id>/NN.jpg
 """
 import json, sys, pathlib, html, shutil, subprocess
 from playwright.sync_api import sync_playwright
+from brand import VARS, BG_DARK, BG_ACCENT, logo, data_uri
 
 ROOT = pathlib.Path(__file__).parent
 
 CSS = """
-@font-face { font-family: 'Deva'; src: local('FreeSans'); unicode-range: U+0900-097F, U+A8E0-A8FF; }
 * { margin:0; padding:0; box-sizing:border-box; }
-:root {
-  --ink:#14183D; --navy:#1F2A6B; --saffron:#FF8A1F; --cream:#FFF6EA; --mint:#1FB57A; --muted:#5B6185;
-}
-body { width:1080px; height:1350px; font-family:'Deva','Poppins','Inter',sans-serif; overflow:hidden; }
+""" + VARS + """
+body { width:1080px; height:1350px; font-family:'Poppins','Inter',sans-serif; overflow:hidden; }
 .slide { width:1080px; height:1350px; position:relative; padding:96px 88px; display:flex; flex-direction:column; }
-.light { background:var(--cream); color:var(--ink); }
-.dark { background:var(--navy); color:#fff; }
-.accent { background:var(--saffron); color:var(--ink); }
-.brand { position:absolute; left:88px; bottom:72px; display:flex; align-items:center; gap:14px; font-weight:700; font-size:30px; letter-spacing:.5px; }
-.brand .dot { width:34px; height:34px; border-radius:10px; background:var(--saffron); display:grid; place-items:center; color:var(--navy); font-size:22px; font-weight:800; }
-.dark .brand .dot, .accent .brand .dot { background:#fff; }
-.page { position:absolute; right:88px; bottom:76px; font-size:26px; font-weight:600; opacity:.6; }
-.swipe { position:absolute; right:88px; bottom:72px; font-size:28px; font-weight:700; color:var(--saffron); }
-.kicker { font-size:30px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--saffron); margin-bottom:36px; }
-.accent .kicker { color:var(--navy); }
-h1 { font-size:104px; line-height:1.12; font-weight:800; letter-spacing:-1px; }
+.light { background:var(--paper); color:var(--ink); --hl:var(--blue); }
+.dark { background:""" + BG_DARK + """; color:#fff; --hl:var(--sky); }
+.accent { background:""" + BG_ACCENT + """; color:#fff; --hl:#fff; }
+.brand { position:absolute; left:88px; bottom:70px; height:58px; }
+.brand .logo { height:58px; display:block; }
+.page { position:absolute; right:88px; bottom:80px; font-size:26px; font-weight:600; opacity:.6; }
+.swipe { position:absolute; right:88px; bottom:78px; font-size:28px; font-weight:700; color:var(--hl); }
+.kicker { font-size:30px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--hl); margin-bottom:36px; }
+.accent .kicker { color:#CFE4FF; }
+h1 { font-size:104px; line-height:1.2; font-weight:800; letter-spacing:-1px; }
 h2 { font-size:88px; line-height:1.15; font-weight:800; margin-bottom:40px; }
 p.body { font-size:46px; line-height:1.45; font-weight:500; opacity:.88; }
-.hl { color:var(--saffron); }
-.accent .hl { color:#fff; }
-.bignum { font-size:260px; font-weight:800; line-height:.9; color:var(--saffron); margin-bottom:24px; }
+.hl { color:var(--hl); }
+.accent .hl { background:#fff; color:#0A55DA; padding:0 .14em; border-radius:.12em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+.accent h1, .accent h2 { line-height:1.3; }
+.bignum { font-size:260px; font-weight:800; line-height:.9; color:var(--hl); margin-bottom:24px; }
 .wrap { margin:auto 0; padding-bottom:60px; }
 .wrap > div[style*='margin-top:auto'] { margin:0 !important; }
 .list { list-style:none; margin-top:20px; }
-.list li { font-size:50px; font-weight:600; line-height:1.3; padding:30px 0 30px 92px; position:relative; border-bottom:2px solid rgba(20,24,61,.12); }
-.dark .list li { border-color:rgba(255,255,255,.15); }
-.list li .n { position:absolute; left:0; top:24px; width:64px; height:64px; border-radius:50%; background:var(--saffron); color:var(--navy); font-size:34px; font-weight:800; display:grid; place-items:center; }
-.chip { display:inline-block; background:var(--navy); color:#fff; border-radius:999px; padding:18px 36px; font-size:40px; font-weight:700; margin:0 14px 18px 0; }
-.dark .chip { background:#fff; color:var(--navy); }
+.list li { font-size:50px; font-weight:600; line-height:1.3; padding:30px 0 30px 92px; position:relative; border-bottom:2px solid rgba(10,18,48,.12); }
+.dark .list li, .accent .list li { border-color:rgba(255,255,255,.18); }
+.list li .n { position:absolute; left:0; top:24px; width:64px; height:64px; border-radius:50%; background:var(--blue); color:#fff; font-size:34px; font-weight:800; display:grid; place-items:center; }
+.accent .list li .n { background:#fff; color:#0A55DA; }
+.chip { display:inline-block; background:var(--ink); color:#fff; border-radius:999px; padding:18px 36px; font-size:40px; font-weight:700; margin:0 14px 18px 0; }
+.dark .chip { background:#fff; color:var(--ink); }
+.accent .chip { background:#fff; color:#0A55DA; }
 .cta-box { margin-top:56px; background:#fff; color:var(--ink); border-radius:36px; padding:52px 56px; }
 .cta-box .label { font-size:32px; font-weight:600; color:var(--muted); }
-.cta-box .phone { font-size:88px; font-weight:800; color:var(--navy); letter-spacing:1px; margin-top:6px; }
-.cta-box .sub { font-size:34px; font-weight:600; margin-top:14px; color:var(--mint); }
-.deco { position:absolute; right:-120px; top:-120px; width:520px; height:520px; border-radius:50%; border:60px solid rgba(255,138,31,.18); }
-.dark .deco { border-color:rgba(255,255,255,.08); }
+.cta-box .phone { font-size:88px; font-weight:800; color:var(--deep); letter-spacing:1px; margin-top:6px; }
+.cta-box .sub { font-size:34px; font-weight:600; margin-top:14px; color:var(--blue); }
+.deco { position:absolute; right:-120px; top:-120px; width:520px; height:520px; border-radius:50%; border:60px solid rgba(10,108,240,.14); }
+.dark .deco { border-color:rgba(61,149,255,.16); }
+.accent .deco { border-color:rgba(255,255,255,.14); }
 .chat { margin-top:30px; display:flex; flex-direction:column; gap:26px; }
 .bubble { align-self:flex-start; max-width:860px; background:#fff; color:var(--ink); border-radius:8px 36px 36px 36px; padding:34px 42px; font-size:42px; line-height:1.4; font-weight:500; box-shadow:0 10px 30px rgba(0,0,0,.15); }
+.bubble .hl { color:var(--blue); background:none; padding:0; }
 .bubble b { color:var(--mint); }
 .bubble .t { display:block; font-size:24px; opacity:.5; margin-top:10px; text-align:right; }
 .price { font-size:40px; font-weight:700; margin-top:40px; }
 .price .hl { font-size:64px; }
+.ph { width:100%; aspect-ratio:3/2; border-radius:36px; overflow:hidden; margin-bottom:44px; box-shadow:0 24px 60px rgba(0,0,0,.28); }
+.ph img { width:100%; height:100%; object-fit:cover; display:block; }
+h2.pt { font-size:68px; margin-bottom:18px; }
 """
 
 def esc(s):
@@ -70,6 +75,7 @@ TALL = """
 body, .slide { height:1920px; }
 .slide { padding:240px 88px 320px; }
 .brand { bottom:190px; }
+.ph { aspect-ratio:1/1; }
 .page, .swipe { display:none; }
 """
 
@@ -95,13 +101,17 @@ def render_slide(s, idx, total, tall=False):
     elif kind == "chat":
         bubbles = "".join(f'<div class="bubble">{rich(b["text"])}<span class="t">{html.escape(b.get("time",""))} ✓✓</span></div>' for b in s["bubbles"])
         inner = f'<div class="kicker">{rich(s.get("kicker",""))}</div><h2>{rich(s["title"])}</h2><div class="chat">{bubbles}</div>'
+    elif kind == "photo":   # real photo from photos/, kept whole in a 3:2 frame; "pos" = CSS object-position
+        inner = (f'<div class="kicker">{rich(s["kicker"])}</div>' if s.get("kicker") else "") + \
+                f'<div class="ph"><img src="{data_uri(s["src"])}" style="object-position:{s.get("pos","center")}"></div>' \
+                f'<h2 class="pt">{rich(s["title"])}</h2><p class="body">{rich(s.get("body",""))}</p>'
     elif kind == "cta":
         inner = f'<div class="deco"></div><div style="margin-top:40px"><div class="kicker">{rich(s.get("kicker",""))}</div>' \
                 f'<h2>{rich(s["title"])}</h2><p class="body">{rich(s.get("body",""))}</p>' \
                 f'<div class="cta-box"><div class="label">{rich(s.get("label","Free demo बुक करा"))}</div>' \
                 f'<div class="phone">📞 {html.escape(s.get("phone","8888567870"))}</div>' \
                 f'<div class="sub">{rich(s.get("sub","bizflowindia.cloud"))}</div></div></div>'
-    footer = '<div class="brand"><span class="dot">B</span>BizFlow India</div>'
+    footer = f'<div class="brand">{logo(theme)}</div>'
     if idx == 0 and total > 1:
         footer += '<div class="swipe">Swipe →</div>'
     elif total > 1:
@@ -121,7 +131,7 @@ def main(spec_path):
             n = len(post["slides"])
             for i, s in enumerate(post["slides"]):
                 page.set_content(render_slide(s, i, n))
-                page.wait_for_timeout(150)
+                page.wait_for_timeout(250)
                 page.screenshot(path=str(out / f"{i+1:02d}.jpg"), type="jpeg", quality=92)
             print(post["id"], n, "slides")
             if n < 2: continue
@@ -130,9 +140,9 @@ def main(spec_path):
             page.set_viewport_size({"width": 1080, "height": 1920})
             pngs, durs = [], []
             for i, s in enumerate(post["slides"]):
-                page.set_content(render_slide(s, i, n, tall=True)); page.wait_for_timeout(150)
+                page.set_content(render_slide(s, i, n, tall=True)); page.wait_for_timeout(250)
                 f = tmp / f"{i:02d}.png"; page.screenshot(path=str(f)); pngs.append(f)
-                durs.append({"cover": 2.6, "list": 4.2, "chat": 4.2, "cta": 3.2}.get(s["kind"], 3.0))
+                durs.append({"cover": 2.6, "list": 4.2, "chat": 4.2, "cta": 3.2, "photo": 3.4}.get(s["kind"], 3.0))
             page.set_viewport_size({"width": 1080, "height": 1350})
             stitch(pngs, durs, out / "short.mp4")
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(pngs[0]), "-q:v", "3", str(out / "cover.jpg")], check=True)

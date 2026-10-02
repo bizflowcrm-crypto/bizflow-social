@@ -65,7 +65,11 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    - Every caption ends with a question or a "tag a friend" line.
 4. **Write the specs**: carousels and greetings in `posts/<YYYY>-w<WW>.json` (shape of
    `posts/2026-w41.json`; slide kinds `cover`, `point`, `list`, `chips`, `chat`, `cta`; 4–6
-   slides, last is `cta`; `[[text]]` highlights). Reels in `posts/<YYYY>-w<WW>-reels.json`
+   slides, last is `cta`; `[[text]]` highlights). For real photos use the `photo` slide kind
+   (`{"kind":"photo","src":"photos/<file>.jpg","title":...,"body":...}`; see
+   `posts/2026-w40-team.json`, a team post that is drafted but not yet scheduled). Only use
+   photos that are in `photos/`, never photos showing children, and don't reuse a photo within 4 weeks.
+   The logo and blue palette live in `brand.py` and `assets/`; don't recolour or redraw the logo. Reels in `posts/<YYYY>-w<WW>-reels.json`
    (shape of `posts/2026-w41-reels.json`; scene kinds `big`, `mid`, `chat`, `cta`; 5–6 scenes,
    10–15 seconds total, last is `cta`).
 5. **Render**: `pip install playwright --break-system-packages && python3 -m playwright install chromium`
