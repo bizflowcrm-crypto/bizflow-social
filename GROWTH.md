@@ -90,7 +90,7 @@ Under a festival post from a local page:
 2. **Customer spotlights.** Photo of a real shop using BizFlow, or a website we built,
    + one line from the owner, tag their account. They share it, their customers see you.
    Real customers are in `CUSTOMERS.md` (30+ websites, and shops, traders and factories
-   using BizFlow software across Sangamner, Kopargaon, Pune and nearby). Ask the customer before featuring them.
+   using AccountFlow across Sangamner, Kopargaon, Pune and nearby). Ask the customer before featuring them.
 3. **Fix the bio.** One line on what you do in Marathi, "Free demo 👇", link to
    bizflowindia.cloud, and a WhatsApp button.
 4. **Stories every day.** Polls and question stickers (must be added in the app):
