@@ -1,0 +1,23 @@
+{
+  "week": "2026-W40",
+  "reels": [
+    {
+      "id": "2026-10-03-reel-midnight-hisab",
+      "date": "2026-10-03T00:30:00",
+      "scenes": [
+        {"kind": "big", "theme": "dark", "tag": "रात्रीचे 12 वाजले 🌙", "text": "सगळं गाव\n[[झोपलंय]]", "dur": 2.4},
+        {"kind": "mid", "theme": "dark", "text": "जागे फक्त [[दोघं]]:", "sub": "1. गावचा चौकीदार 🔦\n2. वहीत हिशोब करणारा दुकानदार 📒", "dur": 3.2},
+        {"kind": "chat", "theme": "light", "bubbles": [
+          {"who": "घरून", "text": "झोपा आता, [[12 वाजले!]]"},
+          {"who": "दुकानदार", "me": true, "text": "फक्त ₹70 चा फरक सापडू दे… 😩"}
+        ], "dur": 3.4},
+        {"kind": "big", "theme": "accent", "tag": "आणि 500+ BizFlow वाले?", "text": "केव्हाच\n[[झोपलेत]] 😴", "sub": "हिशोब दिवसभर बिलासोबतच बंद.", "dur": 3.0},
+        {"kind": "cta", "theme": "dark", "text": "आज तरी\n[[लवकर झोपा]] 😄", "dur": 3.0}
+      ],
+      "caption": "रात्रीचे 12 वाजले 🌙 सगळं गाव झोपलंय.\nजागे फक्त दोघं: गावचा चौकीदार 🔦 आणि वहीत ₹70 चा फरक शोधणारा दुकानदार 📒😅\n\nआणि 500+ BizFlow वाले? केव्हाच झोपलेत 😴 कारण प्रत्येक बिलासोबत हिशोब आपोआप तयार.\n\nआत्ता हे कोण कोण पाहतंय? जागे असाल तर 🌙 comment करा 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #dukandar #hisab #marathireels #smallbusinessindia #marathibusiness #sangamner",
+      "youtube_title": "रात्रीचे 12 वाजले, दुकानदार अजून जागा 😅 | BizFlow #shorts",
+      "youtube_description": "रात्रीचे 12 वाजले 🌙 सगळं गाव झोपलंय.\nजागे फक्त दोघं: गावचा चौकीदार 🔦 आणि वहीत ₹70 चा फरक शोधणारा दुकानदार 📒😅\n\nआणि 500+ BizFlow वाले? केव्हाच झोपलेत 😴 कारण प्रत्येक बिलासोबत हिशोब आपोआप तयार.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\nजागे असाल तर 🌙 comment करा 👇\n\n#bizflow #dukandar #hisab #marathi #shorts",
+      "youtube_tags": ["bizflow", "dukandar", "hisab", "billing software", "marathi", "small business india"]
+    }
+  ]
+}
