@@ -64,24 +64,16 @@ def scene_html(sc):
     return f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>' \
            f'<div class="s {t}">{inner}<div class="brand"><span class="dot">B</span>BizFlow India</div></div></body></html>'
 
-def build(reel, page):
-    out = ROOT / "media" / reel["id"]; out.mkdir(parents=True, exist_ok=True)
-    tmp = out / "_frames"; tmp.mkdir(exist_ok=True)
-    pngs, durs = [], []
-    for i, sc in enumerate(reel["scenes"]):
-        page.set_content(scene_html(sc)); page.wait_for_timeout(150)
-        p = tmp / f"{i:02d}.png"; page.screenshot(path=str(p)); pngs.append(p); durs.append(float(sc.get("dur", 2.6)))
-    shutil.copy(pngs[0], out / "cover.png")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(pngs[0]), "-q:v", "3", str(out / "cover.jpg")], check=True)
-    # per-scene clips with gentle zoom
+def stitch(pngs, durs, mp4):
+    """Join 1080x1920 stills into an mp4: slow zoom per still, crossfades, silent audio track."""
+    tmp = pathlib.Path(pngs[0]).parent
     clips = []
     for i, (p, d) in enumerate(zip(pngs, durs)):
-        c = tmp / f"{i:02d}.mp4"; n = int(d * FPS)
+        c = tmp / f"clip{i:02d}.mp4"; n = int(d * FPS)
         vf = f"scale={W*2}:{H*2},zoompan=z='min(1+0.0006*on,1.05)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS},format=yuv420p"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", str(p), "-vf", vf, "-t", f"{d}", "-r", str(FPS),
                         "-c:v", "libx264", "-preset", "medium", "-crf", "20", str(c)], check=True)
         clips.append(c)
-    # crossfade chain
     inputs, fc, last, off = [], [], "0:v", 0.0
     for c in clips: inputs += ["-i", str(c)]
     for i in range(1, len(clips)):
@@ -91,15 +83,23 @@ def build(reel, page):
         last = lab
     total = sum(durs) - XF * (len(clips) - 1)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", *inputs, "-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=44100:cl=stereo"]
-    if fc:
-        cmd += ["-filter_complex", ";".join(fc), "-map", f"[{last}]"]
-    else:
-        cmd += ["-map", "0:v"]
+    cmd += (["-filter_complex", ";".join(fc), "-map", f"[{last}]"] if fc else ["-map", "0:v"])
     cmd += ["-map", f"{len(clips)}:a", "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-            "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(out / "reel.mp4")]
+            "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(mp4)]
     subprocess.run(cmd, check=True)
+
+def build(reel, page):
+    out = ROOT / "media" / reel["id"]; out.mkdir(parents=True, exist_ok=True)
+    tmp = out / "_frames"; tmp.mkdir(exist_ok=True)
+    pngs, durs = [], []
+    for i, sc in enumerate(reel["scenes"]):
+        page.set_content(scene_html(sc)); page.wait_for_timeout(150)
+        p = tmp / f"{i:02d}.png"; page.screenshot(path=str(p)); pngs.append(p); durs.append(float(sc.get("dur", 2.6)))
+    shutil.copy(pngs[0], out / "cover.png")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(pngs[0]), "-q:v", "3", str(out / "cover.jpg")], check=True)
+    stitch(pngs, durs, out / "reel.mp4")
     shutil.rmtree(tmp); (out / "cover.png").unlink()
-    print(reel["id"], f"{total:.1f}s")
+    print(reel["id"], f"{sum(durs) - XF * (len(durs) - 1):.1f}s")
 
 def main(spec_path):
     spec = json.loads(pathlib.Path(spec_path).read_text())

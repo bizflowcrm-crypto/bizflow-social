@@ -3,7 +3,7 @@
 Usage: python3 build.py posts/2026-w41.json
 Outputs JPGs to media/<post-id>/NN.jpg
 """
-import json, sys, pathlib, html
+import json, sys, pathlib, html, shutil, subprocess
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).parent
@@ -66,7 +66,14 @@ def rich(s):
         out.append(f'<span class="hl">{html.escape(hl)}</span>{html.escape(rest)}')
     return "".join(out).replace("\n", "<br>")
 
-def render_slide(s, idx, total):
+TALL = """
+body, .slide { height:1920px; }
+.slide { padding:240px 88px 320px; }
+.brand { bottom:190px; }
+.page, .swipe { display:none; }
+"""
+
+def render_slide(s, idx, total, tall=False):
     theme = s.get("theme", "light")
     kind = s["kind"]
     inner = ""
@@ -99,10 +106,11 @@ def render_slide(s, idx, total):
         footer += '<div class="swipe">Swipe →</div>'
     elif total > 1:
         footer += f'<div class="page">{idx+1}/{total}</div>'
-    return f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head>' \
+    return f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}{TALL if tall else ""}</style></head>' \
            f'<body><div class="slide {theme}"><div class="wrap">{inner}</div>{footer}</div></body></html>'
 
 def main(spec_path):
+    from reel import stitch
     spec = json.loads(pathlib.Path(spec_path).read_text())
     with sync_playwright() as pw:
         b = pw.chromium.launch()
@@ -116,6 +124,20 @@ def main(spec_path):
                 page.wait_for_timeout(150)
                 page.screenshot(path=str(out / f"{i+1:02d}.jpg"), type="jpeg", quality=92)
             print(post["id"], n, "slides")
+            if n < 2: continue
+            # 9:16 video version (media/<id>/short.mp4 + cover.jpg) for YouTube Shorts
+            tmp = out / "_tall"; tmp.mkdir(exist_ok=True)
+            page.set_viewport_size({"width": 1080, "height": 1920})
+            pngs, durs = [], []
+            for i, s in enumerate(post["slides"]):
+                page.set_content(render_slide(s, i, n, tall=True)); page.wait_for_timeout(150)
+                f = tmp / f"{i:02d}.png"; page.screenshot(path=str(f)); pngs.append(f)
+                durs.append({"cover": 2.6, "list": 4.2, "chat": 4.2, "cta": 3.2}.get(s["kind"], 3.0))
+            page.set_viewport_size({"width": 1080, "height": 1350})
+            stitch(pngs, durs, out / "short.mp4")
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(pngs[0]), "-q:v", "3", str(out / "cover.jpg")], check=True)
+            shutil.rmtree(tmp)
+            print(post["id"], "short.mp4", f"{sum(durs) - 0.4 * (n - 1):.1f}s")
         b.close()
 
 if __name__ == "__main__":

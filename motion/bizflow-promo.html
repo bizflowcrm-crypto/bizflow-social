@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<title>BizFlow motion promo</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --ink:#14183D; --navy:#1F2A6B; --saffron:#FF8A1F; --cream:#FFF6EA; --mint:#1FB57A; --muted:#6B7196; }
+  html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
+  body { font-family:'Poppins','Inter',sans-serif; -webkit-font-smoothing:antialiased; }
+  #stage { position:absolute; left:0; top:0; width:1080px; height:1920px; overflow:hidden; }
+  #bg { position:absolute; inset:0; }
+  .abs { position:absolute; left:0; top:0; }
+
+  /* headline */
+  #head { left:90px; top:250px; width:900px; }
+  #head .ln { overflow:hidden; height:140px; }
+  #head .ln span { display:block; font-size:104px; font-weight:800; line-height:140px; color:#fff; letter-spacing:-1px; }
+  #head .ln.b span { color:var(--saffron); }
+
+  /* step pill */
+  #pill { left:0; top:210px; width:1080px; text-align:center; }
+  #pill .p { display:inline-block; padding:18px 44px; border-radius:999px; font-size:44px; font-weight:700; letter-spacing:1px; }
+  #pill .p b { color:var(--saffron); margin-right:14px; }
+
+  /* hero */
+  #hero { overflow:hidden; box-shadow:0 40px 90px rgba(10,14,50,.35); }
+  .layer { position:absolute; left:50%; top:50%; transform-origin:center; }
+
+  /* paper */
+  #paperL { width:640px; height:820px; margin:-410px 0 0 -320px;
+    background:repeating-linear-gradient(#0000 0 77px, #C9D4F2 77px 80px); padding:96px 40px 0 92px; }
+  #paperL::before { content:""; position:absolute; left:70px; top:0; bottom:0; width:3px; background:#F2A0A0; }
+  .scr { position:relative; height:80px; font-size:46px; font-weight:600; color:#2A3A8F; line-height:80px; white-space:nowrap; }
+  .scr .strike { position:absolute; left:-6px; top:42px; height:5px; background:#D8433B; border-radius:3px; transform-origin:left; }
+  .scr .q { position:absolute; right:10px; top:-6px; font-size:70px; font-weight:800; color:#D8433B; }
+
+  /* bill */
+  #billL { width:880px; height:1160px; margin:-580px 0 0 -440px; padding:64px 60px; color:var(--ink); }
+  .bh { display:flex; justify-content:space-between; align-items:center; }
+  .bh .t { font-size:60px; font-weight:800; }
+  .bh .n { font-size:34px; font-weight:600; color:var(--muted); background:#EEF0FA; padding:10px 22px; border-radius:14px; }
+  .field { margin-top:38px; border:3px solid #E3E6F5; border-radius:24px; padding:22px 30px; }
+  .field small { display:block; font-size:28px; color:var(--muted); font-weight:600; }
+  .field .v { font-size:48px; font-weight:700; height:68px; line-height:68px; white-space:nowrap; }
+  .caret { display:inline-block; width:4px; height:48px; background:var(--saffron); vertical-align:-8px; margin-left:4px; }
+  .row { display:flex; justify-content:space-between; align-items:center; font-size:44px; font-weight:600; padding:26px 6px; border-bottom:2px solid #EEF0FA; }
+  .row .q2 { color:var(--muted); font-size:34px; font-weight:500; margin-left:14px; }
+  .tot { display:flex; justify-content:space-between; font-size:38px; font-weight:600; color:var(--muted); padding:16px 6px 0; }
+  .tot.big { font-size:66px; font-weight:800; color:var(--ink); padding-top:20px; }
+  .tot.big .amt { color:var(--navy); }
+  #sendBtn { position:absolute; left:60px; right:60px; bottom:60px; height:124px; border-radius:36px; background:var(--mint); color:#fff;
+    font-size:48px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:18px; }
+
+  /* bubble */
+  #bubbleL { width:800px; height:250px; margin:-125px 0 0 -400px; padding:38px 48px; color:#0E2A12; }
+  #bubbleL .a { font-size:50px; font-weight:700; }
+  #bubbleL .b { font-size:42px; font-weight:600; margin-top:10px; display:flex; justify-content:space-between; align-items:center; }
+  #bubbleL .tick { font-size:38px; font-weight:800; letter-spacing:-8px; }
+
+  #chatHead { left:0; top:0; width:1080px; height:300px; background:var(--navy); color:#fff; padding:150px 60px 0; display:flex; gap:28px; align-items:flex-start; }
+  #chatHead .av { width:104px; height:104px; border-radius:50%; background:var(--saffron); color:var(--navy); font-size:52px; font-weight:800; display:grid; place-items:center; }
+  #chatHead .nm { font-size:50px; font-weight:700; line-height:1.15; }
+  #chatHead .on { font-size:32px; font-weight:500; opacity:.75; }
+  .reply { left:70px; background:#fff; color:var(--ink); border-radius:14px 56px 56px 56px; padding:34px 46px; font-size:50px; font-weight:600;
+    box-shadow:0 14px 34px rgba(20,24,61,.14); transform-origin:left top; white-space:nowrap; }
+
+  /* dashboard */
+  #dashL { width:900px; height:1040px; margin:-520px 0 0 -450px; padding:64px 60px; color:var(--ink); }
+  #dashL .lab { font-size:40px; font-weight:600; color:var(--muted); }
+  #dashL .num { font-size:124px; font-weight:800; color:var(--navy); line-height:1.15; letter-spacing:-2px; }
+  #bars { position:absolute; left:60px; right:60px; top:330px; height:420px; display:flex; align-items:flex-end; gap:26px; border-bottom:3px solid #E3E6F5; }
+  #bars .bar { flex:1; border-radius:18px 18px 0 0; background:#FFD2A6; transform-origin:bottom; position:relative; }
+  #bars .bar.hot { background:var(--saffron); }
+  #days { position:absolute; left:60px; right:60px; top:766px; display:flex; gap:26px; }
+  #days span { flex:1; text-align:center; font-size:28px; font-weight:600; color:var(--muted); }
+  #tip { position:absolute; background:var(--ink); color:#fff; font-size:34px; font-weight:700; padding:14px 26px; border-radius:18px; white-space:nowrap; transform-origin:bottom center; }
+  .chipx { position:absolute; bottom:60px; height:110px; border-radius:30px; padding:0 34px; font-size:38px; font-weight:700; display:flex; align-items:center; gap:14px; white-space:nowrap; }
+  #chipA { left:60px; background:#FFE9E7; color:#C5352D; }
+  #chipB { right:60px; background:#E4F7EE; color:#0F7F53; }
+
+  /* kinetic words */
+  #words { left:90px; top:470px; width:940px; }
+  #words .w { overflow:hidden; height:210px; }
+  #words .w span { display:block; font-size:150px; font-weight:800; line-height:210px; letter-spacing:-3px; white-space:nowrap; }
+
+  /* end card */
+  #tileL { width:220px; height:220px; margin:-110px 0 0 -110px; display:grid; place-items:center; font-size:150px; font-weight:800; color:var(--navy); line-height:1; }
+  #end { left:0; top:860px; width:1080px; text-align:center; color:#fff; }
+  #end .mask { overflow:hidden; }
+  #end .name { font-size:108px; font-weight:800; line-height:150px; letter-spacing:-1px; }
+  #end .tag { font-size:60px; font-weight:600; color:var(--saffron); line-height:100px; }
+  #end .cta { display:inline-block; margin-top:70px; background:#fff; color:var(--navy); border-radius:40px; padding:32px 64px; font-size:76px; font-weight:800; }
+  #end .sub { margin-top:36px; font-size:46px; font-weight:600; opacity:.85; }
+
+  /* touch cursor */
+  #cur { width:120px; height:120px; margin:-60px 0 0 -60px; border-radius:50%; background:rgba(255,255,255,.55); border:5px solid rgba(20,24,61,.55);
+    box-shadow:0 10px 30px rgba(0,0,0,.25); }
+  #rip { width:120px; height:120px; margin:-60px 0 0 -60px; border-radius:50%; border:8px solid var(--saffron); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg"></div>
+
+  <div id="head" class="abs">
+    <div class="ln a"><span>अजूनही</span></div>
+    <div class="ln b"><span>वहीत हिशोब?</span></div>
+  </div>
+
+  <div id="chatHead" class="abs"><div class="av">रा</div><div><div class="nm">राहुल किराणा</div><div class="on">online</div></div></div>
+  <div id="r1" class="abs reply">धन्यवाद! 🙏</div>
+  <div id="r2" class="abs reply">₹798 UPI केलं ✅</div>
+
+  <div id="pill" class="abs"><span class="p" id="pillp"></span></div>
+
+  <div id="hero" class="abs">
+    <div id="paperL" class="layer">
+      <div class="scr">राहुल — ₹1200<div class="strike"></div><div class="q">?</div></div>
+      <div class="scr">तेल 2 की 3 डबे<div class="strike"></div><div class="q">?</div></div>
+      <div class="scr">GST किती लावला<div class="strike"></div><div class="q">?</div></div>
+      <div class="scr">बाकी… आठवत नाही<div class="strike"></div><div class="q">?</div></div>
+    </div>
+
+    <div id="billL" class="layer">
+      <div class="bh"><div class="t">नवीन बिल</div><div class="n">#1042</div></div>
+      <div class="field"><small>Customer</small><div class="v"><span id="typed"></span><span class="caret" id="caret"></span></div></div>
+      <div style="margin-top:24px">
+        <div class="row"><span>तांदूळ<span class="q2">5 kg</span></span><span>₹350</span></div>
+        <div class="row"><span>तेल<span class="q2">2 L</span></span><span>₹320</span></div>
+        <div class="row"><span>साखर<span class="q2">2 kg</span></span><span>₹90</span></div>
+      </div>
+      <div class="tot" id="gstRow"><span>GST 5%</span><span id="gst">₹0</span></div>
+      <div class="tot big" id="totRow"><span>एकूण</span><span class="amt" id="total">₹0</span></div>
+      <div id="sendBtn">WhatsApp वर पाठवा&nbsp;➤</div>
+    </div>
+
+    <div id="bubbleL" class="layer">
+      <div class="a">🧾 बिल #1042</div>
+      <div class="b"><span>एकूण ₹798</span><span class="tick" id="tick">✓✓</span></div>
+    </div>
+
+    <div id="dashL" class="layer">
+      <div class="lab">आजची विक्री</div>
+      <div class="num" id="sales">₹0</div>
+      <div id="bars">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar hot"><div id="tip">शुक्र · ₹18,450</div></div><div class="bar"></div><div class="bar"></div>
+      </div>
+      <div id="days"><span>सोम</span><span>मंगळ</span><span>बुध</span><span>गुरु</span><span>शुक्र</span><span>शनि</span><span>रवि</span></div>
+      <div class="chipx" id="chipA">⚠️ Stock कमी: तेल</div>
+      <div class="chipx" id="chipB">बाकी ₹4,200</div>
+    </div>
+
+    <div id="tileL" class="layer">B</div>
+  </div>
+
+  <div id="words" class="abs">
+    <div class="w"><span>बिल.</span></div>
+    <div class="w"><span>GST.</span></div>
+    <div class="w"><span>Stock.</span></div>
+    <div class="w"><span>WhatsApp.</span></div>
+  </div>
+
+  <div id="end" class="abs">
+    <div class="mask"><div class="name" id="eName">BizFlow India</div></div>
+    <div class="mask"><div class="tag" id="eTag">सगळं एकाच app मध्ये.</div></div>
+    <div class="cta" id="eCta">📞 8888567870</div>
+    <div class="sub" id="eSub">Free demo · ₹399 पासून</div>
+  </div>
+
+  <div id="rip" class="abs"></div>
+  <div id="cur" class="abs"></div>
+</div>
+
+<script>
+// ---------- pure helpers: everything below is a function of time only ----------
+const DUR = 15;
+const $ = id => document.getElementById(id);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, p) => a + (b - a) * p;
+const pr = (t, s, d) => clamp((t - s) / d);
+const outCubic = p => 1 - Math.pow(1 - p, 3);
+const inCubic = p => p * p * p;
+const ioCubic = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const outExpo = p => p >= 1 ? 1 : 1 - Math.pow(2, -10 * p);
+// closed-form underdamped spring step response (0 -> 1)
+function spring(t, w = 15, z = 0.8) {
+  if (t <= 0) return 0;
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const pop = (t, s) => spring(t - s, 22, 0.55);          // bouncy little pop
+const rgb = c => `rgb(${c.map(v => Math.round(clamp(v, 0, 255))).join(',')})`;
+const mix = (a, b, p) => a.map((v, i) => lerp(v, b[i], p));
+const seg = s => [...new Intl.Segmenter('mr', { granularity: 'grapheme' }).segment(s)].map(x => x.segment);
+const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
+
+const NAVY = [31, 42, 107], SAFF = [255, 138, 31], CREAM = [255, 246, 234], CHAT = [239, 231, 221], WHITE = [255, 255, 255];
+
+// ---------- the one persistent shape ----------
+const S = {
+  off:    { x: 540, y: 2500, w: 640, h: 820,  r: [18, 18, 18, 18], c: [255, 253, 245], rot: -16 },
+  paper:  { x: 540, y: 1060, w: 640, h: 820,  r: [18, 18, 18, 18], c: [255, 253, 245], rot: -4 },
+  dot:    { x: 540, y: 960,  w: 100, h: 100,  r: [50, 50, 50, 50], c: SAFF, rot: 0 },
+  bill:   { x: 540, y: 1000, w: 880, h: 1160, r: [56, 56, 56, 56], c: WHITE, rot: 0 },
+  bubble: { x: 610, y: 520,  w: 800, h: 250,  r: [60, 14, 60, 60], c: [220, 248, 198], rot: 0 },
+  dash:   { x: 540, y: 980,  w: 900, h: 1040, r: [56, 56, 56, 56], c: WHITE, rot: 0 },
+  full:   { x: 540, y: 960,  w: 1240, h: 2160, r: [0, 0, 0, 0],   c: SAFF, rot: 0 },
+  tile:   { x: 540, y: 640,  w: 220, h: 220,  r: [60, 60, 60, 60], c: SAFF, rot: 0 },
+};
+const MOVES = [ // [time, state, spring freq, damping]
+  [0.00, 'paper', 11, 0.72], [2.00, 'dot', 20, 0.85], [2.50, 'bill', 15, 0.78], [5.70, 'bubble', 15, 0.8],
+  [7.75, 'dash', 15, 0.78], [10.50, 'full', 14, 1 - 1e-3], [12.90, 'tile', 15, 0.76],
+];
+function heroAt(t) {
+  let cur = JSON.parse(JSON.stringify(S.off)), prev = S.off;
+  for (const [t0, name, w, z] of MOVES) {
+    const to = S[name], p = spring(t - t0, w, z);
+    for (const k of ['x', 'y', 'w', 'h', 'rot']) cur[k] += (to[k] - prev[k]) * p;
+    cur.r = cur.r.map((v, i) => v + (to.r[i] - prev.r[i]) * p);
+    cur.c = cur.c.map((v, i) => v + (to.c[i] - prev.c[i]) * clamp(p));
+    prev = to;
+  }
+  cur.w = Math.max(cur.w, 20); cur.h = Math.max(cur.h, 20);
+  return cur;
+}
+
+// ---------- cursor path (touch dot) ----------
+const CUR = [ // [time, x, y]
+  [1.45, 1180, 1700], [1.95, 620, 1150], [2.35, 620, 1150], [2.9, 1200, 1500],
+  [5.0, 1200, 1700], [5.45, 560, 1490], [5.8, 560, 1490], [6.3, 1200, 1800],
+  [9.6, 1200, 1500], [10.05, 667, 880], [10.4, 667, 880], [10.8, 1200, 1300],
+];
+const TAPS = [2.0, 5.5];
+function curAt(t) {
+  if (t <= CUR[0][0]) return { x: CUR[0][1], y: CUR[0][2] };
+  for (let i = 1; i < CUR.length; i++) {
+    if (t <= CUR[i][0]) {
+      const a = CUR[i - 1], b = CUR[i], p = ioCubic(pr(t, a[0], b[0] - a[0]));
+      return { x: lerp(a[1], b[1], p), y: lerp(a[2], b[2], p) };
+    }
+  }
+  const l = CUR[CUR.length - 1]; return { x: l[1], y: l[2] };
+}
+
+const typedFull = seg('राहुल किराणा');
+const rows = [...document.querySelectorAll('#billL .row')];
+const scr = [...document.querySelectorAll('.scr')];
+const bars = [...document.querySelectorAll('#bars .bar')];
+const BARH = [0.42, 0.55, 0.38, 0.66, 1.0, 0.0, 0.0];
+const words = [...document.querySelectorAll('#words .w span')];
+const WT = [10.75, 11.25, 11.75, 12.25];
+const PILLS = [[2.6, 5.6, '01', 'बिल बनवा'], [5.95, 7.6, '02', 'WhatsApp वर पाठवा'], [8.0, 10.4, '03', 'हिशोब तयार']];
+
+function seek(t) {
+  // background
+  let bg = NAVY;
+  bg = mix(bg, CHAT, ioCubic(pr(t, 5.7, 0.4)));
+  bg = mix(bg, CREAM, ioCubic(pr(t, 7.75, 0.4)));
+  if (t >= 11.0) bg = NAVY;
+  $('bg').style.background = rgb(bg);
+
+  // headline
+  const hOut = inCubic(pr(t, 1.95, 0.3));
+  document.querySelector('#head .a span').style.transform = `translateY(${lerp(140, 0, outExpo(pr(t, 0.2, 0.5))) - hOut * 150}px)`;
+  document.querySelector('#head .b span').style.transform = `translateY(${lerp(140, 0, outExpo(pr(t, 0.45, 0.5))) - hOut * 150}px)`;
+  $('head').style.opacity = t > 2.4 ? 0 : 1;
+
+  // hero shape
+  const h = heroAt(t);
+  const he = $('hero');
+  he.style.width = h.w + 'px'; he.style.height = h.h + 'px';
+  he.style.transform = `translate(${h.x - h.w / 2}px, ${h.y - h.h / 2}px) rotate(${h.rot}deg)`;
+  he.style.borderRadius = h.r.map(v => Math.max(0, v) + 'px').join(' ');
+  he.style.background = rgb(h.c);
+  he.style.boxShadow = (t > 10.5 && t < 12.95) ? 'none' : '0 40px 90px rgba(10,14,50,.35)';
+
+  const layer = (id, tw, a, b, c, d) => { // fade in a..b, out c..d ; scale follows the shape
+    const o = pr(t, a, b - a) * (1 - pr(t, c, d - c));
+    const el = $(id); el.style.opacity = o; el.style.visibility = o <= 0 ? 'hidden' : 'visible';
+    const s = clamp(h.w / tw, 0.2, 1.25);
+    el.style.transform = `scale(${s})`; el.style.filter = o < 1 && o > 0 ? `blur(${(1 - o) * 10}px)` : 'none';
+  };
+  layer('paperL', 640, -1, -0.9, 2.0, 2.12);
+  layer('billL', 880, 2.68, 2.88, 5.72, 5.84);
+  layer('bubbleL', 800, 5.92, 6.06, 7.75, 7.85);
+  layer('dashL', 900, 7.98, 8.18, 10.48, 10.58);
+  layer('tileL', 220, 13.05, 13.2, 99, 100);
+
+  // paper scribbles
+  scr.forEach((el, i) => {
+    const s0 = 0.55 + i * 0.25;
+    el.style.opacity = pr(t, s0, 0.12);
+    el.style.transform = `translateX(${lerp(-24, 0, outCubic(pr(t, s0, 0.25)))}px)`;
+    const st = el.querySelector('.strike'), q = el.querySelector('.q');
+    st.style.width = (i % 2 === 0 ? 330 : 400) + 'px';
+    st.style.transform = `scaleX(${outCubic(pr(t, s0 + 0.2, 0.22))}) rotate(${i % 2 ? -2 : 1.5}deg)`;
+    q.style.transform = `scale(${pop(t, s0 + 0.32)}) rotate(${12 - i * 7}deg)`;
+  });
+
+  // bill
+  const typeP = pr(t, 2.9, 0.55);
+  $('typed').textContent = typedFull.slice(0, Math.round(typeP * typedFull.length)).join('');
+  $('caret').style.opacity = (t < 3.6 && Math.floor(t * 4) % 2 === 0) ? 1 : (typeP < 1 && typeP > 0 ? 1 : 0);
+  rows.forEach((el, i) => {
+    const s0 = 3.5 + i * 0.25, p = spring(t - s0, 18, 0.8);
+    el.style.opacity = pr(t, s0, 0.12); el.style.transform = `translateX(${lerp(70, 0, p)}px)`;
+  });
+  const cnt = outCubic(pr(t, 4.25, 0.7));
+  $('gstRow').style.opacity = pr(t, 4.2, 0.15); $('totRow').style.opacity = pr(t, 4.3, 0.15);
+  $('gst').textContent = inr(38 * cnt); $('total').textContent = inr(798 * cnt);
+  $('totRow').style.transform = `scale(${1 + 0.06 * Math.max(0, Math.sin(pr(t, 4.95, 0.3) * Math.PI))})`;
+  $('totRow').style.transformOrigin = 'right center';
+  const press = Math.sin(pr(t, 5.45, 0.22) * Math.PI);
+  $('sendBtn').style.transform = `translateY(${lerp(200, 0, spring(t - 4.85, 16, 0.75))}px) scale(${1 - 0.06 * press})`;
+  $('sendBtn').style.filter = `brightness(${1 + 0.18 * press})`;
+
+  // chat
+  $('chatHead').style.transform = `translateY(${lerp(-320, 0, outExpo(pr(t, 5.75, 0.5))) - inCubic(pr(t, 7.6, 0.3)) * 320}px)`;
+  $('tick').style.color = t > 6.75 ? '#2F8FE6' : '#7A917C';
+  [['r1', 6.5, 760], ['r2', 7.0, 940]].forEach(([id, s0, y]) => {
+    const p = pop(t, s0), out = inCubic(pr(t, 7.6, 0.25));
+    const el = $(id); el.style.top = y + 'px';
+    el.style.opacity = pr(t, s0, 0.08) * (1 - out);
+    el.style.transform = `scale(${lerp(0.4, 1, p)}) translateX(${-out * 300}px)`;
+  });
+
+  // pill
+  let pt = null;
+  for (const P of PILLS) if (t >= P[0] && t <= P[1] + 0.25) pt = P;
+  const pe = $('pillp');
+  if (pt) {
+    const dark = pt[2] === '01';
+    pe.innerHTML = `<b>${pt[2]}</b>${pt[3]}`;
+    pe.style.background = dark ? 'rgba(255,255,255,.12)' : '#1F2A6B'; pe.style.color = '#fff';
+    const pin = spring(t - pt[0], 18, 0.7), pout = inCubic(pr(t, pt[1], 0.25));
+    pe.style.opacity = pr(t, pt[0], 0.12) * (1 - pout);
+    pe.style.transform = `translateY(${lerp(60, 0, pin) - pout * 60}px)`;
+    $('pill').style.top = (pt[2] === '02' ? 1290 : 210) + 'px';
+  } else pe.style.opacity = 0;
+
+  // dashboard
+  $('sales').textContent = inr(18450 * outCubic(pr(t, 8.25, 1.3)));
+  bars.forEach((el, i) => {
+    const p = spring(t - (8.3 + i * 0.125), 17, 0.62);
+    el.style.height = (BARH[i] * 400) + 'px'; el.style.transform = `scaleY(${Math.max(0, p)})`;
+    el.style.opacity = BARH[i] ? 1 : 0;
+  });
+  [['chipA', 9.4], ['chipB', 9.6]].forEach(([id, s0]) => {
+    $(id).style.transform = `translateY(${lerp(220, 0, spring(t - s0, 17, 0.72))}px)`;
+  });
+  const tp = pop(t, 10.05);
+  $('tip').style.left = '50%'; $('tip').style.bottom = '412px';
+  $('tip').style.transform = `translateX(-50%) scale(${tp})`; $('tip').style.opacity = pr(t, 10.05, 0.08);
+
+  // kinetic words
+  const wOut = inCubic(pr(t, 12.7, 0.28));
+  words.forEach((el, i) => {
+    const p = outExpo(pr(t, WT[i], 0.38));
+    el.style.transform = `translateY(${lerp(215, 0, p) - wOut * 215}px)`;
+    const next = i < 3 ? pr(t, WT[i + 1], 0.2) : 0;
+    el.style.color = rgb(mix(WHITE, [20, 24, 61], next));
+  });
+  $('words').style.visibility = (t > 10.6 && t < 13.05) ? 'visible' : 'hidden';
+
+  // end card
+  $('end').style.visibility = t > 13.0 ? 'visible' : 'hidden';
+  $('eName').style.transform = `translateY(${lerp(160, 0, outExpo(pr(t, 13.2, 0.55)))}px)`;
+  $('eTag').style.transform = `translateY(${lerp(110, 0, outExpo(pr(t, 13.45, 0.55)))}px)`;
+  $('eCta').style.transform = `scale(${pop(t, 13.85)})`;
+  $('eSub').style.opacity = pr(t, 14.15, 0.35);
+  $('eSub').style.transform = `translateY(${lerp(30, 0, outCubic(pr(t, 14.15, 0.4)))}px)`;
+
+  // cursor + ripple
+  const c = curAt(t);
+  let pressK = 0, rip = null;
+  for (const tp2 of TAPS) { pressK = Math.max(pressK, Math.sin(pr(t, tp2 - 0.08, 0.26) * Math.PI)); if (t >= tp2 && t < tp2 + 0.5) rip = tp2; }
+  $('cur').style.transform = `translate(${c.x}px, ${c.y}px) scale(${1 - 0.28 * pressK})`;
+  $('cur').style.opacity = (t > 1.45 && t < 2.9) || (t > 5.0 && t < 6.3) || (t > 9.6 && t < 10.8) ? 1 : 0;
+  if (rip !== null) {
+    const p = outCubic(pr(t, rip, 0.5));
+    $('rip').style.transform = `translate(${c.x}px, ${c.y}px) scale(${lerp(0.6, 3.2, p)})`; $('rip').style.opacity = 1 - p;
+  } else $('rip').style.opacity = 0;
+}
+
+window.seek = seek; window.DUR = DUR;
+// live preview when opened in a browser (render script calls seek directly)
+if (!location.hash.includes('render')) {
+  const t0 = performance.now();
+  (function loop() { seek(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); })();
+} else seek(0);
+</script>
+</body>
+</html>
