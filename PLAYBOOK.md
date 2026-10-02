@@ -41,35 +41,47 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    IGPO13 likes, IGPO08 comments, IGPO15 saves, IGPO27 shares, IGPO28 views, IGPO29 follows).
    Add a dated line per post to "What has worked" above. Note what beat the average.
 2. **Check the calendar**: `getScheduledPosts` for next Mon–Sun so nothing is doubled.
-3. **Plan 3 posts** for Mon, Wed, Fri at 10:00, one from each of three different pillars,
-   leaning toward whatever performed best:
-   - Pain point → solution (udhaar, GST stress, stock guesswork, missed follow-ups)
-   - How-to / save-worthy tips (GST invoice steps, reminders, reports)
-   - Feature spotlight (WhatsApp automation, CRM, inventory, Marathi/Hindi support)
-   - Industry product (TableFlow restaurants, RetailFlow shops, AccountFlow)
-   - Festival / local / community (Indian & Maharashtra festivals that week; Sangamner)
-   - If `photos/` has new real photos (team, customers, events), build one post around them —
-     real people outperform graphics.
-4. **Write the spec** as `posts/<YYYY>-w<WW>.json` (copy the shape of `posts/2026-w41.json`).
-   Slide kinds: `cover`, `point`, `list`, `chips`, `chat`, `cta`. 4–6 slides; last slide is
-   always `cta`. Use `[[text]]` to highlight. Keep each slide to one idea.
+3. **Plan the week** (read `GROWTH.md` first: voice, rhythm, upcoming festival moments):
+   - **3 carousels**, Mon/Wed/Fri at 10:00, one from each of three different pillars:
+     pain point → solution; how-to / save-worthy tips; feature spotlight; industry product
+     (TableFlow, RetailFlow, AccountFlow).
+   - **2 Reels**, Tue/Thu at 18:00, funny and relatable dukandar-life humour in the
+     "तुमचा दुकानातला मित्र" voice. Each must be a new idea, not a repeat of a past one
+     (check `posts/` for what's been done).
+   - **Festival greeting** at 09:00 on any festival day in the coming 8 days (search the
+     web to confirm the date first). Single image, warm, ends with a question.
+   - If `photos/` has new real photos (team, customers, events), build one post around
+     them — real people outperform graphics.
+   - Every caption ends with a question or a "tag a friend" line.
+4. **Write the specs**: carousels and greetings in `posts/<YYYY>-w<WW>.json` (shape of
+   `posts/2026-w41.json`; slide kinds `cover`, `point`, `list`, `chips`, `chat`, `cta`; 4–6
+   slides, last is `cta`; `[[text]]` highlights). Reels in `posts/<YYYY>-w<WW>-reels.json`
+   (shape of `posts/2026-w41-reels.json`; scene kinds `big`, `mid`, `chat`, `cta`; 5–6 scenes,
+   10–15 seconds total, last is `cta`).
 5. **Render**: `pip install playwright --break-system-packages && python3 -m playwright install chromium`
-   if needed, then `python3 build.py posts/<file>.json`. Open 2–3 slides with Read and check
-   Devanagari renders correctly (Poppins covers it; FreeSans is the fallback) and nothing
-   overflows.
-6. **Publish images**: commit `posts/` + `media/` and push to `main`. Image URLs are
-   `https://raw.githubusercontent.com/bizflowcrm-crypto/bizflow-social/main/media/<post-id>/NN.jpg`.
-   Confirm one URL returns HTTP 200 before scheduling.
-7. **Schedule** each post with `createScheduledPost`: providers `[{"network":"instagram"}]`,
-   `instagramData: {"type":"POST"}`, `media`: the slide URLs in order, `autoPublish: true`,
-   `publicationDate: {"dateTime":"YYYY-MM-DDT10:00:00","timezone":"Asia/Calcutta"}`.
-8. **Report**: write `reports/<YYYY>-w<WW>.md` (last week's numbers in 5 lines, this week's 3
-   posts), commit and push, then send the owner a short summary.
+   if needed, then `python3 build.py posts/<file>.json` and `python3 reel.py posts/<reels file>.json`
+   (needs ffmpeg). Open 2–3 slides with Read, and extract a frame or two from each Reel with
+   ffmpeg, to check Devanagari renders correctly and nothing overflows.
+6. **Publish media**: commit `posts/` + `media/` and push to `main`. URLs are
+   `https://raw.githubusercontent.com/bizflowcrm-crypto/bizflow-social/main/media/<id>/NN.jpg`
+   (carousels) and `.../media/<id>/reel.mp4` + `.../media/<id>/cover.jpg` (Reels).
+7. **Schedule** with `createScheduledPost`, `autoPublish: true`,
+   `publicationDate: {"dateTime":"YYYY-MM-DDTHH:MM:SS","timezone":"Asia/Calcutta"}`:
+   - Carousel / greeting: providers `[{"network":"instagram"}]`, `instagramData: {"type":"POST"}`,
+     `media`: slide URLs in order.
+   - Reel: providers `[{"network":"instagram"},{"network":"youtube"}]`, `media`: the mp4 URL,
+     `videoThumbnailUrl`: the cover.jpg URL, `instagramData: {"type":"REEL","showReelOnFeed":true}`,
+     `youtubeData: {"title":"<Marathi title> | BizFlow #shorts","type":"short","privacy":"public","tags":[...],"madeForKids":false}`.
+8. **Report**: write `reports/<YYYY>-w<WW>.md` with (a) last week's numbers in 5 lines,
+   (b) this week's posts, (c) a **fresh comment kit**: 10 new witty comment lines in the
+   GROWTH.md style for the owner to post by hand on other accounts this week, tied to that
+   week's festivals and trends. Commit and push, then send the owner a short summary that
+   includes the 10 comment lines.
 
 ## Hard rules
 
-- Only post BizFlow's own content. No engagement bait that breaks Instagram rules,
-  no follow/unfollow, no auto-commenting on other accounts.
+- Only post on BizFlow's own accounts. Never automate comments, likes, follows or DMs on
+  other accounts — comment lines are written for the owner to post by hand.
 - Never post anything about competitors by name, politics, or religion beyond warm
   festival greetings.
 - If Metricool or GitHub fails, don't post half a week — report the error to the owner.
