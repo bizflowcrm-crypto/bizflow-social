@@ -1,0 +1,54 @@
+{
+  "week": "2026-W42",
+  "posts": [
+    {
+      "id": "2026-10-12-customers-come-back",
+      "date": "2026-10-12T10:00:00",
+      "pillar": "pain point → solution",
+      "youtube_title": "Customer एकदा आला. परत आला का? | BizFlow #shorts",
+      "slides": [
+        {"kind": "cover", "theme": "dark", "kicker": "दुकानदारांसाठी एक प्रश्न", "title": "Customer\nएकदा आला.\n[[परत आला का?]]", "body": "या 3 गोष्टी तपासा 👇"},
+        {"kind": "point", "theme": "light", "num": "01", "title": "चेहरा आठवतो,\nनंबर नाही", "body": "Regular customer ओळखता, पण\nत्याचा number कुठे [[लिहिलाय]]\nते आठवत नाही."},
+        {"kind": "point", "theme": "light", "num": "02", "title": "सणाची offer\nकोणाला पाठवणार?", "body": "Offer तयार आहे, पण\ncustomers ची [[यादीच नाही]]."},
+        {"kind": "point", "theme": "light", "num": "03", "title": "बिल झालं,\nसंपर्क संपला", "body": "खरेदीनंतर customer शी बोलणंच\nहोत नाही, [[पुढच्या सणापर्यंत]]."},
+        {"kind": "chips", "theme": "dark", "kicker": "उपाय", "title": "Customers\n[[एकाच ठिकाणी]]", "body": "BizFlow CRM मध्ये customers ची यादी,\nआणि WhatsApp वर थेट संपर्क.", "chips": ["CRM", "WhatsApp Automation", "GST Billing", "मराठी · हिंदी · English"], "price": "फक्त [[₹399]] पासून सुरू"},
+        {"kind": "cta", "theme": "accent", "kicker": "पुढची पायरी", "title": "Customer जोडा,\nनातं टिकवा", "body": "Call करा किंवा comment मध्ये DEMO लिहा."}
+      ],
+      "caption": "नवीन customer मिळवायला मेहनत लागते. पण जो एकदा आला, तो परत आला का? 🤔\n\nचेहरा आठवतो पण नंबर नाही. सणाची offer तयार, पण पाठवायची कोणाला ते माहीत नाही. ओळखीचं वाटतंय?\n\nBizFlow CRM मध्ये तुमचे customers एकाच ठिकाणी, आणि WhatsApp automation ने त्यांच्याशी थेट संपर्क. Support मराठी, हिंदी आणि English मध्ये. फक्त ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा.\n\nतुमच्या दुकानातला सगळ्यात जुना regular customer कोण? Comment मध्ये सांगा 👇\n\n#bizflow #bizflowindia #crm #whatsappautomation #smallbusinessindia #marathibusiness #maharashtrabusiness #sangamner",
+      "youtube_description": "नवीन customer मिळवायला मेहनत लागते. पण जो एकदा आला, तो परत आला का? 🤔\n\nचेहरा आठवतो पण नंबर नाही. सणाची offer तयार, पण पाठवायची कोणाला ते माहीत नाही.\n\nBizFlow CRM मध्ये तुमचे customers एकाच ठिकाणी, आणि WhatsApp automation ने त्यांच्याशी थेट संपर्क. Support मराठी, हिंदी आणि English मध्ये. फक्त ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\nतुमच्या दुकानातला सगळ्यात जुना regular customer कोण? Comment करा 👇\n\n#bizflow #crm #whatsappautomation #smallbusinessindia #marathi #shorts",
+      "youtube_tags": ["bizflow", "crm", "whatsapp automation", "small business india", "marathi"]
+    },
+    {
+      "id": "2026-10-14-diwali-prep-checklist",
+      "date": "2026-10-14T10:00:00",
+      "pillar": "how-to / save-worthy",
+      "youtube_title": "दिवाळीआधी दुकानाची 5-point तयारी | BizFlow #shorts",
+      "slides": [
+        {"kind": "cover", "theme": "light", "kicker": "Checklist · Save करा 🔖", "title": "दिवाळीआधी\nदुकानाची\n[[5-point तयारी]]", "body": "सणाची गर्दी यायच्या आधी हे करून ठेवा."},
+        {"kind": "list", "theme": "light", "kicker": "आत्ताच सुरू करा", "title": "तयारीची यादी", "items": ["जुनी [[उधारी]] वसूल करा", "[[Stock]] मोजून घ्या", "कमी माल [[आत्ताच]] मागवा", "Customers चे नंबर [[update]] करा", "रोजचा हिशोब [[रोज]] बंद करा"]},
+        {"kind": "point", "theme": "dark", "num": "✓", "title": "गर्दीच्या दिवसांत\nवेळ नसतो", "body": "म्हणून तयारी आधी. सणात फक्त\n[[विक्रीवर]] लक्ष द्या."},
+        {"kind": "chips", "theme": "accent", "kicker": "BizFlow मध्ये", "title": "ही यादी\n[[सोपी]] होते", "body": "Billing, stock आणि customers,\nएकाच ठिकाणी.", "chips": ["GST Billing", "Inventory", "CRM", "WhatsApp Automation"]},
+        {"kind": "cta", "theme": "dark", "kicker": "सणाआधी सुरू करा", "title": "Free demo\nबुक करा", "body": "आमची team मराठीत समजावून सांगेल."}
+      ],
+      "caption": "दिवाळी जवळ आली की दुकानात गर्दी वाढते, आणि वेळ कमी पडतो. ⏳ म्हणून तयारी आत्ताच:\n\n1️⃣ जुनी उधारी वसूल करा\n2️⃣ Stock मोजून घ्या\n3️⃣ कमी माल आत्ताच मागवा\n4️⃣ Customers चे नंबर update करा\n5️⃣ रोजचा हिशोब रोज बंद करा\n\nहा post save करा आणि तुमच्या दुकानदार मित्राला पाठवा 🔖\n\nBizFlow मध्ये billing, stock आणि customers एकाच ठिकाणी.\n📞 8888567870 | Free demo\n\nतुमची दिवाळीची तयारी कधी सुरू होते? Comment करा 👇\n\n#bizflow #bizflowindia #diwali2026 #dukandar #inventory #smallbusinessindia #marathibusiness #sangamner",
+      "youtube_description": "दिवाळी जवळ आली की दुकानात गर्दी वाढते, आणि वेळ कमी पडतो. ⏳ म्हणून तयारी आत्ताच:\n\n1️⃣ जुनी उधारी वसूल करा\n2️⃣ Stock मोजून घ्या\n3️⃣ कमी माल आत्ताच मागवा\n4️⃣ Customers चे नंबर update करा\n5️⃣ रोजचा हिशोब रोज बंद करा\n\nBizFlow मध्ये billing, stock आणि customers एकाच ठिकाणी.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\nतुमची दिवाळीची तयारी कधी सुरू होते? Comment करा 👇\n\n#bizflow #diwali2026 #dukandar #smallbusinessindia #marathi #shorts",
+      "youtube_tags": ["bizflow", "diwali", "dukandar", "inventory", "small business india", "marathi"]
+    },
+    {
+      "id": "2026-10-16-retailflow",
+      "date": "2026-10-16T10:00:00",
+      "pillar": "industry product",
+      "youtube_title": "Counter वर रांग, हातात बिलबुक? RetailFlow | BizFlow #shorts",
+      "slides": [
+        {"kind": "cover", "theme": "dark", "kicker": "Retail दुकानांसाठी", "title": "Counter वर [[रांग]],\nहातात पेन\nआणि बिलबुक?", "body": "Swipe करा 👉"},
+        {"kind": "point", "theme": "light", "num": "01", "title": "गर्दी वाढली की\nबिलबुक थकतं", "body": "प्रत्येक बिल हाताने लिहायचं,\nआणि customers [[वाट पाहतात]]."},
+        {"kind": "chips", "theme": "accent", "kicker": "ओळख करून घ्या", "title": "[[RetailFlow]]", "body": "BizFlow चं retail दुकानांसाठीचं POS.", "chips": ["Retail POS", "मराठी", "हिंदी", "English"], "price": "Plans [[₹399]] पासून"},
+        {"kind": "list", "theme": "light", "kicker": "BizFlow मध्ये", "title": "दुकानाला लागणारं\nसगळं", "items": ["[[POS billing]], counter साठी", "[[GST]] billing", "[[Inventory]], stock चा हिशोब", "[[WhatsApp]] automation"]},
+        {"kind": "cta", "theme": "dark", "kicker": "Demo पहा", "title": "तुमच्या counter वर\nRetailFlow", "body": "Free demo मध्ये live पहा."}
+      ],
+      "caption": "Counter वर रांग, हातात पेन आणि बिलबुक? ✍️ सणाच्या दिवसांत हे चित्र बऱ्याच दुकानांत दिसतं.\n\nRetailFlow हे BizFlow चं retail दुकानांसाठीचं POS. आणि BizFlow मध्ये POS billing, GST billing, inventory आणि WhatsApp automation, सगळं एकाच ठिकाणी. Support मराठी, हिंदी आणि English मध्ये. Plans ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा.\n\nतुमच्या दुकानात बिल कसं बनतं: बिलबुक, calculator की software? Comment करा 👇\n\n#bizflow #bizflowindia #retailflow #retailpos #billingsoftware #smallbusinessindia #marathibusiness #sangamner",
+      "youtube_description": "Counter वर रांग, हातात पेन आणि बिलबुक? ✍️ सणाच्या दिवसांत हे चित्र बऱ्याच दुकानांत दिसतं.\n\nRetailFlow हे BizFlow चं retail दुकानांसाठीचं POS. आणि BizFlow मध्ये POS billing, GST billing, inventory आणि WhatsApp automation, सगळं एकाच ठिकाणी. Support मराठी, हिंदी आणि English मध्ये. Plans ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\nतुमच्या दुकानात बिल कसं बनतं: बिलबुक, calculator की software? Comment करा 👇\n\n#bizflow #retailflow #retailpos #billingsoftware #marathi #shorts",
+      "youtube_tags": ["bizflow", "retailflow", "retail pos", "billing software", "small business india", "marathi"]
+    }
+  ]
+}

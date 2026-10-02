@@ -29,6 +29,11 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
   22 likes** — by far the best. Real people + local community wins.
 - 2026-09-29 TableFlow product carousel: 131 views, 48 reach. Pure product posts reach less.
 - 2026-09-14 team Ganpati celebration: 138 views, 56 reach.
+- 2026-10-02 review (18 Sep–2 Oct, 2 posts, average reach 229): only the visarjan post beat
+  the average (409 reach, 790 views, 22 likes, 4 comments). The TableFlow carousel had 48 reach,
+  4 likes, 0 comments. Neither post got saves, shares or follows, so graphics need a stronger
+  comment hook: end with a question that can be answered in one word. No YouTube videos
+  published yet (first Shorts go out 5 Oct), so no YouTube numbers to compare.
 - Best posting time (Metricool): **10:00 IST Mon–Fri**, strongest Wed/Thu/Fri. 18:00 is second best.
   Weekends get about half the reach.
 
@@ -67,6 +72,11 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    if needed, then `python3 build.py posts/<file>.json` and `python3 reel.py posts/<reels file>.json`
    (needs ffmpeg). Open 2–3 slides with Read, and extract a frame or two from each Reel with
    ffmpeg, to check Devanagari renders correctly and nothing overflows.
+   In headings, a Latin word with a descender (p, y, g, q, j) on the line directly above a
+   Devanagari line collides with the matras below it — write that word in Devanagari
+   (पेन, पैसे) or move it to the last line.
+   Specs may carry `youtube_title`, `youtube_description` and `youtube_tags` per post so the
+   YouTube copy is kept in the repo next to the Instagram caption.
 6. **Publish media**: commit `posts/` + `media/` and push to `main`. Base URL:
    `https://raw.githubusercontent.com/bizflowcrm-crypto/bizflow-social/main/media/<id>/`.
    `build.py` writes `NN.jpg` slides plus `short.mp4` and `cover.jpg` (the 9:16 video version)
