@@ -10,6 +10,8 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
   inventory, WhatsApp automation**, 20+ industry products.
 - Industry products: **TableFlow** (restaurant/hotel POS: table billing, KOT, bar stock,
   accounts, 15+ reports), **RetailFlow** (retail POS), **AccountFlow** (GST accounting).
+- Also builds **websites** for local businesses, schools, colleges and gram panchayats.
+  Real customers are listed in `CUSTOMERS.md`; that is the only list of names we may use.
 - Plans **from ₹399**. Support in **English, Hindi and Marathi**.
 - CTA: **📞 8888567870, free demo**. Email hello@bizflowindia.cloud
 - Never invent numbers (customer counts, speed claims, savings %, testimonials).
@@ -62,6 +64,9 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
      web to confirm the date first). Single image, warm, ends with a question.
    - If `photos/` has new real photos (team, customers, events), build one post around
      them — real people outperform graphics.
+   - Once a month, draft one **customer spotlight** from `CUSTOMERS.md` (a website we
+     built, with screenshots). Follow the rules in that file: leave it unscheduled until
+     the owner confirms the customer agreed.
    - Every caption ends with a question or a "tag a friend" line.
 4. **Write the specs**: carousels and greetings in `posts/<YYYY>-w<WW>.json` (shape of
    `posts/2026-w41.json`; slide kinds `cover`, `point`, `list`, `chips`, `chat`, `cta`; 4–6
@@ -112,6 +117,8 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
 
 - Only post on BizFlow's own accounts. Never automate comments, likes, follows or DMs on
   other accounts — comment lines are written for the owner to post by hand.
+- Never name a customer who isn't in `CUSTOMERS.md`, and never put passwords or logins
+  in this repo.
 - Never post anything about competitors by name, politics, or religion beyond warm
   festival greetings.
 - If Metricool or GitHub fails, don't post half a week — report the error to the owner.
