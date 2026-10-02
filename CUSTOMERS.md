@@ -1,6 +1,6 @@
 # BizFlow Customers
 
-Real customers whose websites BizFlow has built or manages. This is the **only** source
+Real BizFlow customers: websites we built or manage, and businesses using our software. This is the **only** source
 for customer names in posts: never name a customer who isn't on this list, and never
 invent a quote, number or result for one (see the Hard rules in `PLAYBOOK.md`).
 
@@ -47,6 +47,50 @@ No passwords, registrar logins or personal contact details go in this repo. It i
 
 Sectors are a best guess from the names; correct them here when you know better.
 
+## Software customers
+
+Businesses using BizFlow software (billing / accounting). Spellings were tidied from the
+owner's sheet; fix any that are wrong. Renewal dates in that sheet run 2021–2024, so check a
+customer is still active before featuring them.
+
+| Customer | Town | Product |
+|---|---|---|
+| Kalpesh Polymer | — | Software |
+| Sayukta Electronics | Loni | Accounting |
+| Bharat Tyres | Rahuri | Software |
+| VR Traders | Bhosari | Software |
+| Swamilila Traders | — | Software |
+| Sagar Trailer | — | Software |
+| Swity Electronics | Nandur | Software |
+| Kute Traders | — | Software |
+| Kamal Electricals | — | Software |
+| Kalabhavan | Sangamner | Software |
+| SuperWield Enterprises | Raigad | Accounting |
+| Shiv Irrigators | — | Software |
+| Dhruv Industries | Pune | Accounting |
+| Om Sai Steel | Alephata | Software |
+| Ojas Plumbing | — | Software |
+| Shree Ganesh Industries | Bhosari | Software |
+| Rushikesh Ad Agencies | Kopargaon | Software |
+| Laxmi Paper Mill | Kolhar | Software |
+| Yogayog Door | Sangamner | Accounting |
+| Patel Tiles | Samnapur Rd | Software |
+| Sara Enterprises | — | Software |
+| Someshwar Traders | Sangamner | Accounting |
+| Phonix Enterprises | Chakan, Pune | Accounting |
+| Omkar Solar | Kopargaon | Software |
+| Anup Spare Parts | Narayangaon | Accounting |
+| DN Agencies | Manoli | Accounting |
+| SP Polymer | Pune | Accounting |
+| Aashirwad Printers (press) | Kopargaon | Software |
+| Rishikesh Agency | — | Accounting |
+
+Also on the sheet with no details yet (confirm they're customers, not leads, before using):
+Gunjal Sandesh Trading, Jagdish Enterprises, Balaji Outdoor, Carnival Inn Room, Siddhivinayak Cement, Sai Seva TVS Parts, Shreekrishna Electronics (Navin Nagar Road), VPS (Mumbai), Vaishnavi Tailor, Maruti Steel (Alephata), Gujarat Rubber, Tamanna AC, Sai Doors (Sakur), GS Computer, Sara Industrial Rubber, Trisha Beauty, Digital World (Samarth Computer), Balaji Traders, Sunil Chavhan (Bhosari), Ramesh Saloli (Bhosari).
+
+Left out on purpose: Ajinkya Agencies (demo only so far), the Vadgaon election entry
+(politics), and entries that were only a person's name or a phone number.
+
 ## Using customers in posts
 
 - **Which sites to feature**: only ones that are live and look good on the day. Open the
@@ -55,8 +99,8 @@ Sectors are a best guess from the names; correct them here when you know better.
 - **Ask first**: a spotlight that names or tags a customer needs the owner's OK that the
   customer is happy to be featured. Draft it in `posts/` and leave it unscheduled until
   then (like `posts/2026-w40-team.json`), and say so in the weekly report.
-- **What we can say**: "BizFlow ने बनवलेली website" plus the customer's name, website and
-  sector. Nothing about their sales, traffic or results unless the customer gives it to us.
+- **What we can say**: "BizFlow ने बनवलेली website" or "BizFlow वापरणारे" plus the customer's name, website or town,
+  and sector. Nothing about their sales, traffic or results unless the customer gives it to us.
 - **Screenshots**: a website screenshot (desktop + phone) is fine as a slide image. Put it
   in `photos/` first. No photos of children, so crop school and college sites carefully.
 - **Politics**: gram panchayat and sarpanch sites are fine as "we built their website",
