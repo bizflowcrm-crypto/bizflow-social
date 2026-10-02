@@ -6,6 +6,13 @@ invent a quote, number or result for one (see the Hard rules in `PLAYBOOK.md`).
 
 No passwords, registrar logins or personal contact details go in this repo. It is public.
 
+## Agreed to be featured
+
+The owner adds a line here when a customer says yes (name, date, what they agreed to:
+photos, name, tag, owner quote). Only customers listed here go in a scheduled post.
+
+- (none yet)
+
 ## Websites
 
 | Customer | Website | Sector |
@@ -171,7 +178,8 @@ a trial (Rahuri Marg), and Dipali Wakale (already listed under Websites).
   flagged as having problems; skip them until they're fixed.
 - **Ask first**: a spotlight that names or tags a customer needs the owner's OK that the
   customer is happy to be featured. Draft it in `posts/` and leave it unscheduled until
-  then (like `posts/2026-w40-team.json`), and say so in the weekly report.
+  they are listed under "Agreed to be featured" (like `posts/2026-w40-team.json`), and say
+  so in the weekly report.
 - **What we can say**: "BizFlow ने बनवलेली website" or "AccountFlow / TableFlow / RetailFlow वापरणारे" plus the customer's name, website or town,
   and sector. Nothing about their sales, traffic or results unless the customer gives it to us.
 - **Screenshots**: a website screenshot (desktop + phone) is fine as a slide image. Put it

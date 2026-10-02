@@ -52,7 +52,8 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    two weeks, and leave filled slots alone. In normal running the nearer week is already full
    and you build the further one, so there is always a one-week buffer of scheduled posts.
 3. **Plan each week that needs filling** (read `GROWTH.md` first: voice, rhythm, upcoming festival
-   moments). Both platforms get every slot: Instagram **and** YouTube Shorts.
+   moments; then `MARKETING.md` for that week's theme in the three-month calendar and the
+   signature series). Both platforms get every slot: Instagram **and** YouTube Shorts.
    - **3 carousels**, Mon/Wed/Fri at 10:00 (Instagram carousel + the same content as a vertical
      video on YouTube Shorts), one from each of three different pillars:
      pain point → solution; how-to / save-worthy tips; feature spotlight; industry product
@@ -64,9 +65,15 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
      web to confirm the date first). Single image, warm, ends with a question.
    - If `photos/` has new real photos (team, customers, events), build one post around
      them — real people outperform graphics.
-   - Once a month, draft one **customer spotlight** from `CUSTOMERS.md` (a website we
-     built, with screenshots). Follow the rules in that file: leave it unscheduled until
-     the owner confirms the customer agreed.
+   - **Customer of the Week** (Friday carousel, `MARKETING.md` §3): for any customer listed
+     under "Agreed to be featured" in `CUSTOMERS.md` with photos in `photos/customers/<shop>/`,
+     build the spotlight instead of the Friday product carousel. With nobody agreed yet,
+     draft one from `CUSTOMERS.md` and leave it unscheduled, and say so in the report.
+   - **Website Wednesday** every other week, from screenshots in `photos/sites/` (made by
+     `python3 shots.py`), under the same consent rule.
+   - **One long YouTube video script** per week (`MARKETING.md` §4) in
+     `posts/<YYYY>-w<WW>-youtube.json`: title, description, tags, chapter list and a spoken
+     Marathi script. A person records it, so don't schedule it.
    - Every caption ends with a question or a "tag a friend" line.
 4. **Write the specs**: carousels and greetings in `posts/<YYYY>-w<WW>.json` (shape of
    `posts/2026-w41.json`; slide kinds `cover`, `point`, `list`, `chips`, `chat`, `cta`; 4–6
