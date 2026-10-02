@@ -19,11 +19,12 @@ BizFlow talks like a funny friend who also runs a shop, not like a software comp
 
 | Day | Time | What |
 |---|---|---|
-| Mon | 10:00 | Carousel: pain point → solution |
+| Mon | 10:00 | Carousel: pain point → solution (also a YouTube Short) |
 | Tue | 18:00 | Reel: relatable/funny (also YouTube Short) |
-| Wed | 10:00 | Carousel: how-to, save-worthy |
+| Wed | 10:00 | Carousel: how-to, save-worthy (also a YouTube Short) |
 | Thu | 18:00 | Reel: relatable/funny (also YouTube Short) |
-| Fri | 10:00 | Carousel: feature or industry (TableFlow, RetailFlow) |
+| Fri | 10:00 | Carousel: feature or industry (also a YouTube Short) |
+| Sat (monthly) | 11:00 | Motion-graphics promo (Reel + YouTube Short) |
 | Festival days | 09:00 | Greeting post with a question |
 
 Every caption ends with a **question or a "tag a friend" line**. Comments and shares

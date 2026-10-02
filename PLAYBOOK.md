@@ -40,12 +40,17 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    `getAnalyticsDataByMetrics` (IGPO02 date, IGPO03 content, IGPO07 type, IGPO14 reach,
    IGPO13 likes, IGPO08 comments, IGPO15 saves, IGPO27 shares, IGPO28 views, IGPO29 follows).
    Add a dated line per post to "What has worked" above. Note what beat the average.
-2. **Check the calendar**: `getScheduledPosts` for next Mon–Sun so nothing is doubled.
-3. **Plan the week** (read `GROWTH.md` first: voice, rhythm, upcoming festival moments):
-   - **3 carousels**, Mon/Wed/Fri at 10:00, one from each of three different pillars:
+2. **Check the calendar**: `getScheduledPosts` for the **two full weeks (Mon–Sun) after today**.
+   The standard slots are listed in step 3. Fill every standard slot that is empty in those
+   two weeks, and leave filled slots alone. In normal running the nearer week is already full
+   and you build the further one, so there is always a one-week buffer of scheduled posts.
+3. **Plan each week that needs filling** (read `GROWTH.md` first: voice, rhythm, upcoming festival
+   moments). Both platforms get every slot: Instagram **and** YouTube Shorts.
+   - **3 carousels**, Mon/Wed/Fri at 10:00 (Instagram carousel + the same content as a vertical
+     video on YouTube Shorts), one from each of three different pillars:
      pain point → solution; how-to / save-worthy tips; feature spotlight; industry product
      (TableFlow, RetailFlow, AccountFlow).
-   - **2 Reels**, Tue/Thu at 18:00, funny and relatable dukandar-life humour in the
+   - **2 Reels**, Tue/Thu at 18:00 (Instagram Reel + YouTube Short), funny and relatable dukandar-life humour in the
      "तुमचा दुकानातला मित्र" voice. Each must be a new idea, not a repeat of a past one
      (check `posts/` for what's been done).
    - **Festival greeting** at 09:00 on any festival day in the coming 8 days (search the
@@ -62,16 +67,27 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    if needed, then `python3 build.py posts/<file>.json` and `python3 reel.py posts/<reels file>.json`
    (needs ffmpeg). Open 2–3 slides with Read, and extract a frame or two from each Reel with
    ffmpeg, to check Devanagari renders correctly and nothing overflows.
-6. **Publish media**: commit `posts/` + `media/` and push to `main`. URLs are
-   `https://raw.githubusercontent.com/bizflowcrm-crypto/bizflow-social/main/media/<id>/NN.jpg`
-   (carousels) and `.../media/<id>/reel.mp4` + `.../media/<id>/cover.jpg` (Reels).
+6. **Publish media**: commit `posts/` + `media/` and push to `main`. Base URL:
+   `https://raw.githubusercontent.com/bizflowcrm-crypto/bizflow-social/main/media/<id>/`.
+   `build.py` writes `NN.jpg` slides plus `short.mp4` and `cover.jpg` (the 9:16 video version)
+   for every carousel; `reel.py` writes `reel.mp4` and `cover.jpg`.
 7. **Schedule** with `createScheduledPost`, `autoPublish: true`,
    `publicationDate: {"dateTime":"YYYY-MM-DDTHH:MM:SS","timezone":"Asia/Calcutta"}`:
-   - Carousel / greeting: providers `[{"network":"instagram"}]`, `instagramData: {"type":"POST"}`,
-     `media`: slide URLs in order.
-   - Reel: providers `[{"network":"instagram"},{"network":"youtube"}]`, `media`: the mp4 URL,
-     `videoThumbnailUrl`: the cover.jpg URL, `instagramData: {"type":"REEL","showReelOnFeed":true}`,
+   - Carousel on Instagram: providers `[{"network":"instagram"}]`, `instagramData: {"type":"POST"}`,
+     `media`: the slide JPG URLs in order.
+   - The same carousel on YouTube, same date and time, as a separate post: providers
+     `[{"network":"youtube"}]`, `media`: `short.mp4`, `videoThumbnailUrl`: `cover.jpg`,
      `youtubeData: {"title":"<Marathi title> | BizFlow #shorts","type":"short","privacy":"public","tags":[...],"madeForKids":false}`.
+     Use a YouTube-friendly description (no "save this post"; add `🌐 bizflowindia.cloud`).
+   - Reel: one post with providers `[{"network":"instagram"},{"network":"youtube"}]`, `media`:
+     `reel.mp4`, `videoThumbnailUrl`: `cover.jpg`,
+     `instagramData: {"type":"REEL","showReelOnFeed":true}` and `youtubeData` as above.
+   - Festival greeting (single image): Instagram only.
+   - **Motion-graphics promo**: `motion/bizflow-promo.html` + `motion/render.py` + `motion/audio.py`
+     are a worked example of a richer animation (every style computed from time in `seek(t)`,
+     rendered frame by frame with motion blur, with a synthesized soundtrack). In the first
+     run of each month, make one new piece in that pattern on a fresh idea and schedule it as
+     a Reel + Short on Saturday 11:00.
 8. **Report**: write `reports/<YYYY>-w<WW>.md` with (a) last week's numbers in 5 lines,
    (b) this week's posts, (c) a **fresh comment kit**: 10 new witty comment lines in the
    GROWTH.md style for the owner to post by hand on other accounts this week, tied to that
