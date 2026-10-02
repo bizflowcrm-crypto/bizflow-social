@@ -6,5 +6,5 @@ Instagram content for BizFlow India, run on autopilot by Claude.
 - `posts/`: each week's post plan and captions
 - `media/`: rendered carousel slides (public image URLs for Metricool)
 - `photos/`: drop real team/customer/event photos here and they get used in posts
-- `reports/`: weekly performance notes
+- `reports/`: weekly performance notes and the comment kit
 - `build.py`: renders slides from a post plan
