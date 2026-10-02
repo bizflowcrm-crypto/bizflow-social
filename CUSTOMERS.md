@@ -84,8 +84,6 @@ customer is still active before featuring them.
 | SP Polymer | Pune |
 | Aashirwad Printers (press) | Kopargaon |
 | Rishikesh Agency | — |
-| Chandraprabha Cosmetics | Kopargaon |
-| Texcel Auto Components | Pune |
 
 Also on the sheet with no details yet (confirm they're customers, not leads, before using):
 Gunjal Sandesh Trading, Jagdish Enterprises, Balaji Outdoor, Siddhivinayak Cement, Sai Seva TVS Parts, Shreekrishna Electronics (Navin Nagar Road), VPS (Mumbai), Vaishnavi Tailor, Maruti Steel (Alephata), Gujarat Rubber, Tamanna AC, Sai Doors (Sakur), GS Computer, Sara Industrial Rubber, Trisha Beauty, Digital World (Samarth Computer), Balaji Traders, Sunil Chavhan (Bhosari), Ramesh Saloli (Bhosari).
@@ -157,6 +155,8 @@ merged. Renewal dates run 2020–2024, so check a customer is still active befor
 | Dwarka Super Shop | Rahuri |
 | Ansh Bakery | Vadgaon Pan |
 | Shreeram Shop | — |
+| Chandraprabha Cosmetics | Kopargaon |
+| Texcel Auto Components | Pune |
 
 Also on the sheet with no details yet (confirm they're customers, not leads, before using):
 T Trends (Maldad Road), Rubab (Maldad Road), Guva Super Shop (Rahuri), Sirasgaon Cloth Store, City Trends Wear (Sangamner, inquiry), Viraj Sports (Sangamner), Aditya Collection (Sakurphata), Samruddhi Footwear (Loni), Vaishali Bag House (Sangamner), Yuva Collection (Kopargaon), Dwarka Collection (Sangamner), Bluebell (Sangamner), Moraya Wholesale (Sangamner), Moraya Collection, Balaji Collection (Sakur), Ujagar Clothes, JD Collection (Mominpura), Rahuri new super shop, Vaijapur Road super shop, Devgire Vastralay (Sakur).
