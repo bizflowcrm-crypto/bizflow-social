@@ -1,0 +1,44 @@
+{
+  "week": "2026-W41",
+  "posts": [
+    {
+      "id": "2026-10-05-notebook-signs",
+      "date": "2026-10-05T10:00:00",
+      "slides": [
+        {"kind": "cover", "theme": "dark", "kicker": "Business owners, लक्ष द्या", "title": "तुमचा business\n[[वहीच्या बाहेर]]\nगेलाय का?", "body": "ही 3 चिन्हं तपासा 👇"},
+        {"kind": "point", "theme": "light", "num": "01", "title": "उधारी आठवत नाही", "body": "कोणाकडे किती [[बाकी]] आहे, हे शोधायला\nपूर्ण वही चाळावी लागते."},
+        {"kind": "point", "theme": "light", "num": "02", "title": "महिनाअखेरीस\nGST चं टेन्शन", "body": "प्रत्येक बिल हाताने, आणि return भरताना\nसगळं [[पुन्हा जुळवायचं]]."},
+        {"kind": "point", "theme": "light", "num": "03", "title": "कुठला माल नफा देतो,\nमाहीत नाही", "body": "Stock किती आहे, काय जास्त विकलं जातं,\nयाचा फक्त [[अंदाज]]."},
+        {"kind": "chips", "theme": "dark", "kicker": "उपाय", "title": "सगळं [[एकाच app]] मध्ये", "body": "BizFlow, Indian SMEs साठी बनवलेलं.", "chips": ["GST Billing", "CRM", "Inventory", "WhatsApp Automation", "मराठी · हिंदी"], "price": "फक्त [[₹399]] पासून सुरू"},
+        {"kind": "cta", "theme": "accent", "kicker": "पुढची पायरी", "title": "वही बंद करा,\nbusiness वाढवा", "body": "Call करा किंवा comment मध्ये DEMO लिहा."}
+      ],
+      "caption": "उधारी आठवत नाही? महिनाअखेरीस GST चं टेन्शन? कुठला माल नफा देतो माहीत नाही? 🤔\n\nयापैकी एकही गोष्ट ओळखीची वाटली, तर तुमचा business वहीच्या बाहेर गेलाय. 📒➡️📱\n\nBizFlow मध्ये GST billing, customers, stock आणि WhatsApp automation, सगळं एकाच ठिकाणी. मराठी आणि हिंदीमध्ये सुद्धा. फक्त ₹399 पासून.\n\n📞 8888567870 वर आजच free demo बुक करा, किंवा खाली DEMO लिहा 👇\n\n#bizflow #bizflowindia #gstbilling #smallbusinessindia #maharashtrabusiness #sangamner #businesssoftware #marathibusiness"
+    },
+    {
+      "id": "2026-10-07-gst-bill-steps",
+      "date": "2026-10-07T10:00:00",
+      "slides": [
+        {"kind": "cover", "theme": "light", "kicker": "How-to · Save करा 🔖", "title": "GST बिल बनवा\n[[4 सोप्या\nस्टेप्स]]मध्ये", "body": "Accountant ची वाट न पाहता."},
+        {"kind": "list", "theme": "light", "kicker": "BizFlow मध्ये", "title": "असं बनतं बिल", "items": ["Customer निवडा किंवा नवीन add करा", "Items आणि quantity निवडा", "GST [[आपोआप]] calculate होतो", "बिल थेट [[WhatsApp]] वर पाठवा"]},
+        {"kind": "point", "theme": "dark", "num": "✓", "title": "हिशोब आपोआप\nतयार राहतो", "body": "प्रत्येक बिल record होतं, त्यामुळे\nreturn आणि reports साठी data [[तयार]]."},
+        {"kind": "cta", "theme": "accent", "kicker": "स्वतः करून पहा", "title": "Free demo मध्ये\nपहिलं बिल बनवा", "body": "आमची team तुम्हाला step-by-step दाखवेल."}
+      ],
+      "caption": "GST बिल बनवायला accountant ची वाट पाहताय? 🧾\n\nBizFlow मध्ये फक्त 4 स्टेप्स:\n1️⃣ Customer निवडा\n2️⃣ Items आणि quantity निवडा\n3️⃣ GST आपोआप calculate\n4️⃣ बिल थेट WhatsApp वर ✅\n\nहा post save करा आणि तुमच्या business मित्राला share करा 🔖\n\n📞 8888567870 | Free demo बुक करा\n\n#bizflow #bizflowindia #gstinvoice #gstbilling #billingsoftware #smallbusinessindia #maharashtra #sangamner"
+    },
+    {
+      "id": "2026-10-09-whatsapp-automation",
+      "date": "2026-10-09T10:00:00",
+      "slides": [
+        {"kind": "cover", "theme": "dark", "kicker": "WhatsApp Automation", "title": "तुमचे customers\n[[WhatsApp]] वर आहेत.\nतुमचा business?", "body": "Swipe करा आणि पहा 👉"},
+        {"kind": "chat", "theme": "light", "kicker": "उदाहरणार्थ", "title": "BizFlow आपोआप पाठवतं", "bubbles": [
+          {"text": "नमस्कार राहुलजी 🙏 तुमचं ₹2,450 चं बिल तयार आहे. [[धन्यवाद!]]", "time": "10:02 AM"},
+          {"text": "Reminder: ₹1,200 बाकी आहेत. सोयीनुसार payment करा 🙏", "time": "11:30 AM"},
+          {"text": "तुमची order तयार आहे, कधीही pickup करा 📦", "time": "4:15 PM"}
+        ]},
+        {"kind": "chips", "theme": "accent", "kicker": "छोटं दुकान", "title": "[[मोठ्या company]] सारखी सेवा", "body": "Billing, reminders आणि updates, आपोआप.", "chips": ["मराठी", "हिंदी", "English"]},
+        {"kind": "cta", "theme": "dark", "kicker": "सुरुवात करा", "title": "WhatsApp वर\nbusiness चालवा", "body": "Demo मध्ये live पहा कसं काम करतं."}
+      ],
+      "caption": "तुमचे customers दिवसभर WhatsApp वर असतात. मग बिल, payment reminder आणि order updates तिथेच का नको? 📲\n\nBizFlow हे सगळं आपोआप पाठवतं, मराठी, हिंदी किंवा English मध्ये. छोटं दुकान, मोठ्या company सारखी सेवा. 💼\n\n📞 8888567870 वर free demo बुक करा, किंवा DEMO comment करा 👇\n\n#bizflow #bizflowindia #whatsappautomation #whatsappbusiness #crm #smallbusinessindia #marathibusiness #sangamner"
+    }
+  ]
+}
