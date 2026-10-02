@@ -1,0 +1,34 @@
+{
+  "reels": [
+    {
+      "id": "2026-10-06-reel-udhaar",
+      "date": "2026-10-06T18:00:00",
+      "title": "उधारी वसुली, विना भांडण",
+      "scenes": [
+        {"kind": "big", "theme": "dark", "tag": "POV: दुकानदार", "text": "Customer:\n[[“पुढच्या आठवड्यात\nदेतो”]]", "dur": 2.6},
+        {"kind": "mid", "theme": "light", "emoji": "🗓️", "text": "तो ‘पुढचा आठवडा’\nगेल्या [[3 महिन्यांपासून]]\nचालू आहे 😅", "dur": 2.8},
+        {"kind": "chat", "theme": "dark", "tag": "मग BizFlow आपोआप पाठवतं", "bubbles": [
+          {"who": "BizFlow · WhatsApp", "text": "नमस्कार 🙏 ₹1,200 बाकी आहेत. सोयीनुसार payment करा."},
+          {"who": "Customer", "me": true, "text": "आत्ताच UPI केलं 🙏"}
+        ], "dur": 3.4},
+        {"kind": "big", "theme": "accent", "text": "उधारी वसुली,\n[[विना भांडण]] 😎", "dur": 2.4},
+        {"kind": "cta", "theme": "dark", "text": "WhatsApp reminders,\n[[आपोआप]].", "dur": 3.0}
+      ],
+      "caption": "Customer: “पुढच्या आठवड्यात देतो” 🙂\nतो पुढचा आठवडा: 3 महिने आणि चालूच 😅\n\nBizFlow बाकी रकमेची reminder WhatsApp वर आपोआप पाठवतं. तुम्ही फोन करायची गरज नाही, भांडायची तर नाहीच. 😎\n\nतुमच्या दुकानातला सगळ्यात मोठा ‘पुढचा आठवडा’ customer tag करा 😂👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #udhaar #dukandar #smallbusinessindia #marathireels #sangamner #whatsappautomation"
+    },
+    {
+      "id": "2026-10-08-reel-3-types",
+      "date": "2026-10-08T18:00:00",
+      "title": "दुकानदारांचे 3 प्रकार",
+      "scenes": [
+        {"kind": "big", "theme": "accent", "text": "दुकानदारांचे\n[[3 प्रकार]] 👇", "dur": 2.2},
+        {"kind": "mid", "theme": "light", "emoji": "📒", "tag": "प्रकार 1", "text": "वही वाले", "sub": "बिल हाताने, हिशोब\n[[रात्री 11 वाजता]]", "dur": 2.6},
+        {"kind": "mid", "theme": "light", "emoji": "🧮", "tag": "प्रकार 2", "text": "Excel वाले", "sub": "एक formula चुकला,\nकी [[सगळं गेलं]]", "dur": 2.6},
+        {"kind": "mid", "theme": "dark", "emoji": "😎", "tag": "प्रकार 3", "text": "BizFlow वाले", "sub": "बिल, GST, stock आपोआप.\nआणि [[चहा]] वेळेवर ☕", "dur": 3.0},
+        {"kind": "big", "theme": "dark", "text": "तुम्ही कोणत्या\nप्रकारात?\n[[Comment]] करा 👇", "dur": 2.4},
+        {"kind": "cta", "theme": "accent", "text": "प्रकार 3 मध्ये\n[[स्वागत]] आहे!", "dur": 3.0}
+      ],
+      "caption": "दुकानदारांचे 3 प्रकार 👇\n\n1️⃣ वही वाले 📒\n2️⃣ Excel वाले 🧮\n3️⃣ BizFlow वाले 😎☕\n\nखरं सांगा, तुम्ही कोणत्या प्रकारात? 1, 2 की 3? Comment करा 👇\nआणि तो मित्र tag करा जो अजूनही रात्री 11 ला हिशोब करतो 😂\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #dukandar #businessowner #marathireels #smallbusinessindia #gstbilling #sangamner"
+    }
+  ]
+}
