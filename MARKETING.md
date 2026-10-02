@@ -1,7 +1,7 @@
 # BizFlow Marketing Plan: Instagram + YouTube, Oct–Dec 2026
 
 The one-line strategy: **stop saying what BizFlow does, start showing who uses it.**
-BizFlow has 100+ real customers within a few hours' drive of Sangamner (`CUSTOMERS.md`):
+BizFlow has 500+ real customers within a few hours' drive of Sangamner (`CUSTOMERS.md`):
 hotels and bars on TableFlow, clothing stores and super shops on RetailFlow, traders and
 factories on AccountFlow, and 30+ websites. Every other software brand posts feature lists.
 Only BizFlow can post "Hotel Tarang, Sangamner runs on this". The numbers back it: the post
@@ -12,9 +12,8 @@ to post over the next three months, and what the owner needs to do for it.
 
 ## 1. Before anything else (owner, this week)
 
-1. **Confirm the headline claim.** Can we say "100+ businesses use BizFlow"? The sheets list
-   ~100 named customers, but many renewal dates are from 2021–2024. If yes, add it to the brand
-   facts in `PLAYBOOK.md`. If not, give the number you're comfortable with.
+1. ~~Confirm the headline claim.~~ Done: **500+ businesses** (owner, 2 Oct). It's in the brand
+   facts. Launch post Sun 4 Oct (`posts/2026-w40-launch.json`).
 2. **Get permission from 10 customers** using the WhatsApp message in section 7. Start with
    the ones you know best and whose shop looks good: Hotel Tarang, Hira Hotel, Patel Tiles,
    Style Mantra, Jagdamba Super Market, Kaka Super Shop, Ujwala Cotton King, Omkar Solar,
@@ -35,6 +34,21 @@ We use **only** images we made ourselves, or that the customer gave us and agree
 We **don't** take shop photos from Google Maps, Justdial, Facebook or the customer's site
 without asking. Those belong to whoever took them, and a customer who finds their photo in
 our ad without being asked is a customer we lose.
+
+### Customer bites (from Mon 5 Oct)
+
+Film each customer the way section 6 describes, keep the raw clip (don't edit it), and drop it
+in `photos/customers/<shop-name>/` with a note of who it is and that they agreed. The weekly
+run turns it into a branded Reel + Short with `bite.py`: intro card with the customer's own
+line, their clip with name strip and Marathi subtitles, CTA card. Best clips: 20–60 seconds,
+vertical, phone held still, owner looking slightly off-camera, the counter or the screen in
+the background, quiet spot (fan off, music off).
+
+Good questions to ask on camera (let them answer in their own words):
+1. BizFlow च्या आधी हिशोब/billing कसं करायचा?
+2. सगळ्यात जास्त कुठे फरक पडला?
+3. एखादा दिवस आठवतो का, जेव्हा BizFlow मुळे काम सोपं झालं?
+4. दुसऱ्या दुकानदाराला काय सांगाल?
 
 ## 2. Content pillars (what every post is about)
 
@@ -101,8 +115,8 @@ The autopilot writes the script, title, description and tags for each long video
   holds 5–10 stories, so a new visitor can see "who uses this" in 30 seconds.
 - **Stories daily**: repost every customer collab, a poll ("वही की app?"), a behind-the-scenes
   clip from a support visit.
-- **Bio**: "Billing, GST आणि hotel software | 100+ दुकानदार आमच्यासोबत | Free demo 👇", link,
-  WhatsApp button. (Number only once confirmed.)
+- **Bio**: "Billing, GST आणि hotel software | 500+ व्यवसाय आमच्यासोबत | Free demo 👇", link,
+  WhatsApp button. Highlight covers are ready in `media/highlights/`.
 - **Collabs**: every customer spotlight is a Collab post. Plus 1–2 Sangamner creators a month
   (what produced the best post so far).
 - **Tag the town**: location tag on every post (the customer's town for spotlights,

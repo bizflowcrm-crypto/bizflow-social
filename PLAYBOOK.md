@@ -12,6 +12,8 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
   accounts, 15+ reports), **RetailFlow** (retail POS), **AccountFlow** (GST accounting).
 - Also builds **websites** for local businesses, schools, colleges and gram panchayats.
   Real customers are listed in `CUSTOMERS.md`; that is the only list of names we may use.
+- **500+ businesses** use BizFlow (confirmed by the owner, Oct 2026): hotels and bars,
+  shops, traders, factories, schools and colleges, from Sangamner to Pune, Panvel and Mumbai.
 - Plans **from ₹399**. Support in **English, Hindi and Marathi**.
 - CTA: **📞 8888567870, free demo**. Email hello@bizflowindia.cloud
 - Never invent numbers (customer counts, speed claims, savings %, testimonials).
@@ -69,6 +71,12 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
      under "Agreed to be featured" in `CUSTOMERS.md` with photos in `photos/customers/<shop>/`,
      build the spotlight instead of the Friday product carousel. With nobody agreed yet,
      draft one from `CUSTOMERS.md` and leave it unscheduled, and say so in the report.
+   - **Customer bites** (real customer videos, filmed from 5 Oct 2026): new clips land in
+     `photos/customers/<shop>/`. For each one listed under "Agreed to be featured", transcribe
+     what they say into subtitles (their words only), pick the strongest 20–40 seconds, write
+     `posts/<YYYY>-w<WW>-bites.json` (shape in the `bite.py` docstring) and render with
+     `python3 bite.py`. Schedule as Reel + YouTube Short (same as a Reel). A bite replaces that
+     week's Friday carousel, or the Tue/Thu Reel when there are two.
    - **Website Wednesday** every other week, from screenshots in `photos/sites/` (made by
      `python3 shots.py`), under the same consent rule.
    - **One long YouTube video script** per week (`MARKETING.md` §4) in
