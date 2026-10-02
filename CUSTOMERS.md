@@ -1,6 +1,6 @@
 # BizFlow Customers
 
-Real BizFlow customers: websites we built or manage, and businesses using AccountFlow. This is the **only** source
+Real BizFlow customers: websites we built or manage, and businesses using AccountFlow and TableFlow. This is the **only** source
 for customer names in posts: never name a customer who isn't on this list, and never
 invent a quote, number or result for one (see the Hard rules in `PLAYBOOK.md`).
 
@@ -86,10 +86,42 @@ customer is still active before featuring them.
 | Rishikesh Agency | — |
 
 Also on the sheet with no details yet (confirm they're customers, not leads, before using):
-Gunjal Sandesh Trading, Jagdish Enterprises, Balaji Outdoor, Carnival Inn Room, Siddhivinayak Cement, Sai Seva TVS Parts, Shreekrishna Electronics (Navin Nagar Road), VPS (Mumbai), Vaishnavi Tailor, Maruti Steel (Alephata), Gujarat Rubber, Tamanna AC, Sai Doors (Sakur), GS Computer, Sara Industrial Rubber, Trisha Beauty, Digital World (Samarth Computer), Balaji Traders, Sunil Chavhan (Bhosari), Ramesh Saloli (Bhosari).
+Gunjal Sandesh Trading, Jagdish Enterprises, Balaji Outdoor, Siddhivinayak Cement, Sai Seva TVS Parts, Shreekrishna Electronics (Navin Nagar Road), VPS (Mumbai), Vaishnavi Tailor, Maruti Steel (Alephata), Gujarat Rubber, Tamanna AC, Sai Doors (Sakur), GS Computer, Sara Industrial Rubber, Trisha Beauty, Digital World (Samarth Computer), Balaji Traders, Sunil Chavhan (Bhosari), Ramesh Saloli (Bhosari).
 
 Left out on purpose: Ajinkya Agencies (demo only so far), the Vadgaon election entry
 (politics), and entries that were only a person's name or a phone number.
+
+## TableFlow customers
+
+Hotels, restaurants and bars using **TableFlow** (restaurant/hotel POS). Spellings were
+tidied from the owner's sheet, and repeats were merged (Hotel Tarang / New Tarang,
+Sasarwadi / Sasurwadi). Renewal dates run 2021–2024, so check a customer is still active
+before featuring them. Bars: show the place and the software, never alcohol.
+
+| Customer | Town |
+|---|---|
+| Hotel Samadhan | Nimgaon Sawa |
+| Hotel Mejwani | Nimgaon Sawa |
+| Vrundavan Bar | Loni |
+| N Cafe | Loni |
+| Nimantran Bar | Sinnar |
+| Sai Kinara Hotel | — |
+| Amrut Bar | Karhe Ghat |
+| Hotel Tarang | Sangamner |
+| Hotel Gadkari | Talegaon |
+| Sitai Bar | Ghargaon |
+| Hira Hotel | Sangamner |
+| KGF | — |
+| Hotel Krushna | Sangamner |
+| Vanashri Restaurant | — |
+| Hotel Sai Amrut | Sangamner |
+| Hotel Shri Ganesh | Panvel |
+| Vrundavan Hotel | Akole |
+| Sapana Bar | — |
+| Sai Krupa Resto | Mahuli |
+
+Also on the sheet with no details yet (confirm they're customers, not leads, before using):
+Hotel Sasurwadi, Hotel Tulsi (Kopargaon), Hotel Sharyat (Kopargaon), Hemant Restaurant, Hotel 7th Spices, Punjab Khalsa, Yash Hotel (Sangamner), Hotel Shivsagar, Hotel Ambar, Carnival Inn / Carnival Lodge (Sangamner), Rajeshai Hotel (Loni), Trimbakeshwar Udupi, Hotel Maharaja, Davbindu Hotel (Bota), Ayodhya Hotel (Ghargaon), Prarambh Hotel (Alephata), Hotel Dhadakebaj (Sakur), Om Sai Chains (Sangamner), Chairman Bar, Hotel Saheba Bar, Atithi Mess (Ghulewadi), Jayant Gunjal Hotel, Premdan Bar, Kolpewadi Bar, Hotel Panchwati, Hotel Pride (Ghargaon), Hotel Sarthak Bar (Nandur), Hotel Vishwajit (Ghargaon), Hotel Sudhir, Hotel Priyal Bar.
 
 ## Using customers in posts
 
@@ -99,7 +131,7 @@ Left out on purpose: Ajinkya Agencies (demo only so far), the Vadgaon election e
 - **Ask first**: a spotlight that names or tags a customer needs the owner's OK that the
   customer is happy to be featured. Draft it in `posts/` and leave it unscheduled until
   then (like `posts/2026-w40-team.json`), and say so in the weekly report.
-- **What we can say**: "BizFlow ने बनवलेली website" or "AccountFlow वापरणारे" plus the customer's name, website or town,
+- **What we can say**: "BizFlow ने बनवलेली website" or "AccountFlow / TableFlow वापरणारे" plus the customer's name, website or town,
   and sector. Nothing about their sales, traffic or results unless the customer gives it to us.
 - **Screenshots**: a website screenshot (desktop + phone) is fine as a slide image. Put it
   in `photos/` first. No photos of children, so crop school and college sites carefully.
