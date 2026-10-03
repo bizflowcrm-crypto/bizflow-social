@@ -93,7 +93,9 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    (shape of `posts/2026-w41-reels.json`; scene kinds `big`, `mid`, `chat`, `cta`; 5–6 scenes,
    10–15 seconds total, last is `cta`).
 5. **Render**: `pip install playwright --break-system-packages && python3 -m playwright install chromium`
-   if needed, then `python3 build.py posts/<file>.json` and `python3 reel.py posts/<reels file>.json`
+   if needed, then `python3 build.py posts/<file>.json` and `python3 motion/reels.py posts/<reels file>.json`
+   (animated motion-graphics Reels with music and sound effects; `pip install numpy scipy` if needed.
+   Never publish a Reel made of still cards: if an idea can't be animated, post it as a carousel)
    (needs ffmpeg). Open 2–3 slides with Read, and extract a frame or two from each Reel with
    ffmpeg, to check Devanagari renders correctly and nothing overflows.
    In headings, a Latin word with a descender (p, y, g, q, j) on the line directly above a
@@ -104,7 +106,7 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
 6. **Publish media**: commit `posts/` + `media/` and push to `main`. Base URL:
    `https://raw.githubusercontent.com/bizflowcrm-crypto/bizflow-social/main/media/<id>/`.
    `build.py` writes `NN.jpg` slides plus `short.mp4` and `cover.jpg` (the 9:16 video version)
-   for every carousel; `reel.py` writes `reel.mp4` and `cover.jpg`.
+   for every carousel; `motion/reels.py` writes `reel.mp4` and `cover.jpg`.
 7. **Schedule** with `createScheduledPost`, `autoPublish: true`,
    `publicationDate: {"dateTime":"YYYY-MM-DDTHH:MM:SS","timezone":"Asia/Calcutta"}`:
    - Carousel on Instagram: providers `[{"network":"instagram"}]`, `instagramData: {"type":"POST"}`,
