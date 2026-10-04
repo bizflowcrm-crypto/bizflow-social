@@ -1,0 +1,8 @@
+{
+  "week": "2026-W40",
+  "posts": [
+    {"id": "2026-10-04-tableflow-gbp", "slides": [
+      {"kind": "chips", "theme": "dark", "kicker": "Hotel आणि restaurant साठी", "title": "Order हरवत नाही,\n[[बिल चुकत नाही]]", "body": "TableFlow: table billing, KOT,\nbar stock आणि 15+ reports.", "chips": ["Table billing", "KOT", "Bar stock", "15+ reports"], "price": "Plans [[₹399]] पासून"}
+    ]}
+  ]
+}
