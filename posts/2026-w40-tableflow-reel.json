@@ -5,7 +5,7 @@
       "id": "2026-10-04-reel-tableflow-kot",
       "scenes": [
         {"kind": "big", "theme": "dark", "tag": "POV: Hotel मालक, शनिवार रात्री", "text": "Table 5:\n[[“आमची order\nकुठे आहे?”]]", "dur": 2.7},
-        {"kind": "mid", "theme": "light", "emoji": "🧾", "text": "Waiter: “दिली होती…”\nKitchen: “[[आलीच नाही]]”", "dur": 2.8},
+        {"kind": "mid", "theme": "light", "emoji": "🧾", "text": "Waiter: “दिली होती…”\nKitchen: [[“आलीच नाही”]]", "dur": 2.8},
         {"kind": "mid", "theme": "light", "emoji": "🤯", "text": "आणि बिल करताना\n[[2 items विसरले]] 😅", "dur": 2.6},
         {"kind": "chat", "theme": "dark", "tag": "TableFlow मध्ये", "bubbles": [
           {"who": "Waiter", "text": "Table 5: 2 पनीर मसाला, 4 रोटी ✅"},
