@@ -58,13 +58,18 @@ YouTube channel **bizflowcrm** (`UChYqT-_8_HN-H1aZIkOW9Hw`; never the BizFlow PO
 3. **Plan each week that needs filling** (read `GROWTH.md` first: voice, rhythm, upcoming festival
    moments; then `MARKETING.md` for that week's theme in the three-month calendar and the
    signature series). Both platforms get every slot: Instagram **and** YouTube Shorts.
-   - **3 carousels**, Mon/Wed/Fri at 10:00 (Instagram carousel + the same content as a vertical
-     video on YouTube Shorts), one from each of three different pillars:
-     pain point → solution; how-to / save-worthy tips; feature spotlight; industry product
-     (TableFlow, RetailFlow, AccountFlow).
-   - **2 Reels**, Tue/Thu at 18:00 (Instagram Reel + YouTube Short), funny and relatable dukandar-life humour in the
-     "तुमचा दुकानातला मित्र" voice. Each must be a new idea, not a repeat of a past one
-     (check `posts/` for what's been done).
+   - **3 posts every day** (owner's choice, 4 Oct 2026) on Instagram **and** YouTube Shorts,
+     in three slots: **10:00, 13:30 and 18:00** (weekends 12:00/14:00/18:00 or 19:00 are fine).
+     Each day has at least one carousel and one Reel; alternate which slot gets which.
+     That's about **10 carousels and 11 Reels a week**:
+     - Carousels: Instagram carousel + the same content as a vertical video on YouTube Shorts.
+       Rotate the pillars (pain point → solution; how-to / save-worthy; feature spotlight;
+       industry product TableFlow/RetailFlow/AccountFlow; websites).
+     - Reels: Instagram Reel + YouTube Short, rendered with `motion/reels.py`. Mostly
+       dukandar-life humour in the "तुमचा दुकानातला मित्र" voice, plus product and festival Reels.
+     - Every idea must be new (check `posts/` for what's been done).
+   - **Google Business Profile: 1 post a day** (not 3: several posts a day from a young profile
+     looks like spam to Google). Use that day's best carousel, at 11:00 or later.
    - **Festival greeting** at 09:00 on any festival day in the coming 8 days (search the
      web to confirm the date first). Single image, warm, ends with a question.
    - If `photos/` has new real photos (team, customers, events), build one post around

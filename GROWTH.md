@@ -19,11 +19,10 @@ BizFlow talks like a funny friend who also runs a shop, not like a software comp
 
 | Day | Time | What |
 |---|---|---|
-| Mon | 10:00 | Carousel: pain point → solution (also a YouTube Short) |
-| Tue | 18:00 | Reel: relatable/funny (also YouTube Short) |
-| Wed | 10:00 | Carousel: how-to, save-worthy (also a YouTube Short) |
-| Thu | 18:00 | Reel: relatable/funny (also YouTube Short) |
-| Fri | 10:00 | Carousel: feature or industry (also a YouTube Short) |
+| Every day | 10:00 | Carousel or Reel (Instagram + YouTube Short) |
+| Every day | 13:30 | Carousel or Reel (Instagram + YouTube Short) |
+| Every day | 18:00 | Carousel or Reel (Instagram + YouTube Short) |
+| Every day | 11:00+ | Google Business Profile update (one a day) |
 | Sat (monthly) | 11:00 | Motion-graphics promo (Reel + YouTube Short) |
 | Festival days | 09:00 | Greeting post with a question |
 
