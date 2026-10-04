@@ -25,15 +25,28 @@ SR = 44100
 # ---------- timeline (shared by the animation and the sound) ----------
 
 def tokens(text):
-    """'a [[b c]]\nd' -> lines of words [{'w':..,'hl':bool}]"""
-    lines = []
+    """'a [[b c]]\nd' -> lines of words [{'w':..,'hl':bool}]. Punctuation that touches a word
+    (no space between) stays with that word, so quotes and full stops never float alone."""
+    import unicodedata
+    is_punct = lambda w: all(unicodedata.category(c).startswith("P") for c in w)
+    lines, hl = [], False
     for raw in text.split("\n"):
-        words, hl = [], False
+        words, gap = [], True
         for part in re.split(r"(\[\[|\]\])", raw):
             if part == "[[": hl = True; continue
             if part == "]]": hl = False; continue
-            for w in part.split(" "):
-                if w: words.append({"w": w, "hl": hl})
+            chunks = part.split(" ")
+            for k, w in enumerate(chunks):
+                if k > 0: gap = True
+                if not w: continue
+                if words and not gap and is_punct(w):
+                    words[-1]["w"] += w
+                elif words and not gap and is_punct(words[-1]["w"]):
+                    words[-1]["w"] += w; words[-1]["hl"] = words[-1]["hl"] or hl
+                else:
+                    words.append({"w": w, "hl": hl})
+                gap = False
+            if part.endswith(" "): gap = True
         lines.append(words)
     return lines
 
