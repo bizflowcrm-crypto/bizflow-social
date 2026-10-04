@@ -43,7 +43,9 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
 
 ## Weekly procedure
 
-Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@bizflowindia`.
+Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@bizflowindia`,
+YouTube channel **bizflowcrm** (`UChYqT-_8_HN-H1aZIkOW9Hw`; never the BizFlow POS channel, check
+`getBrandSettings` before scheduling), Google Business Profile (network `gmb`).
 
 1. **Review**: pull Instagram post metrics for the last 14 days with
    `getAnalyticsDataByMetrics` (IGPO02 date, IGPO03 content, IGPO07 type, IGPO14 reach,
@@ -118,7 +120,12 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    - Reel: one post with providers `[{"network":"instagram"},{"network":"youtube"}]`, `media`:
      `reel.mp4`, `videoThumbnailUrl`: `cover.jpg`,
      `instagramData: {"type":"REEL","showReelOnFeed":true}` and `youtubeData` as above.
-   - Festival greeting (single image): Instagram only.
+   - Google Business Profile, for every carousel, at 11:00 the same day: providers
+     `[{"network":"gmb"}]`, `gmbData: {"type":"publication"}`, `media`: the cover slide `01.jpg`,
+     text = the caption **without phone numbers or hashtags** (Google rejects them), ending
+     "Free demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या". Real photos added to
+     `photos/` also go to the gallery with `gmbData: {"type":"photo"}`.
+   - Festival greeting (single image): Instagram and Google Business Profile.
    - **Motion-graphics promo**: `motion/bizflow-promo.html` + `motion/render.py` + `motion/audio.py`
      are a worked example of a richer animation (every style computed from time in `seek(t)`,
      rendered frame by frame with motion blur, with a synthesized soundtrack). In the first

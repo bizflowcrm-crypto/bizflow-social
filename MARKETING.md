@@ -83,31 +83,90 @@ These repeat with the same look and name, so people recognise them and come back
    - **Shop week (RetailFlow)**: barcode billing, festival rush queue, size/colour stock.
    - **Trader week (AccountFlow)**: GST return month-end, ledger, outstanding.
 
-## 4. YouTube: more than Shorts
+## 4. YouTube growth (channel: bizflowcrm, connected 4 Oct)
 
-Shorts are already automated. Add **one long video every week** in Marathi (8–12 min),
-because long videos are what people find by searching, and searchers are buyers.
+Goal by end of December: **1,000 subscribers** and **4,000 watch hours**. That's the bar for
+YouTube's partner programme, and it means the channel is showing up in search. Shorts bring
+subscribers; long videos bring watch hours and buyers, because people who search
+"restaurant billing software Marathi" are about to buy.
 
-**Tutorials** (screen recording + voice, no editing skill needed):
+**Every week (automatic):** 5 Shorts, one from each Instagram carousel and Reel. Reels are
+motion-graphics videos with sound (`motion/reels.py`).
+
+**Every week (someone at BizFlow records, the autopilot writes the script):** one long video
+in Marathi, 8–12 minutes, screen recording plus voice. Script, title, description, chapters
+and tags go in `posts/<YYYY>-w<WW>-youtube.json`. Start with these, in this order:
 1. TableFlow मध्ये पहिलं बिल कसं बनवायचं (hotel/restaurant)
-2. KOT आणि table transfer, TableFlow मध्ये
-3. Bar stock आणि peg calculation (TableFlow)
-4. RetailFlow: barcode print करून billing सुरू करा
-5. RetailFlow: size आणि colour नुसार stock
-6. AccountFlow: GST return साठी data कसा तयार करायचा
-7. उधारी आणि payment reminder WhatsApp वर
-8. रोजचा हिशोब 5 मिनिटांत बंद करा (day-end report)
+2. RetailFlow: barcode print करून billing सुरू करा
+3. GST बिल 2 मिनिटांत: AccountFlow
+4. KOT आणि table transfer, TableFlow मध्ये
+5. उधारी आणि payment reminder WhatsApp वर
+6. रोजचा हिशोब 5 मिनिटांत बंद करा (day-end report)
+7. RetailFlow: size आणि colour नुसार stock
+8. Bar stock आणि peg calculation (TableFlow)
 
-**Customer case studies** (3–5 min), once a month: visit a customer who agreed, show the shop,
-the counter, the billing in action, owner talks for one minute. "Hotel X ने वही का सोडली?"
+**Monthly:** one customer story (3–5 min) from the customer bites, once customers agree.
 
-**Channel setup**: playlists per product (TableFlow, RetailFlow, AccountFlow, Websites,
-Customer Stories, Shorts). Titles in Marathi with the English search words: "TableFlow
-Restaurant Billing Software in Marathi | KOT, Table Billing". Pin a comment with
-📞 8888567870 on every video. Channel trailer: the motion promo.
+**Search wording.** Titles start with what people type, then the Marathi: "Restaurant
+Billing Software in Marathi | TableFlow KOT आणि Table Billing". Descriptions: first two lines
+say what the video solves and give 📞 8888567870, then chapters (00:00 …), then
+bizflowindia.cloud. Tags: product name, "billing software", "GST billing", "Marathi", town names.
 
-The autopilot writes the script, title, description and tags for each long video in
-`posts/<YYYY>-w<WW>-youtube.json`. Someone at BizFlow records it.
+**Channel setup (owner, once, in YouTube Studio):**
+- Name **BizFlow India**, handle @bizflowcrm, banner and logo from `assets/`.
+- About: "Billing, GST आणि business software: TableFlow, RetailFlow, AccountFlow. 500+
+  व्यवसाय, Sangamner." Links: website, WhatsApp, Instagram.
+- Playlists: TableFlow, RetailFlow, AccountFlow, WhatsApp automation, Customer stories, Shorts.
+- Channel trailer for new visitors: the motion promo (`motion/bizflow-promo.mp4`).
+- Default upload settings: language Marathi, category Science & Technology, description footer
+  with the phone number and website.
+- On every long video: end screen (subscribe + next tutorial) and a pinned comment
+  "Free demo: 📞 8888567870".
+- Reply to every comment within a day. Comments are the strongest signal YouTube reads.
+
+**Clean-up:** three Shorts went to the BizFlow POS channel on 3–4 Oct before the switch.
+They're re-posted on bizflowcrm (4–5 Oct). Delete or keep them on BizFlow POS, the owner's choice.
+
+## 4b. Google Business Profile growth (connected 4 Oct)
+
+Goal: show up in the **top 3 on Google Maps** for "billing software Sangamner", "GST software
+near me", "hotel billing software" and "POS software" in Sangamner, Kopargaon, Akole, Rahuri
+and Sinnar. That ranking comes from three things: a complete profile, steady activity and
+reviews.
+
+**Reviews: the biggest lever, and 500+ customers is a huge head start.**
+- Get the review link: Google Business Profile → "Ask for reviews" → copy link.
+- Send it to existing customers on WhatsApp, 10–15 a day (not all at once, Google flags
+  bursts). Message:
+  > नमस्कार {नाव} जी 🙏 BizFlow वापरल्याबद्दल धन्यवाद. तुमचा अनुभव Google वर 1 मिनिटात
+  > लिहाल का? इतर दुकानदारांना खूप मदत होईल: {review link}
+- Never offer a discount or gift for a review (Google removes them and can suspend the profile).
+- Reply to every review within 24 hours, by name, in the language they wrote in.
+- Target: 50 reviews by end of October, 150 by December.
+
+**Complete the profile (owner, once):**
+- Primary category **Software company**; extra categories: *Computer support and services*,
+  *Website designer*, *Point of sale equipment supplier*.
+- Description (750 chars) with the words people search: GST billing software, POS, restaurant
+  billing, retail billing, accounting software, website development, Sangamner, Maharashtra.
+- **Products**: TableFlow, RetailFlow, AccountFlow, Websites, each with a photo, a line and
+  "₹399 पासून" where it applies. **Services**: GST billing setup, POS installation, training,
+  website development, WhatsApp automation.
+- Hours, phone, website, WhatsApp chat, "Service areas": Sangamner, Kopargaon, Akole, Rahuri,
+  Rahata, Sinnar, Loni, Ahilyanagar, Nashik, Pune.
+- Q&A: add 5 real questions with answers (price, Marathi support, offline billing, training,
+  barcode printer).
+
+**Posting (automatic, Metricool network `gmb`):**
+- An update with every carousel (Mon/Wed/Fri 11:00), cover slide as the image. Rules: **no
+  phone numbers and no hashtags in the text** (Google rejects those posts; the profile's call
+  button does the job), end with "Free demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या".
+- Photos to the gallery every week: team, office, and (once customers agree) customer shops.
+  Profiles with fresh photos get more calls and direction requests.
+- Festival greetings as updates too.
+
+**Measure monthly** (Google Business Profile → Performance): searches, calls, website clicks,
+direction requests, reviews count and average.
 
 ## 5. Instagram beyond the feed
 
