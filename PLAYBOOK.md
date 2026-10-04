@@ -34,6 +34,26 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
   4 likes, 0 comments. Neither post got saves, shares or follows, so graphics need a stronger
   comment hook: end with a question that can be answered in one word. No YouTube videos
   published yet (first Shorts go out 5 Oct), so no YouTube numbers to compare.
+- 2026-10-04 review (20 Sep–4 Oct). **The 2 Oct review missed Reels**: the IGPO fields only
+  return feed posts. Reels need the Reel fields (IGRE02 date, IGRE03 content, IGRE11 reach,
+  IGRE23 views, IGRE10 likes, IGRE07 comments, IGRE12 saves, IGRE21 shares). Pull both every run.
+  Per-post table: `reports/2026-w41.md`.
+  - **Reels reach far more than carousels.** 24 Reels: average reach 711
+    (median 542), 98 shares, 28 saves. Feed posts: the visarjan photo carousel 413 reach;
+    the three others 15–49 (TableFlow carousel 49, Team BizFlow photos 37, midnight hisab 15).
+  - 2026-09-30 RetailFlow "Purchase entry → Print Barcode" Reel: **2,521 reach, 3,668 views,
+    22 shares, 8 saves** — best of the period. 2026-09-30 RetailFlow "F5 → scan → F3" Reel:
+    1,925 reach. 2026-09-28 parking entry-slip Reel: 1,935 reach. 2026-10-01 TableFlow F4 billing
+    Reel: 1,073 reach. Pattern: one everyday counter problem as a question, then the fix as
+    2–3 literal steps. These ten product walkthrough Reels average 1,118 reach and carry
+    72 of the 98 shares. So "pure product posts reach less" holds for carousels, not for Reels.
+  - 2026-09-25 visarjan aarti Reel with Sangamner influencers: 1,428 reach, 47 likes (most
+    likes of any Reel). People Reels (team, office, visarjan) average 708 reach.
+  - Below average: the four "गणेशोत्सव विशेष" business-lesson Reels (148–219 reach) and the
+    2026-10-03 midnight hisab graphic Reel (113 reach, 0 shares).
+  - Comments are still the gap: 4 comments across all 24 Reels.
+  - YouTube (channel bizflowcrm): 87 subscribers on 4 Oct, 314 channel views 20 Sep–1 Oct.
+    Metricool returns no per-video numbers yet. First Shorts from this repo published 4 Oct.
 - Best posting time (Metricool): **10:00 IST Mon–Fri**, strongest Wed/Thu/Fri. 18:00 is second best.
   Weekends get about half the reach.
 
