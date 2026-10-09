@@ -32,6 +32,30 @@ Everything is in the repo; nothing needs re-making. Media URLs:
 - Google Business Profile updates (text in `gbp_text` in the specs; no phone numbers/hashtags).
 - Navratri greeting 11 Oct (`posts/2026-w41-festival.json`).
 
+## New creatives for the new account (made 9 Oct, not scheduled)
+
+Reels (motion graphics with music; Instagram Reel + YouTube Short), `posts/new-account-reels-1.json`:
+- `new-reel-dasara-sona`: Dasara: आपट्याची पानं सोनं, पण दुकानदारासाठी खरं सोनं म्हणजे वेळ. Post on Dasara (20 Oct) or the day before.
+- `new-reel-dhanteras-stock`: Dhanteras: best-seller stock runs out. Post 1–5 Nov (Dhanteras is 6 Nov).
+- `new-reel-hotel-owner-away`: POV: the hotel owner is out of town (TableFlow).
+- `new-reel-party-baki`: POV: a trader gets the call, "माझं किती बाकी?" (AccountFlow).
+- `new-reel-website-ahe-ka`: "तुमची website आहे का?" (websites).
+- `new-reel-500-towns`: 500+ businesses, town by town.
+- `new-reel-gst-rate`: the GST 5/12/18% confusion.
+
+Carousels (Instagram carousel + YouTube Short + Google update), `posts/new-account-carousels-1.json`:
+- `new-car-udhaar-math`: ₹200 a day of forgotten udhaar = ₹73,000 a year (a share/save hook).
+- `new-car-software-myths`: 4 myths about billing software.
+- `new-car-diwali-offers`: 5 low-cost Diwali sales ideas. Post 20–31 Oct.
+- `new-car-whatsapp-templates`: 5 WhatsApp messages to copy (a save hook).
+- `new-car-this-or-that`: an A-or-B game (a comment hook).
+- `new-car-7-habits`: 7 habits of shopkeepers who save money.
+- `new-car-hotel-rush-mistakes`: 4 hotel rush-night mistakes (TableFlow).
+
+Suggested order: festival pieces first (Dasara, Dhanteras, Diwali offers), then alternate a
+Reel and a carousel, and put the comment/save hooks (udhaar math, A-or-B, WhatsApp) at the
+evening slots.
+
 ## Status on 9 Oct
 
 All 7 live posts from 5–9 Oct published; none failed. October has used about 19 of 20 free
