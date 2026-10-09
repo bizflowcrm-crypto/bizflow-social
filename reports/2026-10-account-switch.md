@@ -32,6 +32,20 @@ Everything is in the repo; nothing needs re-making. Media URLs:
 - Google Business Profile updates (text in `gbp_text` in the specs; no phone numbers/hashtags).
 - Navratri greeting 11 Oct (`posts/2026-w41-festival.json`).
 
+## Status on 9 Oct
+
+All 7 live posts from 5–9 Oct published; none failed. October has used about 19 of 20 free
+posts (a post to Instagram + YouTube appears to count once). The 10 Oct 11:00 promo is the 20th.
+
+## Switching the connector (owner)
+
+1. Create the new Metricool account and brand; connect Instagram @bizflowindia, YouTube
+   **bizflowcrm** and Google Business Profile in it.
+2. At claude.ai/customize/connectors, disconnect Metricool and connect it again, signing in
+   with the new Metricool account.
+3. Start a new Claude session (connectors are read when a session starts) and ask it to
+   reschedule the drafted posts from 11 Oct.
+
 ## In the new account
 
 1. Connect Instagram @bizflowindia, YouTube **bizflowcrm** (not BizFlow POS), Google Business Profile.
