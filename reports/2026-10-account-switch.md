@@ -61,6 +61,24 @@ evening slots.
 All 7 live posts from 5–9 Oct published; none failed. October has used about 19 of 20 free
 posts (a post to Instagram + YouTube appears to count once). The 10 Oct 11:00 promo is the 20th.
 
+## Result on 10 Oct (end of day, free quota used up)
+
+Published (5 posts):
+- 11:00 motion promo Reel: Instagram + YouTube
+- 12:30 CA month-end Reel: Instagram + YouTube
+- 14:00 new-shop checklist carousel: Instagram
+- 14:00 new-shop update: Google Business Profile
+- 16:00 GST invoice checklist carousel: Instagram
+
+Failed, "You have reached your Metricool account limit" (3 Reels). These go first in the new account:
+- 17:30 बिल हरवलं Reel (`posts/2026-w41-extra-reels.json`)
+- 19:00 rain / वही भिजली Reel
+- 20:30 hotel bestseller Reel
+
+The free plan's October quota is used up. A post going to Instagram and YouTube together
+counted as one. Nothing else is scheduled in the old account. The 42 drafts above, the 3 failed
+Reels and the 14 new creatives are all ready for the new account.
+
 ## Switching the connector (owner)
 
 1. Create the new Metricool account and brand; connect Instagram @bizflowindia, YouTube
