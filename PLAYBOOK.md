@@ -54,6 +54,37 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
   - Comments are still the gap: 4 comments across all 24 Reels.
   - YouTube (channel bizflowcrm): 87 subscribers on 4 Oct, 314 channel views 20 Sep–1 Oct.
     Metricool returns no per-video numbers yet. First Shorts from this repo published 4 Oct.
+- 2026-10-11 review (27 Sep–11 Oct): 27 Reels, average reach 744 (median 412), 146 shares,
+  73 saves, 9 comments. 9 feed carousels, average reach 38. Per-post table: `reports/2026-w43.md`.
+  - **Best of 5–11 Oct: 2026-10-05 TableFlow Captain Reel "Waiter साठी dedicated tablet ची गरजच
+    नाही": 2,724 reach, 3,058 views, 23 saves, 19 shares, 2 comments** (a product walkthrough posted
+    by the team). 2026-10-04 Captain "table select → items → KOT" Reel: 1,433 reach, 24 shares.
+  - **Product walkthrough Reels posted by the team: 19 Reels, average reach 981.** They
+    carry 139 of the 146 shares and 72 of the 73 saves.
+  - **Graphic Reels rendered from this repo (text cards and the motion promo): 7 Reels, reach
+    80–221, average 127, 0 comments, 1 save.** 2026-10-08 "दुकानदारांचे 3 प्रकार" 128,
+    2026-10-06 udhaar 91, 2026-10-10 motion promo 111 (6 shares). That is about an eighth of a
+    walkthrough Reel. The seven differ in topic (udhaar, stock, GST, hotel, promo); what they
+    share is the rendered-graphics format, so the format is the first thing to question.
+  - Carousels stayed under 50 reach for the third week running: 2026-10-05 notebook signs 35,
+    2026-10-07 barcode benefits 35, 2026-10-09 WhatsApp automation 18, 2026-10-10 two carousels
+    12 and 16. The 2026-10-03 Team BizFlow photo carousel grew to 76, the best feed post.
+  - YouTube (bizflowcrm): 88 subscribers on 10 Oct (87 on 4 Oct). Channel views 56, 23 and 42 on
+    5–7 Oct. The per-video fields (YTVP02/06/09/11/12/17) return one row with empty numbers, so
+    there is still nothing to compare per Short.
+- **Metricool plan limit (found 2026-10-11).** Brand 7206028 is on Metricool's free plan. On
+  2026-10-10 three Reels failed with "You have reached your Metricool account limit". The
+  account-switch note on branch `claude/bold-fermat-5i4j9m` (`reports/2026-10-account-switch.md`)
+  records the limit as 20 published posts a month, reset on the 1st, with October used up, and
+  says the owner is moving to a new Metricool account. Posts saved as `draft: true` do not
+  publish: the 16 planner entries for 11–16 Oct are drafts and the 11 Oct Navratri greeting did
+  not go out. The standard week is 8 Metricool posts (3 carousels on Instagram, 3 Shorts, 2 Reels),
+  about 35 a month, so it does not fit in 20.
+- **Week 43 (19–25 Oct) is built but not scheduled** (`posts/2026-w43.json`,
+  `posts/2026-w43-reels.json`, `posts/2026-w43-festival.json`, media pushed). If a later run finds
+  those slots empty and Metricool can publish again, schedule these specs as they are instead
+  of making new ones; any whose date has passed can be reused in a later empty slot (the Dasara
+  greeting and the "सणाला सुट्टी" Reel only make sense on or around Dasara).
 - Best posting time (Metricool): **10:00 IST Mon–Fri**, strongest Wed/Thu/Fri. 18:00 is second best.
   Weekends get about half the reach.
 

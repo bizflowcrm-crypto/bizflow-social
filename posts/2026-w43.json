@@ -1,0 +1,55 @@
+{
+  "week": "2026-W43",
+  "posts": [
+    {
+      "id": "2026-10-19-owner-day-off",
+      "date": "2026-10-19T10:00:00",
+      "pillar": "pain point → solution",
+      "youtube_title": "तुम्ही एक दिवस नसलात, तर दुकान चालतं का? | BizFlow #shorts",
+      "slides": [
+        {"kind": "cover", "theme": "dark", "kicker": "खरं सांगा", "title": "तुम्ही एक दिवस\nनसलात, तर\n[[दुकान चालतं का?]]", "body": "हे 3 प्रश्न स्वतःला विचारा 👇"},
+        {"kind": "point", "theme": "light", "num": "01", "title": "भाव फक्त\nतुम्हालाच माहीत", "body": "कुठली वस्तू कितीला, हे कुठेच\n[[लिहिलेलं नाही]]. तुम्ही नसलात\nकी फोन सुरू."},
+        {"kind": "point", "theme": "light", "num": "02", "title": "उधारी फक्त\nतुमच्या लक्षात", "body": "कोणाकडे किती बाकी, हे\n[[तुमच्याशिवाय]] कोणालाच\nसांगता येत नाही."},
+        {"kind": "point", "theme": "light", "num": "03", "title": "माल कुठे आहे,\nतुम्हीच सांगू शकता", "body": "Stock किती आणि कुठे ठेवलाय,\nयाचा नकाशा फक्त [[डोक्यात]]."},
+        {"kind": "chips", "theme": "dark", "kicker": "उपाय", "title": "डोक्यातला हिशोब\n[[system मध्ये]]", "body": "BizFlow मध्ये billing, stock आणि\ncustomers, एकाच ठिकाणी.", "chips": ["POS Billing", "Inventory", "CRM", "Cloud ERP"], "price": "Plans [[₹399]] पासून"},
+        {"kind": "cta", "theme": "accent", "kicker": "सुरुवात करा", "title": "हिशोब डोक्यात नको,\n[[system]] मध्ये हवा", "body": "Call करा किंवा comment मध्ये DEMO लिहा."}
+      ],
+      "caption": "खरं सांगा: तुम्ही एक दिवस दुकानात नसलात, तर दुकान नीट चालतं का? 🤔\n\nभाव फक्त तुम्हालाच माहीत. उधारी फक्त तुमच्या लक्षात. माल कुठे ठेवलाय, तेही तुम्हीच सांगू शकता. म्हणजे सगळा हिशोब एकाच ठिकाणी आहे: तुमच्या डोक्यात. 😅\n\nBizFlow मध्ये billing, stock आणि customers एकाच ठिकाणी, त्यामुळे हिशोब डोक्यात ठेवायची गरज नाही. Support मराठी, हिंदी आणि English मध्ये. Plans ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा.\n\nतुमच्याशिवाय तुमचं दुकान एक दिवस चालतं का? हो / नाही, comment करा 👇\n\n#bizflow #bizflowindia #dukandar #inventory #billingsoftware #smallbusinessindia #marathibusiness #sangamner",
+      "youtube_description": "खरं सांगा: तुम्ही एक दिवस दुकानात नसलात, तर दुकान नीट चालतं का? 🤔\n\nभाव फक्त तुम्हालाच माहीत. उधारी फक्त तुमच्या लक्षात. माल कुठे ठेवलाय, तेही तुम्हीच सांगू शकता. म्हणजे सगळा हिशोब एकाच ठिकाणी आहे: तुमच्या डोक्यात. 😅\n\nBizFlow मध्ये billing, stock आणि customers एकाच ठिकाणी, त्यामुळे हिशोब डोक्यात ठेवायची गरज नाही. Support मराठी, हिंदी आणि English मध्ये. Plans ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\nतुमच्याशिवाय तुमचं दुकान एक दिवस चालतं का? हो / नाही, comment करा 👇\n\n#bizflow #dukandar #inventory #billingsoftware #marathi #shorts",
+      "youtube_tags": ["bizflow", "dukandar", "inventory", "billing software", "small business india", "marathi"]
+    },
+    {
+      "id": "2026-10-21-ask-customer-number",
+      "date": "2026-10-21T10:00:00",
+      "pillar": "how-to / save-worthy",
+      "youtube_title": "Customer चा नंबर कसा मागायचा? 4 सोपे मार्ग | BizFlow #shorts",
+      "slides": [
+        {"kind": "cover", "theme": "light", "kicker": "How-to · Save करा 🔖", "title": "Customer चा नंबर\nकसा मागायचा?\n[[4 सोपे मार्ग]]", "body": "अवघडल्यासारखं न वाटता."},
+        {"kind": "list", "theme": "light", "kicker": "Counter वर हे विचारा", "title": "4 सोपे प्रश्न", "items": ["“बिल [[WhatsApp]] वर पाठवू का?”", "“नवीन माल आला की [[कळवू]] का?”", "“सणाची offer [[आधी]] तुम्हाला सांगू?”", "“Order तयार झाली की [[कळवू]]?”"]},
+        {"kind": "point", "theme": "dark", "num": "✓", "title": "नंबर मिळाला की\nलगेच save करा", "body": "नावासकट. वहीच्या कोपऱ्यात\nलिहिलेला नंबर गरजेच्या वेळी\n[[सापडत नाही]]."},
+        {"kind": "point", "theme": "light", "num": "!", "title": "एक नियम", "body": "विचारूनच message करा, आणि\nकामाचाच करा. रोजचा message\nम्हणजे [[block]] ची तयारी 😅"},
+        {"kind": "chips", "theme": "accent", "kicker": "BizFlow मध्ये", "title": "यादी तयार,\n[[संपर्क सोपा]]", "body": "BizFlow CRM मध्ये customers ची यादी,\nआणि WhatsApp automation.", "chips": ["CRM", "WhatsApp Automation", "मराठी · हिंदी · English"]},
+        {"kind": "cta", "theme": "dark", "kicker": "स्वतः पहा", "title": "Customers ची यादी\nआजच सुरू करा", "body": "आमची team मराठीत समजावून सांगेल."}
+      ],
+      "caption": "Customer चा नंबर मागायला अवघडल्यासारखं वाटतं? 🙈 मग नुसता नंबर मागू नका, कारण द्या. Counter वर हे 4 प्रश्न विचारा:\n\n1️⃣ “बिल WhatsApp वर पाठवू का?”\n2️⃣ “नवीन माल आला की कळवू का?”\n3️⃣ “सणाची offer आधी तुम्हाला सांगू?”\n4️⃣ “Order तयार झाली की कळवू?”\n\nनंबर मिळाला की लगेच नावासकट save करा. आणि एक नियम: विचारूनच message करा, कामाचाच करा. 🙏\n\nहा post save करा, दिवाळीच्या गर्दीत कामाला येईल 🔖\n\nBizFlow CRM मध्ये customers ची यादी एकाच ठिकाणी, आणि WhatsApp automation ने संपर्क सोपा.\n📞 8888567870 | Free demo\n\nतुमच्या दुकानात customers चे नंबर कुठे असतात: phone मध्ये, वहीत की software मध्ये? Comment करा 👇\n\n#bizflow #bizflowindia #crm #whatsappautomation #dukandar #smallbusinessindia #marathibusiness #sangamner",
+      "youtube_description": "Customer चा नंबर मागायला अवघडल्यासारखं वाटतं? 🙈 मग नुसता नंबर मागू नका, कारण द्या. Counter वर हे 4 प्रश्न विचारा:\n\n1️⃣ “बिल WhatsApp वर पाठवू का?”\n2️⃣ “नवीन माल आला की कळवू का?”\n3️⃣ “सणाची offer आधी तुम्हाला सांगू?”\n4️⃣ “Order तयार झाली की कळवू?”\n\nनंबर मिळाला की लगेच नावासकट save करा. आणि एक नियम: विचारूनच message करा, कामाचाच करा. 🙏\n\nBizFlow CRM मध्ये customers ची यादी एकाच ठिकाणी, आणि WhatsApp automation ने संपर्क सोपा.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\nतुमच्या दुकानात customers चे नंबर कुठे असतात: phone मध्ये, वहीत की software मध्ये? Comment करा 👇\n\n#bizflow #crm #whatsappautomation #dukandar #marathi #shorts",
+      "youtube_tags": ["bizflow", "crm", "whatsapp automation", "dukandar", "small business india", "marathi"]
+    },
+    {
+      "id": "2026-10-23-tableflow-four-books",
+      "date": "2026-10-23T10:00:00",
+      "pillar": "industry product",
+      "youtube_title": "Hotel चे चार हिशोब, चार ठिकाणी? TableFlow | BizFlow #shorts",
+      "slides": [
+        {"kind": "cover", "theme": "dark", "kicker": "Hotel आणि restaurant साठी", "title": "Order चिठ्ठीवर,\nबिल वहीत,\nbar stock\n[[अंदाजाने?]]", "body": "Swipe करा 👉"},
+        {"kind": "point", "theme": "light", "num": "01", "title": "चार ठिकाणी\nचार हिशोब", "body": "रात्री hotel बंद झाल्यावर\nसगळं [[जुळवत बसायचं]]."},
+        {"kind": "list", "theme": "light", "kicker": "ओळख करून घ्या", "title": "[[TableFlow]] मध्ये", "items": ["[[Table billing]]", "[[KOT]], kitchen साठी", "[[Bar stock]] चा हिशोब", "[[Accounts]]", "[[15+ reports]]"]},
+        {"kind": "chips", "theme": "accent", "kicker": "BizFlow चं hotel POS", "title": "चार वह्या नको,\n[[एकच system]]", "body": "Restaurant आणि hotel साठी बनवलेलं.", "chips": ["TableFlow", "मराठी", "हिंदी", "English"], "price": "BizFlow plans [[₹399]] पासून"},
+        {"kind": "cta", "theme": "dark", "kicker": "Demo पहा", "title": "तुमच्या hotel मध्ये\nTableFlow", "body": "Free demo साठी call करा."}
+      ],
+      "caption": "Order चिठ्ठीवर, बिल वहीत, bar stock अंदाजाने, आणि accounts वेगळ्याच वहीत? 📒 रात्री hotel बंद झाल्यावर हे चार हिशोब जुळवत बसणं ओळखीचं वाटतंय?\n\nTableFlow हे BizFlow चं restaurant आणि hotel साठीचं POS: table billing, KOT, bar stock, accounts आणि 15+ reports, सगळं एकाच ठिकाणी. Support मराठी, हिंदी आणि English मध्ये. BizFlow plans ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा.\n\nज्याच्या hotel मध्ये अजून चार वह्या आहेत, त्या मित्राला tag करा 😄👇\n\n#bizflow #bizflowindia #tableflow #restaurantpos #hotelbusiness #smallbusinessindia #marathibusiness #sangamner",
+      "youtube_description": "Order चिठ्ठीवर, बिल वहीत, bar stock अंदाजाने, आणि accounts वेगळ्याच वहीत? 📒 रात्री hotel बंद झाल्यावर हे चार हिशोब जुळवत बसणं ओळखीचं वाटतंय?\n\nTableFlow हे BizFlow चं restaurant आणि hotel साठीचं POS: table billing, KOT, bar stock, accounts आणि 15+ reports, सगळं एकाच ठिकाणी. Support मराठी, हिंदी आणि English मध्ये. BizFlow plans ₹399 पासून.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\nतुमच्या hotel मध्ये अजून किती वह्या आहेत? Comment करा 👇\n\n#bizflow #tableflow #restaurantpos #hotelbusiness #marathi #shorts",
+      "youtube_tags": ["bizflow", "tableflow", "restaurant pos", "hotel billing software", "small business india", "marathi"]
+    }
+  ]
+}
