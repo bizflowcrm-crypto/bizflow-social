@@ -151,3 +151,9 @@ YouTube channel **bizflowcrm** (`UChYqT-_8_HN-H1aZIkOW9Hw`; never the BizFlow PO
 - Never post anything about competitors by name, politics, or religion beyond warm
   festival greetings.
 - If Metricool or GitHub fails, don't post half a week — report the error to the owner.
+
+## Publishing without Metricool (GitHub Actions)
+
+Metricool's free quota is used up, so posts now go out through `.github/workflows/publish.yml`
+(every 15 min) from `publisher/queue.json`. To schedule: `python3 publisher/enqueue.py <spec> --start
+<date> --slots <times>`, commit and push the queue. Setup and secrets: `publisher/SETUP.md`.
