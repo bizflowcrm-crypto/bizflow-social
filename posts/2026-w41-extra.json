@@ -1,0 +1,405 @@
+{
+ "week": "2026-W41",
+ "posts": [
+  {
+   "id": "2026-10-05-gst-invoice-checklist",
+   "date": "2026-10-05T13:30:00",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "Save करा 🔖",
+     "title": "GST बिलावर\nहे [[असायलाच]]\nहवं",
+     "body": "8 गोष्टी, एक checklist 👇"
+    },
+    {
+     "kind": "list",
+     "theme": "light",
+     "kicker": "बिलाचा वरचा भाग",
+     "title": "तुमची माहिती",
+     "items": [
+      "दुकानाचं नाव आणि पत्ता",
+      "तुमचा [[GSTIN]]",
+      "Invoice नंबर आणि [[तारीख]]",
+      "Customer चं नाव (GSTIN असल्यास)"
+     ]
+    },
+    {
+     "kind": "list",
+     "theme": "light",
+     "kicker": "बिलाचा खालचा भाग",
+     "title": "Items आणि tax",
+     "items": [
+      "प्रत्येक item चा [[HSN/SAC]] code",
+      "Taxable value",
+      "GST rate आणि [[रक्कम]]",
+      "Place of supply"
+     ]
+    },
+    {
+     "kind": "chips",
+     "theme": "dark",
+     "kicker": "BizFlow मध्ये",
+     "title": "हे सगळं\n[[आपोआप]]",
+     "body": "GST बिल बनवा, WhatsApp वर पाठवा.",
+     "chips": [
+      "GST Billing",
+      "AccountFlow",
+      "WhatsApp"
+     ],
+     "price": "Plans [[₹399]] पासून"
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "Free demo",
+     "title": "बिल बरोबर,\n[[टेन्शन बंद]]",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "GST बिलावर हे असायलाच हवं 🧾 Save करा 🔖\n\n1️⃣ दुकानाचं नाव आणि पत्ता\n2️⃣ तुमचा GSTIN\n3️⃣ Invoice नंबर आणि तारीख\n4️⃣ Customer चं नाव (GSTIN असल्यास)\n5️⃣ प्रत्येक item चा HSN/SAC code\n6️⃣ Taxable value\n7️⃣ GST rate आणि रक्कम\n8️⃣ Place of supply\n\nBizFlow मध्ये हे सगळं बिलावर आपोआप येतं, आणि बिल थेट WhatsApp वर जातं.\n\nतुमच्या बिलावर यापैकी काय नसतं? खरं सांगा 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #gstinvoice #gstbilling #accountflow #smallbusinessindia #marathibusiness #sangamner",
+   "youtube_title": "GST बिलावर हे असायलाच हवं: 8 गोष्टींची checklist #shorts",
+   "youtube_tags": [
+    "gst invoice",
+    "gst billing",
+    "bizflow",
+    "small business india"
+   ],
+   "youtube_description": "GST बिलावर हे असायलाच हवं 🧾 Save करा 🔖\n\n1️⃣ दुकानाचं नाव आणि पत्ता\n2️⃣ तुमचा GSTIN\n3️⃣ Invoice नंबर आणि तारीख\n4️⃣ Customer चं नाव (GSTIN असल्यास)\n5️⃣ प्रत्येक item चा HSN/SAC code\n6️⃣ Taxable value\n7️⃣ GST rate आणि रक्कम\n8️⃣ Place of supply\n\nBizFlow मध्ये हे सगळं बिलावर आपोआप येतं, आणि बिल थेट WhatsApp वर जातं.\n\nतुमच्या बिलावर यापैकी काय नसतं? खरं सांगा 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#gstinvoice #gstbilling #bizflow #smallbusinessindia #marathi #shorts"
+  },
+  {
+   "id": "2026-10-06-hotel-daily-numbers",
+   "date": "2026-10-06T10:00:00",
+   "gbp_date": "2026-10-06T11:00:00",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "Hotel मालकांसाठी",
+     "title": "रोज रात्री\nहे [[5 आकडे]]\nबघा",
+     "body": "धंदा वाढवायचा असेल तर 👇"
+    },
+    {
+     "kind": "list",
+     "theme": "light",
+     "kicker": "रोजचे 5 आकडे",
+     "title": "दिवस कसा गेला?",
+     "items": [
+      "आजची [[एकूण विक्री]]",
+      "सगळ्यात जास्त गेलेली [[dish]]",
+      "Cash, UPI, card: कुठे किती",
+      "कोणत्या table वर किती बिल",
+      "Kitchen मध्ये [[pending]] KOT"
+     ]
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "15+",
+     "title": "एका click वर\n[[reports]]",
+     "body": "Table billing, KOT, bar stock\nआणि [[accounts]] सोबत."
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "Hotel साठी TableFlow",
+     "title": "हिशोब नाही,\n[[निर्णय]] घ्या",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "Hotel मालकांनो, रोज रात्री हे 5 आकडे बघा 📊\n\n1️⃣ आजची एकूण विक्री\n2️⃣ सगळ्यात जास्त गेलेली dish\n3️⃣ Cash, UPI, card: कुठे किती\n4️⃣ कोणत्या table वर किती बिल\n5️⃣ Kitchen मध्ये pending KOT\n\nTableFlow मध्ये table billing, KOT, bar stock, accounts आणि 15+ reports, एका click वर.\n\nतुम्ही रोज रात्री कोणता आकडा आधी बघता? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #tableflow #restaurantbusiness #hotelbusiness #restaurantbilling #sangamner #marathibusiness",
+   "youtube_title": "Hotel मालकांनो, रोज रात्री हे 5 आकडे बघा | TableFlow #shorts",
+   "youtube_tags": [
+    "restaurant billing software",
+    "tableflow",
+    "hotel business",
+    "bizflow"
+   ],
+   "youtube_description": "Hotel मालकांनो, रोज रात्री हे 5 आकडे बघा 📊\n\n1️⃣ आजची एकूण विक्री\n2️⃣ सगळ्यात जास्त गेलेली dish\n3️⃣ Cash, UPI, card: कुठे किती\n4️⃣ कोणत्या table वर किती बिल\n5️⃣ Kitchen मध्ये pending KOT\n\nTableFlow मध्ये table billing, KOT, bar stock, accounts आणि 15+ reports, एका click वर.\n\nतुम्ही रोज रात्री कोणता आकडा आधी बघता? 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#restaurantbillingsoftware #tableflow #hotelbusiness #bizflow #marathi #shorts",
+   "gbp_text": "Hotel मालकांनो, रोज रात्री हे 5 आकडे बघा 📊\n\n1️⃣ आजची एकूण विक्री\n2️⃣ सगळ्यात जास्त गेलेली dish\n3️⃣ Cash, UPI, card: कुठे किती\n4️⃣ कोणत्या table वर किती बिल\n5️⃣ Kitchen मध्ये pending KOT\n\nTableFlow मध्ये table billing, KOT, bar stock, accounts आणि 15+ reports, एका click वर.\n\nFree demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या."
+  },
+  {
+   "id": "2026-10-07-barcode-benefits",
+   "date": "2026-10-07T13:30:00",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "कपड्यांचं दुकान · super shop",
+     "title": "Barcode\nbilling [[का?]]",
+     "body": "4 फायदे, सणाच्या आधी 👇"
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "01",
+     "title": "रांग\n[[लवकर]] संपते",
+     "body": "Scan, scan, scan.\nबिल [[सेकंदात]] तयार."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "02",
+     "title": "किंमत\n[[चुकत नाही]]",
+     "body": "प्रत्येक item ची किंमत\nआधीच [[system]] मध्ये."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "03",
+     "title": "Stock\n[[आपोआप]] कमी",
+     "body": "विकलं की stock update.\nमोजायची गरज [[कमी]]."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "04",
+     "title": "बिल\n[[WhatsApp]] वर",
+     "body": "Customer ला बिल थेट\nत्याच्या [[phone]] वर."
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "RetailFlow",
+     "title": "दिवाळीआधी\n[[barcode]] सुरू",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "Barcode billing का? 4 फायदे 🏷️\n\n1️⃣ रांग लवकर संपते: scan, scan, scan, बिल तयार\n2️⃣ किंमत चुकत नाही: प्रत्येक item ची किंमत आधीच system मध्ये\n3️⃣ विकलं की stock आपोआप कमी\n4️⃣ बिल थेट customer च्या WhatsApp वर\n\nRetailFlow: कपड्यांची दुकानं, super shops आणि bag shops साठी BizFlow चं POS.\n\nतुमच्या दुकानात barcode आहे का? हो / नाही 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #retailflow #barcodebilling #retailpos #smallbusinessindia #marathibusiness #sangamner",
+   "youtube_title": "Barcode billing का? दुकानदारांसाठी 4 फायदे | RetailFlow #shorts",
+   "youtube_tags": [
+    "barcode billing",
+    "retailflow",
+    "retail pos",
+    "bizflow"
+   ],
+   "youtube_description": "Barcode billing का? 4 फायदे 🏷️\n\n1️⃣ रांग लवकर संपते: scan, scan, scan, बिल तयार\n2️⃣ किंमत चुकत नाही: प्रत्येक item ची किंमत आधीच system मध्ये\n3️⃣ विकलं की stock आपोआप कमी\n4️⃣ बिल थेट customer च्या WhatsApp वर\n\nRetailFlow: कपड्यांची दुकानं, super shops आणि bag shops साठी BizFlow चं POS.\n\nतुमच्या दुकानात barcode आहे का? हो / नाही 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#barcodebilling #retailflow #retailpos #bizflow #marathi #shorts"
+  },
+  {
+   "id": "2026-10-08-udhaar-tips",
+   "date": "2026-10-08T10:00:00",
+   "gbp_date": "2026-10-08T11:00:00",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "Save करा 🔖",
+     "title": "उधारी कमी\nकरायचे\n[[5 मार्ग]]",
+     "body": "भांडण न करता 👇"
+    },
+    {
+     "kind": "list",
+     "theme": "light",
+     "kicker": "उधारी कमी करा",
+     "title": "5 सोपे मार्ग",
+     "items": [
+      "उधारीची [[मर्यादा]] ठरवा",
+      "प्रत्येक उधारी [[लगेच]] लिहा",
+      "ठरलेल्या दिवशी आठवण करा",
+      "UPI QR [[काउंटरवर]] ठेवा",
+      "जुनी उधारी आधी वसूल करा"
+     ]
+    },
+    {
+     "kind": "chips",
+     "theme": "dark",
+     "kicker": "BizFlow मध्ये",
+     "title": "आठवण\n[[आपोआप]]",
+     "body": "बाकी रकमेची reminder\nWhatsApp वर आपोआप.",
+     "chips": [
+      "Payment reminder",
+      "WhatsApp",
+      "CRM"
+     ]
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "Free demo",
+     "title": "उधारी कमी,\n[[नातं कायम]]",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "उधारी कमी करायचे 5 मार्ग, भांडण न करता 🤝 Save करा 🔖\n\n1️⃣ उधारीची मर्यादा ठरवा\n2️⃣ प्रत्येक उधारी लगेच लिहा\n3️⃣ ठरलेल्या दिवशी आठवण करा\n4️⃣ UPI QR काउंटरवर ठेवा\n5️⃣ जुनी उधारी आधी वसूल करा\n\nBizFlow बाकी रकमेची reminder WhatsApp वर आपोआप पाठवतं.\n\nतुमच्या दुकानात उधारी साधारण किती दिवसांची असते? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #udhaar #dukandar #whatsappautomation #smallbusinessindia #marathibusiness #sangamner",
+   "youtube_title": "उधारी कमी करायचे 5 मार्ग, भांडण न करता | BizFlow #shorts",
+   "youtube_tags": [
+    "udhaar",
+    "dukandar",
+    "whatsapp reminder",
+    "bizflow"
+   ],
+   "youtube_description": "उधारी कमी करायचे 5 मार्ग, भांडण न करता 🤝 Save करा 🔖\n\n1️⃣ उधारीची मर्यादा ठरवा\n2️⃣ प्रत्येक उधारी लगेच लिहा\n3️⃣ ठरलेल्या दिवशी आठवण करा\n4️⃣ UPI QR काउंटरवर ठेवा\n5️⃣ जुनी उधारी आधी वसूल करा\n\nBizFlow बाकी रकमेची reminder WhatsApp वर आपोआप पाठवतं.\n\nतुमच्या दुकानात उधारी साधारण किती दिवसांची असते? 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#udhaar #dukandar #whatsappreminder #bizflow #marathi #shorts",
+   "gbp_text": "उधारी कमी करायचे 5 मार्ग, भांडण न करता 🤝 Save करा 🔖\n\n1️⃣ उधारीची मर्यादा ठरवा\n2️⃣ प्रत्येक उधारी लगेच लिहा\n3️⃣ ठरलेल्या दिवशी आठवण करा\n4️⃣ UPI QR काउंटरवर ठेवा\n5️⃣ जुनी उधारी आधी वसूल करा\n\nBizFlow बाकी रकमेची reminder WhatsApp वर आपोआप पाठवतं.\n\nFree demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या."
+  },
+  {
+   "id": "2026-10-09-why-website",
+   "date": "2026-10-09T13:30:00",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "छोट्या व्यवसायासाठी",
+     "title": "Website\n[[हवीच का?]]",
+     "body": "4 कारणं 👇"
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "01",
+     "title": "सर्चमध्ये\n[[सापडता]]",
+     "body": "लोक आधी Google वर शोधतात,\nमग [[दुकानात]] येतात."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "02",
+     "title": "24 तास\n[[दुकान उघडं]]",
+     "body": "रात्रीही customer तुमची\n[[माहिती]] पाहू शकतो."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "03",
+     "title": "विश्वास\n[[वाढतो]]",
+     "body": "नाव, पत्ता, फोटो, संपर्क.\nसगळं [[एका ठिकाणी]]."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "04",
+     "title": "सगळी माहिती\n[[एका link वर]]",
+     "body": "WhatsApp वर पाठवा,\ncard वर [[छापा]]."
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "आम्ही websites बनवतो",
+     "title": "दुकानं, शाळा,\n[[ग्रामपंचायती]]",
+     "body": "तुमच्या व्यवसायाची website? Call करा."
+    }
+   ],
+   "caption": "छोट्या व्यवसायाला website हवीच का? 4 कारणं 🌐\n\n1️⃣ लोक आधी Google वर शोधतात, मग दुकानात येतात\n2️⃣ 24 तास दुकान उघडं: रात्रीही customer माहिती पाहू शकतो\n3️⃣ नाव, पत्ता, फोटो, संपर्क एका ठिकाणी, त्यामुळे विश्वास वाढतो\n4️⃣ सगळी माहिती एका link वर: WhatsApp वर पाठवा, card वर छापा\n\nBizFlow दुकानं, शाळा, कॉलेज आणि ग्रामपंचायतींसाठी websites बनवतं.\n\nतुमच्या व्यवसायाची website आहे का? हो / नाही 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #websitedesign #smallbusinessindia #digitalindia #marathibusiness #maharashtrabusiness #sangamner",
+   "youtube_title": "छोट्या व्यवसायाला website हवीच का? 4 कारणं | BizFlow #shorts",
+   "youtube_tags": [
+    "website for small business",
+    "website design",
+    "bizflow",
+    "sangamner"
+   ],
+   "youtube_description": "छोट्या व्यवसायाला website हवीच का? 4 कारणं 🌐\n\n1️⃣ लोक आधी Google वर शोधतात, मग दुकानात येतात\n2️⃣ 24 तास दुकान उघडं: रात्रीही customer माहिती पाहू शकतो\n3️⃣ नाव, पत्ता, फोटो, संपर्क एका ठिकाणी, त्यामुळे विश्वास वाढतो\n4️⃣ सगळी माहिती एका link वर: WhatsApp वर पाठवा, card वर छापा\n\nBizFlow दुकानं, शाळा, कॉलेज आणि ग्रामपंचायतींसाठी websites बनवतं.\n\nतुमच्या व्यवसायाची website आहे का? हो / नाही 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#websiteforsmallbusiness #websitedesign #bizflow #sangamner #marathi #shorts"
+  },
+  {
+   "id": "2026-10-10-new-shop-checklist",
+   "date": "2026-10-10T14:00:00",
+   "gbp_date": "2026-10-10T14:00:00",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "नवीन दुकान सुरू करताय?",
+     "title": "पहिल्या\nदिवसापासून\nही [[5 कामं]]",
+     "body": "नंतर पस्तावा नको 👇"
+    },
+    {
+     "kind": "list",
+     "theme": "light",
+     "kicker": "Checklist",
+     "title": "सुरुवात बरोबर",
+     "items": [
+      "GST registration ([[गरज असल्यास]])",
+      "Stock ची [[यादी]] तयार",
+      "किंमती ठरवा, लिहून ठेवा",
+      "Customers चे नंबर [[सेव्ह]] करा",
+      "रोजचा हिशोब [[रोज]] बंद"
+     ]
+    },
+    {
+     "kind": "chips",
+     "theme": "dark",
+     "kicker": "BizFlow मध्ये",
+     "title": "सगळं\n[[एकाच ठिकाणी]]",
+     "body": "Billing, stock, customers.",
+     "chips": [
+      "GST Billing",
+      "Inventory",
+      "CRM",
+      "WhatsApp"
+     ],
+     "price": "Plans [[₹399]] पासून"
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "शुभारंभ",
+     "title": "पहिल्या दिवसापासून\n[[पक्का हिशोब]]",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "नवीन दुकान सुरू करताय? पहिल्या दिवसापासून ही 5 कामं ✅ Save करा 🔖\n\n1️⃣ GST registration (गरज असल्यास)\n2️⃣ Stock ची यादी तयार\n3️⃣ किंमती ठरवा, लिहून ठेवा\n4️⃣ Customers चे नंबर सेव्ह करा\n5️⃣ रोजचा हिशोब रोज बंद\n\nBizFlow मध्ये billing, stock आणि customers एकाच ठिकाणी. Plans ₹399 पासून.\n\nनवीन दुकान सुरू करणाऱ्या मित्राला tag करा 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #newbusiness #dukandar #gstbilling #smallbusinessindia #marathibusiness #sangamner",
+   "youtube_title": "नवीन दुकान सुरू करताय? पहिल्या दिवसापासून ही 5 कामं | BizFlow #shorts",
+   "youtube_tags": [
+    "new shop",
+    "small business tips",
+    "bizflow",
+    "dukandar"
+   ],
+   "youtube_description": "नवीन दुकान सुरू करताय? पहिल्या दिवसापासून ही 5 कामं ✅ Save करा 🔖\n\n1️⃣ GST registration (गरज असल्यास)\n2️⃣ Stock ची यादी तयार\n3️⃣ किंमती ठरवा, लिहून ठेवा\n4️⃣ Customers चे नंबर सेव्ह करा\n5️⃣ रोजचा हिशोब रोज बंद\n\nBizFlow मध्ये billing, stock आणि customers एकाच ठिकाणी. Plans ₹399 पासून.\n\nनवीन दुकान सुरू करणाऱ्या मित्राला tag करा 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#newshop #smallbusinesstips #bizflow #dukandar #marathi #shorts",
+   "gbp_text": "नवीन दुकान सुरू करताय? पहिल्या दिवसापासून ही 5 कामं ✅ Save करा 🔖\n\n1️⃣ GST registration (गरज असल्यास)\n2️⃣ Stock ची यादी तयार\n3️⃣ किंमती ठरवा, लिहून ठेवा\n4️⃣ Customers चे नंबर सेव्ह करा\n5️⃣ रोजचा हिशोब रोज बंद\n\nBizFlow मध्ये billing, stock आणि customers एकाच ठिकाणी. Plans ₹399 पासून.\n\nFree demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या."
+  },
+  {
+   "id": "2026-10-11-vahi-vs-bizflow",
+   "date": "2026-10-11T18:00:00",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "Save करा 🔖",
+     "title": "वही vs\n[[BizFlow]]",
+     "body": "5 फरक, तुम्हीच ठरवा 👇"
+    },
+    {
+     "kind": "list",
+     "theme": "light",
+     "kicker": "वहीत",
+     "title": "रोजचा त्रास",
+     "items": [
+      "उधारी [[विसरली]] जाते",
+      "GST चा हिशोब [[महिनाअखेरीस]]",
+      "Stock अंदाजाने",
+      "बिल हरवलं की [[संपलं]]",
+      "वही भिजली तर?"
+     ]
+    },
+    {
+     "kind": "list",
+     "theme": "dark",
+     "kicker": "BizFlow मध्ये",
+     "title": "रोजचा आराम",
+     "items": [
+      "उधारीची reminder [[आपोआप]]",
+      "GST बिल [[लगेच]]",
+      "Stock नेहमी update",
+      "बिल WhatsApp वर [[सुरक्षित]]",
+      "हिशोब [[cloud]] वर"
+     ]
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "बदल आजच",
+     "title": "वही बंद,\n[[हिशोब सुरू]]",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "वही vs BizFlow: 5 फरक 📒➡️📱\n\nवहीत: उधारी विसरली जाते, GST चा हिशोब महिनाअखेरीस, stock अंदाजाने, बिल हरवलं की संपलं, आणि वही भिजली तर?\n\nBizFlow मध्ये: उधारीची reminder आपोआप, GST बिल लगेच, stock नेहमी update, बिल WhatsApp वर सुरक्षित, हिशोब cloud वर.\n\nखरं सांगा: तुम्ही अजून वहीत की app मध्ये? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #dukandar #gstbilling #billingsoftware #smallbusinessindia #marathibusiness #sangamner",
+   "youtube_title": "वही vs BizFlow: 5 फरक, तुम्हीच ठरवा | BizFlow #shorts",
+   "youtube_tags": [
+    "billing software",
+    "dukandar",
+    "gst billing",
+    "bizflow"
+   ],
+   "youtube_description": "वही vs BizFlow: 5 फरक 📒➡️📱\n\nवहीत: उधारी विसरली जाते, GST चा हिशोब महिनाअखेरीस, stock अंदाजाने, बिल हरवलं की संपलं, आणि वही भिजली तर?\n\nBizFlow मध्ये: उधारीची reminder आपोआप, GST बिल लगेच, stock नेहमी update, बिल WhatsApp वर सुरक्षित, हिशोब cloud वर.\n\nखरं सांगा: तुम्ही अजून वहीत की app मध्ये? 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#billingsoftware #dukandar #gstbilling #bizflow #marathi #shorts"
+  }
+ ]
+}

@@ -10,6 +10,10 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
   inventory, WhatsApp automation**, 20+ industry products.
 - Industry products: **TableFlow** (restaurant/hotel POS: table billing, KOT, bar stock,
   accounts, 15+ reports), **RetailFlow** (retail POS), **AccountFlow** (GST accounting).
+- Also builds **websites** for local businesses, schools, colleges and gram panchayats.
+  Real customers are listed in `CUSTOMERS.md`; that is the only list of names we may use.
+- **500+ businesses** use BizFlow (confirmed by the owner, Oct 2026): hotels and bars,
+  shops, traders, factories, schools and colleges, from Sangamner to Pune, Panvel and Mumbai.
 - Plans **from ₹399**. Support in **English, Hindi and Marathi**.
 - CTA: **📞 8888567870, free demo**. Email hello@bizflowindia.cloud
 - Never invent numbers (customer counts, speed claims, savings %, testimonials).
@@ -90,7 +94,9 @@ BizFlow India's Instagram. Every run starts fresh, so everything it needs is her
 
 ## Weekly procedure
 
-Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@bizflowindia`.
+Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@bizflowindia`,
+YouTube channel **bizflowcrm** (`UChYqT-_8_HN-H1aZIkOW9Hw`; never the BizFlow POS channel, check
+`getBrandSettings` before scheduling), Google Business Profile (network `gmb`).
 
 1. **Review**: pull Instagram post metrics for the last 14 days with
    `getAnalyticsDataByMetrics` (IGPO02 date, IGPO03 content, IGPO07 type, IGPO14 reach,
@@ -101,18 +107,39 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    two weeks, and leave filled slots alone. In normal running the nearer week is already full
    and you build the further one, so there is always a one-week buffer of scheduled posts.
 3. **Plan each week that needs filling** (read `GROWTH.md` first: voice, rhythm, upcoming festival
-   moments). Both platforms get every slot: Instagram **and** YouTube Shorts.
-   - **3 carousels**, Mon/Wed/Fri at 10:00 (Instagram carousel + the same content as a vertical
-     video on YouTube Shorts), one from each of three different pillars:
-     pain point → solution; how-to / save-worthy tips; feature spotlight; industry product
-     (TableFlow, RetailFlow, AccountFlow).
-   - **2 Reels**, Tue/Thu at 18:00 (Instagram Reel + YouTube Short), funny and relatable dukandar-life humour in the
-     "तुमचा दुकानातला मित्र" voice. Each must be a new idea, not a repeat of a past one
-     (check `posts/` for what's been done).
+   moments; then `MARKETING.md` for that week's theme in the three-month calendar and the
+   signature series). Both platforms get every slot: Instagram **and** YouTube Shorts.
+   - **3 posts every day** (owner's choice, 4 Oct 2026) on Instagram **and** YouTube Shorts,
+     in three slots: **10:00, 13:30 and 18:00** (weekends 12:00/14:00/18:00 or 19:00 are fine).
+     Each day has at least one carousel and one Reel; alternate which slot gets which.
+     That's about **10 carousels and 11 Reels a week**:
+     - Carousels: Instagram carousel + the same content as a vertical video on YouTube Shorts.
+       Rotate the pillars (pain point → solution; how-to / save-worthy; feature spotlight;
+       industry product TableFlow/RetailFlow/AccountFlow; websites).
+     - Reels: Instagram Reel + YouTube Short, rendered with `motion/reels.py`. Mostly
+       dukandar-life humour in the "तुमचा दुकानातला मित्र" voice, plus product and festival Reels.
+     - Every idea must be new (check `posts/` for what's been done).
+   - **Google Business Profile: 1 post a day** (not 3: several posts a day from a young profile
+     looks like spam to Google). Use that day's best carousel, at 11:00 or later.
    - **Festival greeting** at 09:00 on any festival day in the coming 8 days (search the
      web to confirm the date first). Single image, warm, ends with a question.
    - If `photos/` has new real photos (team, customers, events), build one post around
      them — real people outperform graphics.
+   - **Customer of the Week** (Friday carousel, `MARKETING.md` §3): for any customer listed
+     under "Agreed to be featured" in `CUSTOMERS.md` with photos in `photos/customers/<shop>/`,
+     build the spotlight instead of the Friday product carousel. With nobody agreed yet,
+     draft one from `CUSTOMERS.md` and leave it unscheduled, and say so in the report.
+   - **Customer bites** (real customer videos, filmed from 5 Oct 2026): new clips land in
+     `photos/customers/<shop>/`. For each one listed under "Agreed to be featured", transcribe
+     what they say into subtitles (their words only), pick the strongest 20–40 seconds, write
+     `posts/<YYYY>-w<WW>-bites.json` (shape in the `bite.py` docstring) and render with
+     `python3 bite.py`. Schedule as Reel + YouTube Short (same as a Reel). A bite replaces that
+     week's Friday carousel, or the Tue/Thu Reel when there are two.
+   - **Website Wednesday** every other week, from screenshots in `photos/sites/` (made by
+     `python3 shots.py`), under the same consent rule.
+   - **One long YouTube video script** per week (`MARKETING.md` §4) in
+     `posts/<YYYY>-w<WW>-youtube.json`: title, description, tags, chapter list and a spoken
+     Marathi script. A person records it, so don't schedule it.
    - Every caption ends with a question or a "tag a friend" line.
 4. **Write the specs**: carousels and greetings in `posts/<YYYY>-w<WW>.json` (shape of
    `posts/2026-w41.json`; slide kinds `cover`, `point`, `list`, `chips`, `chat`, `cta`; 4–6
@@ -124,7 +151,9 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    (shape of `posts/2026-w41-reels.json`; scene kinds `big`, `mid`, `chat`, `cta`; 5–6 scenes,
    10–15 seconds total, last is `cta`).
 5. **Render**: `pip install playwright --break-system-packages && python3 -m playwright install chromium`
-   if needed, then `python3 build.py posts/<file>.json` and `python3 reel.py posts/<reels file>.json`
+   if needed, then `python3 build.py posts/<file>.json` and `python3 motion/reels.py posts/<reels file>.json`
+   (animated motion-graphics Reels with music and sound effects; `pip install numpy scipy` if needed.
+   Never publish a Reel made of still cards: if an idea can't be animated, post it as a carousel)
    (needs ffmpeg). Open 2–3 slides with Read, and extract a frame or two from each Reel with
    ffmpeg, to check Devanagari renders correctly and nothing overflows.
    In headings, a Latin word with a descender (p, y, g, q, j) on the line directly above a
@@ -135,7 +164,7 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
 6. **Publish media**: commit `posts/` + `media/` and push to `main`. Base URL:
    `https://raw.githubusercontent.com/bizflowcrm-crypto/bizflow-social/main/media/<id>/`.
    `build.py` writes `NN.jpg` slides plus `short.mp4` and `cover.jpg` (the 9:16 video version)
-   for every carousel; `reel.py` writes `reel.mp4` and `cover.jpg`.
+   for every carousel; `motion/reels.py` writes `reel.mp4` and `cover.jpg`.
 7. **Schedule** with `createScheduledPost`, `autoPublish: true`,
    `publicationDate: {"dateTime":"YYYY-MM-DDTHH:MM:SS","timezone":"Asia/Calcutta"}`:
    - Carousel on Instagram: providers `[{"network":"instagram"}]`, `instagramData: {"type":"POST"}`,
@@ -147,7 +176,12 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
    - Reel: one post with providers `[{"network":"instagram"},{"network":"youtube"}]`, `media`:
      `reel.mp4`, `videoThumbnailUrl`: `cover.jpg`,
      `instagramData: {"type":"REEL","showReelOnFeed":true}` and `youtubeData` as above.
-   - Festival greeting (single image): Instagram only.
+   - Google Business Profile, for every carousel, at 11:00 the same day: providers
+     `[{"network":"gmb"}]`, `gmbData: {"type":"publication"}`, `media`: the cover slide `01.jpg`,
+     text = the caption **without phone numbers or hashtags** (Google rejects them), ending
+     "Free demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या". Real photos added to
+     `photos/` also go to the gallery with `gmbData: {"type":"photo"}`.
+   - Festival greeting (single image): Instagram and Google Business Profile.
    - **Motion-graphics promo**: `motion/bizflow-promo.html` + `motion/render.py` + `motion/audio.py`
      are a worked example of a richer animation (every style computed from time in `seek(t)`,
      rendered frame by frame with motion blur, with a synthesized soundtrack). In the first
@@ -163,6 +197,14 @@ Brand: Metricool `blogId` **7206028**, timezone `Asia/Calcutta`, Instagram `@biz
 
 - Only post on BizFlow's own accounts. Never automate comments, likes, follows or DMs on
   other accounts — comment lines are written for the owner to post by hand.
+- Never name a customer who isn't in `CUSTOMERS.md`, and never put passwords or logins
+  in this repo.
 - Never post anything about competitors by name, politics, or religion beyond warm
   festival greetings.
 - If Metricool or GitHub fails, don't post half a week — report the error to the owner.
+
+## Publishing without Metricool (GitHub Actions)
+
+Metricool's free quota is used up, so posts now go out through `.github/workflows/publish.yml`
+(every 15 min) from `publisher/queue.json`. To schedule: `python3 publisher/enqueue.py <spec> --start
+<date> --slots <times>`, commit and push the queue. Setup and secrets: `publisher/SETUP.md`.

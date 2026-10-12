@@ -19,11 +19,10 @@ BizFlow talks like a funny friend who also runs a shop, not like a software comp
 
 | Day | Time | What |
 |---|---|---|
-| Mon | 10:00 | Carousel: pain point → solution (also a YouTube Short) |
-| Tue | 18:00 | Reel: relatable/funny (also YouTube Short) |
-| Wed | 10:00 | Carousel: how-to, save-worthy (also a YouTube Short) |
-| Thu | 18:00 | Reel: relatable/funny (also YouTube Short) |
-| Fri | 10:00 | Carousel: feature or industry (also a YouTube Short) |
+| Every day | 10:00 | Carousel or Reel (Instagram + YouTube Short) |
+| Every day | 13:30 | Carousel or Reel (Instagram + YouTube Short) |
+| Every day | 18:00 | Carousel or Reel (Instagram + YouTube Short) |
+| Every day | 11:00+ | Google Business Profile update (one a day) |
 | Sat (monthly) | 11:00 | Motion-graphics promo (Reel + YouTube Short) |
 | Festival days | 09:00 | Greeting post with a question |
 
@@ -87,8 +86,10 @@ Under a festival post from a local page:
 1. **Collab posts with Sangamner influencers.** The visarjan post reached 8x more than
    a product post. Invite 1–2 local creators a month, and publish as an Instagram
    Collab so it shows on both profiles.
-2. **Customer spotlights.** Photo of a real shop using BizFlow + one line from the owner,
-   tag their account. They share it, their customers see you.
+2. **Customer spotlights.** Photo of a real shop using BizFlow, or a website we built,
+   + one line from the owner, tag their account. They share it, their customers see you.
+   500+ businesses use BizFlow; the named ones are in `CUSTOMERS.md` (30+ websites, and shops, traders and factories
+   using AccountFlow, and hotels and bars using TableFlow, and shops using RetailFlow, across Sangamner, Kopargaon, Pune and nearby). Ask the customer before featuring them.
 3. **Fix the bio.** One line on what you do in Marathi, "Free demo 👇", link to
    bizflowindia.cloud, and a WhatsApp button.
 4. **Stories every day.** Polls and question stickers (must be added in the app):
