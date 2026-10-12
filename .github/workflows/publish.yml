@@ -5,10 +5,11 @@ on:
     - cron: "*/15 * * * *"
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: "Dry run (print what would post, post nothing)"
-        type: boolean
-        default: false
+      mode:
+        description: "run = post due items, dry-run = print only, verify = check the secrets work"
+        type: choice
+        options: [run, dry-run, verify]
+        default: run
 
 permissions:
   contents: write
@@ -35,7 +36,12 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           GBP_LOCATION: ${{ secrets.GBP_LOCATION }}
-        run: python3 publisher/publish.py ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          case "${{ inputs.mode }}" in
+            verify) python3 publisher/verify.py ;;
+            dry-run) python3 publisher/publish.py --dry-run ;;
+            *) python3 publisher/publish.py ;;
+          esac
       - name: Save state
         if: always()
         run: |

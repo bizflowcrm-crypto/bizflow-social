@@ -23,10 +23,10 @@ def entry(p, kind, when):
         slides = sorted(f.name for f in (ROOT / mdir).glob("[0-9][0-9].jpg"))
         e = {"slides": [f"{mdir}/{s}" for s in slides], "video": f"{mdir}/short.mp4"}
     for need in (e["video"], *e.get("slides", [])):
-        if not (ROOT / need).exists():
+        if not (ROOT / need).exists() and (kind == "reel" or need != e["video"]):
             sys.exit(f"missing media: {need}")
-    return {"id": p["id"], "when": when, "kind": kind, "networks": ["instagram", "youtube"],
-            "caption": p["caption"], "youtube": yt, **e}
+    nets = ["instagram"] + (["youtube"] if yt["title"] else [])
+    return {"id": p["id"], "when": when, "kind": kind, "networks": nets, "caption": p["caption"], "youtube": yt, **e}
 
 
 def main():

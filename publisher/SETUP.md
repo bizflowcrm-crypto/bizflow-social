@@ -12,7 +12,7 @@ Actions > New repository secret**.
 - Scheduled workflows only run from the **default branch** (`main`), and media is read from
   `raw.githubusercontent.com/.../main/media/...`. So this branch must be merged to `main`.
 - Settings > Actions > General > Workflow permissions: **Read and write**.
-- Test without posting: Actions tab > "Publish scheduled posts" > Run workflow > dry run.
+- Test without posting: Actions tab > "Publish scheduled posts" > Run workflow > mode **verify** (checks every secret works and shows which accounts it reached), then **dry-run**.
 
 ## 1. Instagram (works the same day)
 1. @bizflowindia must be a **Business or Creator** account linked to a Facebook Page.
