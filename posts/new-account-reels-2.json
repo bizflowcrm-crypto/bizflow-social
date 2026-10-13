@@ -1,0 +1,48 @@
+{
+  "week": "new-account",
+  "note": "Diwali-week Reels. Queue with publisher/enqueue.py.",
+  "reels": [
+    {
+      "id": "new-reel-diwali-queue",
+      "scenes": [
+        {"kind": "big", "theme": "dark", "tag": "दिवाळीची गर्दी 🪔", "text": "Counter वर\n[[रांग]] लागली 😵", "dur": 2.6},
+        {"kind": "mid", "theme": "light", "emoji": "⏳", "text": "बिल बनवायला\n[[वेळ]] लागतोय…", "dur": 2.6},
+        {"kind": "mid", "theme": "light", "emoji": "🚶", "text": "रांग बघून customer\n[[निघून]] गेला 😬", "dur": 2.6},
+        {"kind": "big", "theme": "accent", "tag": "RetailFlow मध्ये", "text": "Barcode scan,\n[[बिल तयार]] ✅", "dur": 2.6},
+        {"kind": "cta", "theme": "dark", "text": "दिवाळीच्या गर्दीसाठी\n[[RetailFlow]]", "dur": 3.0}
+      ],
+      "caption": "दिवाळीची गर्दी 🪔 Counter वर रांग, आणि बिल बनवायला वेळ लागतोय ⏳\nरांग बघून customer निघून गेला 😬\n\nRetailFlow मध्ये barcode scan करा आणि बिल तयार ✅ गर्दीतही billing सोपं.\n\nतुमच्या दुकानात दिवाळीला सगळ्यात जास्त गर्दी कधी असते? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #retailflow #barcodebilling #diwali2026 #dukandar #marathireels #sangamner",
+      "youtube_title": "दिवाळीच्या गर्दीत billing ची रांग 😵 Barcode billing | RetailFlow #shorts",
+      "youtube_tags": ["retailflow", "barcode billing", "diwali 2026", "dukandar", "bizflow"],
+      "youtube_description": "दिवाळीची गर्दी 🪔 Counter वर रांग, आणि बिल बनवायला वेळ लागतोय ⏳\nरांग बघून customer निघून गेला 😬\n\nRetailFlow मध्ये barcode scan करा आणि बिल तयार ✅ गर्दीतही billing सोपं.\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#retailflow #barcodebilling #diwali2026 #dukandar #bizflow #marathi #shorts"
+    },
+    {
+      "id": "new-reel-diwali-udhaar",
+      "scenes": [
+        {"kind": "big", "theme": "dark", "tag": "दिवाळीआधी 📞", "text": "पार्टी म्हणते:\n[[“दिवाळीनंतर देतो”]]", "dur": 2.6},
+        {"kind": "mid", "theme": "light", "emoji": "📒", "text": "आणि दिवाळीनंतर\nवहीत [[नाव सापडत नाही]] 😅", "dur": 2.8},
+        {"kind": "big", "theme": "accent", "tag": "BizFlow मध्ये", "text": "उधारी [[record]],\nreminder [[WhatsApp]] वर ✅", "dur": 2.8},
+        {"kind": "mid", "theme": "light", "emoji": "💰", "text": "सणाआधी\n[[पैसे वेळेवर]] 🙏", "dur": 2.4},
+        {"kind": "cta", "theme": "dark", "text": "उधारीचा हिशोब\n[[BizFlow]] मध्ये", "dur": 3.0}
+      ],
+      "caption": "दिवाळीआधी पार्टी म्हणते: “दिवाळीनंतर देतो” 📞\nआणि दिवाळीनंतर वहीत नावच सापडत नाही 😅\n\nBizFlow मध्ये प्रत्येक उधारी record होते, आणि बाकी रकमेची reminder WhatsApp वर जाते ✅\n\nतुमच्याकडे सणाआधी उधारी वसूल करायची पद्धत कोणती? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #udhaar #accountflow #diwali2026 #dukandar #marathireels #sangamner",
+      "youtube_title": "“दिवाळीनंतर देतो” 😅 उधारीचा हिशोब BizFlow मध्ये #shorts",
+      "youtube_tags": ["udhaar", "accountflow", "diwali 2026", "dukandar", "bizflow"],
+      "youtube_description": "दिवाळीआधी पार्टी म्हणते: “दिवाळीनंतर देतो” 📞\nआणि दिवाळीनंतर वहीत नावच सापडत नाही 😅\n\nBizFlow मध्ये प्रत्येक उधारी record होते, आणि बाकी रकमेची reminder WhatsApp वर जाते ✅\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#udhaar #accountflow #diwali2026 #dukandar #bizflow #marathi #shorts"
+    },
+    {
+      "id": "new-reel-chopda-pujan",
+      "scenes": [
+        {"kind": "big", "theme": "dark", "tag": "लक्ष्मीपूजन 🪔", "text": "चोपडा पूजन\nकरताना [[विचार]] आला…", "dur": 2.8},
+        {"kind": "mid", "theme": "light", "emoji": "📒", "text": "वही [[पूजायची]],\nहिशोब मात्र [[app]] मध्ये 😄", "dur": 2.8},
+        {"kind": "big", "theme": "accent", "tag": "BizFlow मध्ये", "text": "बिल, GST, stock\n[[सगळं एकत्र]] ✅", "dur": 2.8},
+        {"kind": "mid", "theme": "light", "emoji": "🙏", "text": "नवं वर्ष,\n[[नवी सुरुवात]]", "dur": 2.4},
+        {"kind": "cta", "theme": "dark", "text": "शुभ दीपावली!\n[[BizFlow]] परिवारातर्फे", "dur": 3.0}
+      ],
+      "caption": "चोपडा पूजन करताना विचार आला… 🪔\nवही पूजायची, पण हिशोब app मध्ये 😄\n\nBizFlow मध्ये बिल, GST आणि stock सगळं एकत्र ✅ नवं वर्ष, नवी सुरुवात 🙏\n\nशुभ दीपावली! BizFlow परिवारातर्फे सर्वांना हार्दिक शुभेच्छा 🪔\n\nयंदा तुम्ही कोणती नवी सुरुवात करताय? 👇\n\n📞 8888567870 | Free demo\n\n#shubhdiwali #lakshmipujan #bizflow #bizflowindia #chopdapujan #dukandar #marathireels #sangamner",
+      "youtube_title": "चोपडा पूजन 🪔 वही पूजा, हिशोब app मध्ये | शुभ दीपावली | BizFlow #shorts",
+      "youtube_tags": ["lakshmi pujan", "chopda pujan", "diwali 2026", "dukandar", "bizflow"],
+      "youtube_description": "चोपडा पूजन करताना विचार आला… 🪔\nवही पूजायची, पण हिशोब app मध्ये 😄\n\nBizFlow मध्ये बिल, GST आणि stock सगळं एकत्र ✅ नवं वर्ष, नवी सुरुवात 🙏\n\nशुभ दीपावली! BizFlow परिवारातर्फे सर्वांना हार्दिक शुभेच्छा 🪔\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#shubhdiwali #lakshmipujan #dukandar #bizflow #marathi #shorts"
+    }
+  ]
+}
