@@ -16,7 +16,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUEUE, STATE = ROOT / "publisher/queue.json", ROOT / "publisher/state.json"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 GRAPH = "https://graph.facebook.com/v21.0"
-MAX_PER_RUN = int(os.environ.get("MAX_PER_RUN", "3"))
+MAX_POSTS_PER_RUN = int(os.environ.get("MAX_POSTS_PER_RUN", "1"))  # a post = all its networks; late posts trickle out
 MAX_LATE_HOURS = float(os.environ.get("MAX_LATE_HOURS", "48"))
 MAX_ATTEMPTS = 3
 REPO = os.environ.get("GITHUB_REPOSITORY", "bizflowcrm-crypto/bizflow-social")
@@ -123,10 +123,13 @@ def main():
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
     done = 0
     for p in sorted(queue, key=lambda p: p["when"]):
+        if done >= MAX_POSTS_PER_RUN:
+            break
         when = parse_when(p["when"])
         if when > now:
             continue
-        st = state.setdefault(p["id"], {})
+        st = state.get(p["id"], {})
+        tried = False
         for net in p["networks"]:
             s = st.get(net, {})
             if s.get("status") in ("posted", "expired") or s.get("attempts", 0) >= MAX_ATTEMPTS:
@@ -137,22 +140,22 @@ def main():
                 print(f"skip  {p['id']} {net}: secrets not set ({', '.join(missing)})")
                 continue
             if (now - when).total_seconds() > MAX_LATE_HOURS * 3600:
-                st[net] = {"status": "expired", "at": now.isoformat()}
+                state.setdefault(p["id"], {})[net] = {"status": "expired", "at": now.isoformat()}
                 print(f"late  {p['id']} {net}: more than {MAX_LATE_HOURS:g}h late, marked expired")
                 continue
-            if done >= MAX_PER_RUN:
-                continue
             print(f"post  {p['id']} -> {net}" + (" (dry run)" if a.dry_run else ""))
-            done += 1
+            tried = True
             if a.dry_run:
                 continue
             try:
                 res = fn(p)
-                st[net] = {"status": "posted", "at": now.isoformat(), **res}
+                state.setdefault(p["id"], {})[net] = {"status": "posted", "at": now.isoformat(), **res}
                 print(f"  ok  {res.get('url') or res.get('id')}")
             except Exception as e:
-                st[net] = {"status": "failed", "attempts": s.get("attempts", 0) + 1, "error": str(e)[:500], "at": now.isoformat()}
+                state.setdefault(p["id"], {})[net] = {"status": "failed", "attempts": s.get("attempts", 0) + 1,
+                                                      "error": str(e)[:500], "at": now.isoformat()}
                 print(f"  FAILED {e}", file=sys.stderr)
+        done += tried
     if not a.dry_run:
         STATE.write_text(json.dumps(state, indent=1, ensure_ascii=False) + "\n")
     failed = [(i, n) for i, s in state.items() for n, v in s.items() if v.get("status") == "failed"]
