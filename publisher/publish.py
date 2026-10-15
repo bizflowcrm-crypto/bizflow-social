@@ -17,7 +17,7 @@ QUEUE, STATE = ROOT / "publisher/queue.json", ROOT / "publisher/state.json"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 GRAPH = "https://graph.facebook.com/v21.0"
 MAX_POSTS_PER_RUN = int(os.environ.get("MAX_POSTS_PER_RUN", "1"))  # a post = all its networks; late posts trickle out
-MAX_LATE_HOURS = float(os.environ.get("MAX_LATE_HOURS", "48"))
+MAX_LATE_HOURS = float(os.environ.get("MAX_LATE_HOURS", "168"))  # 7 days
 MAX_ATTEMPTS = 3
 REPO = os.environ.get("GITHUB_REPOSITORY", "bizflowcrm-crypto/bizflow-social")
 REF = os.environ.get("MEDIA_REF", os.environ.get("GITHUB_REF_NAME", "main"))
