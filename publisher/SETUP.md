@@ -58,4 +58,5 @@ day (only specs with `gbp_text`).
 - Instagram: 100 API posts per 24 h. YouTube: default quota allows about 6 uploads a day.
 - A failed network is retried on the next 3 runs, then the workflow fails and you get an email.
   The error is in `state.json`.
+- Quiet hours: scheduled runs post nothing from 00:00 to 07:00 IST (due posts wait for morning). Manual runs ignore this.
 - GitHub cron can run a few minutes late, so posts go out within about 15-25 minutes of their time.
