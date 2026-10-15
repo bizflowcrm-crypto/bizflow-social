@@ -25,8 +25,8 @@ Actions > New repository secret**.
    exchange it for a long-lived token:
    `GET /oauth/access_token?grant_type=fb_exchange_token&client_id=APP_ID&client_secret=APP_SECRET&fb_exchange_token=SHORT_TOKEN`
 4. With the long-lived token call `GET /me/accounts`. Use that Page's `access_token` (a Page token
-   made from a long-lived user token does not expire) as **`IG_ACCESS_TOKEN`**.
-5. `GET /PAGE_ID?fields=instagram_business_account` gives the id for **`IG_USER_ID`**.
+   made from a long-lived user token does not expire) as **`INSTAGRAM_ACCESS_TOKEN`** (`IG_ACCESS_TOKEN` also works).
+5. `GET /PAGE_ID?fields=instagram_business_account` gives the id for **`INSTAGRAM_ACCOUNT_ID`** (`IG_USER_ID` also works).
 
 ## 2. YouTube + Google Business Profile (one Google token for both)
 1. console.cloud.google.com, signed in as **bizflowcrm**: new project > enable **YouTube Data API
