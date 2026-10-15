@@ -16,6 +16,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUEUE, STATE = ROOT / "publisher/queue.json", ROOT / "publisher/state.json"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 GRAPH = "https://graph.facebook.com/v21.0"
+QUIET_START, QUIET_END = 0, 7  # no posting from 00:00 to 07:00 IST; manual runs set IGNORE_QUIET_HOURS
 MAX_POSTS_PER_RUN = int(os.environ.get("MAX_POSTS_PER_RUN", "1"))  # a post = all its networks; late posts trickle out
 MAX_LATE_HOURS = float(os.environ.get("MAX_LATE_HOURS", "168"))  # 7 days
 MAX_ATTEMPTS = 3
@@ -119,6 +120,9 @@ def main():
     ap.add_argument("--now")
     a = ap.parse_args()
     now = parse_when(a.now) if a.now else dt.datetime.now(IST)
+    if not a.dry_run and not os.environ.get("IGNORE_QUIET_HOURS") and QUIET_START <= now.astimezone(IST).hour < QUIET_END:
+        print(f"quiet hours ({QUIET_START:02d}:00 to {QUIET_END:02d}:00 IST): nothing posted, due posts wait until morning")
+        return
     queue = json.loads(QUEUE.read_text())
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
     done = 0

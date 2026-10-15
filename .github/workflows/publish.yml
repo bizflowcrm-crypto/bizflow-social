@@ -36,6 +36,7 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           GBP_LOCATION: ${{ secrets.GBP_LOCATION }}
+          IGNORE_QUIET_HOURS: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
         run: |
           case "${{ inputs.mode }}" in
             verify) python3 publisher/verify.py ;;
