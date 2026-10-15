@@ -3,7 +3,7 @@
 `.github/workflows/publish.yml` runs every 15 minutes, reads `publisher/queue.json`, posts
 whatever is due and records it in `publisher/state.json`. It posts straight to the platform APIs,
 so there is no monthly post limit. A network whose secrets are missing is skipped (not failed)
-and posts on a later run once you add them (anything more than 48 h late is marked `expired`).
+and posts on a later run once you add them (anything more than 7 days late is marked `expired` (`MAX_LATE_HOURS`)).
 
 Never paste tokens in chat or commit them. They go in **Settings > Secrets and variables >
 Actions > New repository secret**.
