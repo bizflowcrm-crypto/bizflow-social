@@ -27,9 +27,9 @@
  "new-car-software-myths": {
   "instagram": {
    "status": "failed",
-   "attempts": 2,
-   "error": "POST https://graph.facebook.com/v21.0/17841407779825792/media -> 400 {\"error\":{\"message\":\"Error validating access token: Session has expired on Thursday, 15-Oct-26 14:00:00 PDT. The current time is Thursday, 15-Oct-26 22:19:41 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"AxSz8VvyALk430EgFqZxsVk\"}}",
-   "at": "2026-10-16T10:49:41.244025+05:30"
+   "attempts": 3,
+   "error": "POST https://graph.facebook.com/v21.0/17841407779825792/media -> 400 {\"error\":{\"message\":\"Error validating access token: Session has expired on Thursday, 15-Oct-26 14:00:00 PDT. The current time is Thursday, 15-Oct-26 22:53:38 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"AQmH2oariDKytW35Wf1YMvb\"}}",
+   "at": "2026-10-16T11:23:38.703226+05:30"
   }
  },
  "new-reel-website-ahe-ka": {}
