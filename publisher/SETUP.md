@@ -60,3 +60,10 @@ day (only specs with `gbp_text`).
   The error is in `state.json`.
 - Quiet hours: scheduled runs post nothing from 00:00 to 07:00 IST (due posts wait for morning). Manual runs ignore this.
 - GitHub cron can run a few minutes late, so posts go out within about 15-25 minutes of their time.
+
+## Token expired ("Session has expired", OAuthException 190)
+Instagram tokens from the Graph API Explorer last only an hour or two. The publisher now stops and the workflow
+fails (you get an email) when a token is rejected, and it does not use up a post's attempts.
+To fix it for good: run `python3 publisher/ig_token.py APP_ID APP_SECRET SHORT_LIVED_TOKEN` on your computer. It prints a
+Page token that never expires and the Instagram account ID. Put them in the GitHub secrets `INSTAGRAM_ACCESS_TOKEN` and
+`INSTAGRAM_ACCOUNT_ID`, then run the workflow with mode `verify`.
