@@ -33,8 +33,15 @@ def parse_when(s):
     return t if t.tzinfo else t.replace(tzinfo=IST)
 
 
+class AuthError(RuntimeError):
+    """The platform rejected our token. Not the post's fault: do not count an attempt, stop the run."""
+
+
 def check(r):
     if not r.ok:
+        flat = r.text.replace(" ", "")
+        if r.status_code in (400, 401, 403) and any(k in flat for k in ('"code":190', "invalid_grant", "OAuthException", "invalid_client", "UNAUTHENTICATED")):
+            raise AuthError(f"{r.request.method} {r.url.split('?')[0]} -> {r.status_code} {r.text[:300]}")
         raise RuntimeError(f"{r.request.method} {r.url.split('?')[0]} -> {r.status_code} {r.text[:400]}")
     return r.json() if r.text else {}
 
@@ -126,6 +133,7 @@ def main():
     queue = json.loads(QUEUE.read_text())
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
     done = 0
+    auth_error = None
     for p in sorted(queue, key=lambda p: p["when"]):
         if done >= MAX_POSTS_PER_RUN:
             break
@@ -155,13 +163,23 @@ def main():
                 res = fn(p)
                 state.setdefault(p["id"], {})[net] = {"status": "posted", "at": now.isoformat(), **res}
                 print(f"  ok  {res.get('url') or res.get('id')}")
+            except AuthError as e:
+                auth_error = f"{net}: {e}"
+                print(f"  AUTH ERROR {auth_error}", file=sys.stderr)
+                break
             except Exception as e:
                 state.setdefault(p["id"], {})[net] = {"status": "failed", "attempts": s.get("attempts", 0) + 1,
                                                       "error": str(e)[:500], "at": now.isoformat()}
                 print(f"  FAILED {e}", file=sys.stderr)
         done += tried
+        if auth_error:
+            break
     if not a.dry_run:
         STATE.write_text(json.dumps(state, indent=1, ensure_ascii=False) + "\n")
+    if auth_error:
+        print(f"STOPPED: the {auth_error.split(':')[0]} token was rejected, so nothing was posted and no attempts were used. "
+              "Create a new long-lived token and update the GitHub secret (see publisher/SETUP.md, 'Token expired').", file=sys.stderr)
+        sys.exit(1)
     failed = [(i, n) for i, s in state.items() for n, v in s.items() if v.get("status") == "failed"]
     print(f"done: {done} attempted, {len(failed)} failed so far")
     if any(state[i][n].get("attempts", 0) >= MAX_ATTEMPTS for i, n in failed):
