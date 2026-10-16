@@ -55,5 +55,13 @@
    "error": "POST https://graph.facebook.com/v21.0/17841407779825792/media -> 400 {\"error\":{\"message\":\"Error validating access token: Session has expired on Thursday, 15-Oct-26 14:00:00 PDT. The current time is Friday, 16-Oct-26 03:38:17 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"AM96Y-I6EGajwS1G1rm62NS\"}}",
    "at": "2026-10-16T16:08:17.072457+05:30"
   }
+ },
+ "new-reel-gst-rate": {
+  "instagram": {
+   "status": "failed",
+   "attempts": 1,
+   "error": "POST https://graph.facebook.com/v21.0/17841407779825792/media -> 400 {\"error\":{\"message\":\"Error validating access token: Session has expired on Thursday, 15-Oct-26 14:00:00 PDT. The current time is Friday, 16-Oct-26 04:07:20 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"error_subcode\":463,\"fbtrace_id\":\"Ao8JrHNgWPG6oVGsw7vzRkr\"}}",
+   "at": "2026-10-16T16:37:19.937257+05:30"
+  }
  }
 }
