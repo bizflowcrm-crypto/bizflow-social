@@ -20,7 +20,7 @@ a = ap.parse_args()
 
 src = pathlib.Path(a.html).resolve()
 out = pathlib.Path(a.out).resolve() if a.out else src.with_suffix(".mp4")
-tmp = src.parent / "_frames"; shutil.rmtree(tmp, ignore_errors=True); tmp.mkdir()
+tmp = src.parent / f"_frames_{src.stem}"; shutil.rmtree(tmp, ignore_errors=True); tmp.mkdir()
 
 with sync_playwright() as pw:
     b = pw.chromium.launch()
