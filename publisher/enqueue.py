@@ -25,7 +25,7 @@ def entry(p, kind, when):
     for need in (e["video"], *e.get("slides", [])):
         if not (ROOT / need).exists() and (kind == "reel" or need != e["video"]):
             sys.exit(f"missing media: {need}")
-    nets = ["instagram"] + (["youtube"] if yt["title"] else [])
+    nets = ["instagram"] + (["youtube"] if yt["title"] and (ROOT / e["video"]).exists() else [])   # no Short file, no YouTube
     return {"id": p["id"], "when": when, "kind": kind, "networks": nets, "caption": p["caption"], "youtube": yt, **e}
 
 

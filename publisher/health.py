@@ -52,7 +52,8 @@ def check_instagram(now):
                 left.append((label, (dt.datetime.fromtimestamp(ts, dt.timezone.utc) - now).total_seconds() / 86400))
         soon = [(l, x) for l, x in left if x < WARN_DAYS]
         if soon:
-            return add("WARN", "Instagram token", "Expires soon: " + ", ".join(f"{l} in {x:.0f} days" for l, x in soon)
+            when = lambda x: f"{x * 24:.0f} hours" if x < 2 else f"{x:.0f} days"
+            return add("WARN", "Instagram token", "Expires soon: " + ", ".join(f"{l} in {when(x)}" for l, x in soon)
                        + ". Make a new token (publisher/SETUP.md) before then.")
         return add("OK", "Instagram token", "valid, " + (", ".join(f"{l} expires in {x:.0f} days" for l, x in left) if left else "does not expire"))
     # debug_token not available for this token type: at least check the token works
@@ -80,6 +81,20 @@ def check_google():
     else:
         add("FAIL", "Google token", f"refresh token rejected ({r.json().get('error', r.status_code)}). Run publisher/google_token.py again "
             "and make sure the Google app is published, not in Testing mode.")
+
+
+def check_repo_size():
+    repo, tok = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GITHUB_TOKEN")
+    if not repo or not tok:
+        return
+    try:
+        r = requests.get(f"https://api.github.com/repos/{repo}", headers={"Authorization": f"Bearer {tok}"}, timeout=30)
+        mb = r.json()["size"] / 1024
+    except Exception:
+        return
+    lvl = "FAIL" if mb > 4500 else "WARN" if mb > 1500 else "OK"
+    add(lvl, "Repository size", f"{mb:,.0f} MB (GitHub recommends staying under 1,000 MB and never passing 5,000 MB)."
+        + (" Time to move media to a separate rewritten branch (see content/README.md)." if lvl != "OK" else ""))
 
 
 def check_queue_and_posting(now):
@@ -124,6 +139,7 @@ def main():
     check_instagram(now)
     check_google()
     check_queue_and_posting(now)
+    check_repo_size()
     bad = [r for r in rows if r[0] in ("WARN", "FAIL")]
     icon = {"OK": "✅", "INFO": "ℹ️", "WARN": "⚠️", "FAIL": "❌"}
     out = [f"# Social automation health, {now.astimezone(IST):%d %b %Y %H:%M} IST", "",

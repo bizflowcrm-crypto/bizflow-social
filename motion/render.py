@@ -47,7 +47,7 @@ with sync_playwright() as pw:
 cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS * SUB), "-i", str(tmp / "f%05d.jpg")]
 if a.audio: cmd += ["-i", a.audio]
 else: cmd += ["-f", "lavfi", "-t", str(dur), "-i", "anullsrc=r=44100:cl=stereo"]
-cmd += ["-vf", f"tmix=frames={SUB},fps={FPS},format=yuv420p", "-c:v", "libx264", "-preset", "slow", "-crf", "17"]
+cmd += ["-vf", f"tmix=frames={SUB},fps={FPS},format=yuv420p", "-c:v", "libx264", "-preset", "medium", "-crf", "23"]
 cmd += ["-c:a", "aac", "-b:a", "192k", "-shortest"]
 cmd += ["-movflags", "+faststart", str(out)]
 subprocess.run(cmd, check=True)

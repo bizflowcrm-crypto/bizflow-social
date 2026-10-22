@@ -1,0 +1,96 @@
+name: Make content from a file
+
+# Commit a file to content/inbox/ (see content/README.md). This checks it, renders the Reels and carousels,
+# and queues them. Free: it runs on GitHub's own machines and calls no AI.
+on:
+  push:
+    branches: [main]
+    paths: ["content/inbox/*.txt"]
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "File to process, e.g. content/inbox/2027-01.txt"
+        required: true
+      mode:
+        description: "full = check, render, queue | check-only | render-test = render to branch content-test, nothing queued"
+        type: choice
+        options: [full, check-only, render-test]
+        default: full
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content
+  cancel-in-progress: false
+
+jobs:
+  content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Find the content file(s)
+        id: find
+        run: |
+          if [ -n "${{ inputs.file }}" ]; then files="${{ inputs.file }}"
+          else files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'content/inbox/*.txt' || true); fi
+          files=$(for f in $files; do [ -f "$f" ] && echo "$f"; done)
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"; echo "$files" >> "$GITHUB_OUTPUT"; echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "Content files: ${files:-none}"
+
+      - name: Check the file (fast, fails with line numbers)
+        if: steps.find.outputs.files != ''
+        run: |
+          for f in ${{ steps.find.outputs.files }}; do python3 content/process_inbox.py "$f" --stage check; done
+
+      - name: Install rendering tools
+        if: steps.find.outputs.files != '' && inputs.mode != 'check-only'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji ffmpeg
+          pip install -q playwright==1.56.0 numpy scipy requests
+          playwright install --with-deps chromium
+
+      - name: Render Reels and carousels, then verify the media
+        if: steps.find.outputs.files != '' && inputs.mode != 'check-only'
+        run: |
+          for f in ${{ steps.find.outputs.files }}; do MAKE_SHORTS=0 python3 content/process_inbox.py "$f" --stage prepare; done
+
+      - name: Commit the rendered media
+        if: steps.find.outputs.files != '' && inputs.mode != 'check-only'
+        run: |
+          git config user.name "bizflow-content"
+          git config user.email "content@users.noreply.github.com"
+          git add posts media
+          git diff --cached --quiet || git commit -q -m "content: render ${{ steps.find.outputs.files }}"
+
+      - name: Test mode, publish the render to a test branch only
+        if: inputs.mode == 'render-test'
+        run: git push -q --force origin HEAD:refs/heads/content-test
+
+      - name: Queue the posts and archive the file
+        if: steps.find.outputs.files != '' && inputs.mode != 'check-only' && inputs.mode != 'render-test'
+        run: |
+          for attempt in 1 2 3; do
+            git pull --rebase -q origin "${GITHUB_REF_NAME}"
+            base=$(git rev-parse HEAD)
+            for f in ${{ steps.find.outputs.files }}; do python3 content/process_inbox.py "$f" --stage queue; done
+            git add publisher/queue.json content
+            git diff --cached --quiet || git commit -q -m "content: queue ${{ steps.find.outputs.files }} [skip ci]"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            echo "push raced with another commit, retrying"
+            git reset -q --hard "$base"    # undo only the queue step, keep the rendered media commit
+            sleep $((attempt * 5))
+          done
+
+      - name: Summary
+        if: always() && steps.find.outputs.files != ''
+        run: |
+          echo "### Content: ${{ steps.find.outputs.files }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Mode: ${{ inputs.mode || 'full (push)' }}. Job status: ${{ job.status }}." >> "$GITHUB_STEP_SUMMARY"
