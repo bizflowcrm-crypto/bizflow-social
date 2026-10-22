@@ -1,8 +1,8 @@
 """Keep the queue from running dry by re-queuing evergreen posts.
 
-When fewer than `min_days` days of posts remain in publisher/queue.json, this appends one carousel
-(12:30, plus its Google update at 14:00 if it had one) and one Reel (19:00) per day, up to `fill_days`
-days ahead. It always picks the posts used longest ago, so nothing repeats until the whole pool has
+When a day within the next `min_days` days has no carousel or no Reel in publisher/queue.json, this fills
+every such day up to `fill_days` days ahead with a carousel (12:30, plus its Google update at 14:00 if it had one)
+and a Reel (19:00). It always picks the posts used longest ago, so nothing repeats until the whole pool has
 been used. Recycled posts go to Instagram and Google only (not YouTube, which dislikes repeats), and
 festival or seasonal posts are never recycled (see publisher/evergreen.json).
 
@@ -30,22 +30,39 @@ def evergreen(base, rules):
     return base not in rules["exclude_ids"] and not any(k in base for k in rules["exclude_keywords"])
 
 
-def plan(queue, rules, now, min_days=None, fill_days=None):
-    """Returns the new queue entries (possibly none)."""
+def plan(queue, rules, now, min_days=None, fill_days=None, state=None):
+    """Returns the new queue entries (possibly none). Fills every day in the next `fill_days` days that has no
+    carousel or no Reel, but only acts when a gap falls within the next `min_days` days."""
     min_days = rules.get("min_days", 14) if min_days is None else min_days
     fill_days = rules.get("fill_days", 28) if fill_days is None else fill_days
-    last = max(parse(e["when"]) for e in queue)
-    if (last - now).total_seconds() >= min_days * 86400:
+    today = now.astimezone(IST).date()
+    have = {"carousel": set(), "reel": set()}
+    for e in queue:
+        if e["kind"] in have and "instagram" in e["networks"]:
+            have[e["kind"]].add(parse(e["when"]).astimezone(IST).date())
+    window = [today + dt.timedelta(days=n) for n in range(1, fill_days + 1)]
+    gaps = [d for d in window if d not in have["carousel"] or d not in have["reel"]]
+    if not any(d <= today + dt.timedelta(days=min_days) for d in gaps):
         return []
     last_used, first = {}, {}
     gbp = {}
+    state = state or {}
     for e in queue:
         b = base_id(e["id"])
         if e["kind"] == "gbp":
             gbp[b[:-4]] = e          # companion of the carousel whose id is b without "-gbp"
             continue
-        last_used[b] = max(last_used.get(b, ""), e["when"])
         first.setdefault(b, e)       # the original entry, with its media paths
+        # "used" = actually posted (by the time it went out) or still scheduled in the future.
+        # A post whose slot passed without it going out (expired, failed) counts as never used, so it is picked first.
+        posted = state.get(e["id"], {}).get("instagram", {})
+        if posted.get("status") == "posted":
+            used = posted["at"]
+        elif parse(e["when"]) > now:
+            used = e["when"]
+        else:
+            used = ""
+        last_used[b] = max(last_used.get(b, ""), used)
     pools = {k: [b for b, e in first.items() if e["kind"] == k and evergreen(b, rules)] for k in ("carousel", "reel")}
     if not pools["carousel"] or not pools["reel"]:
         print("recycler: no evergreen posts to recycle", file=sys.stderr)
@@ -54,10 +71,10 @@ def plan(queue, rules, now, min_days=None, fill_days=None):
     for e in queue:
         count[base_id(e["id"])] = count.get(base_id(e["id"]), 0) + 1
     new = []
-    day = max(last.astimezone(IST).date(), now.astimezone(IST).date()) + dt.timedelta(days=1)
-    end = now.astimezone(IST).date() + dt.timedelta(days=fill_days)
-    while day <= end:
+    for day in gaps:
         for kind in ("carousel", "reel"):
+            if day in have[kind]:
+                continue
             b = min(pools[kind], key=lambda x: (last_used.get(x, ""), x))
             n = count[b] = count.get(b, 0) + 1
             e = copy.deepcopy(first[b])
@@ -70,7 +87,6 @@ def plan(queue, rules, now, min_days=None, fill_days=None):
                 g = copy.deepcopy(gbp[b])
                 g["id"], g["when"] = f"{g['id'].split('~r')[0]}~r{n}", f"{day.isoformat()}T{SLOT['gbp']}:00+05:30"
                 new.append(g)
-        day += dt.timedelta(days=1)
     return new
 
 
@@ -82,14 +98,14 @@ def main():
     now = parse(a.now) if a.now else dt.datetime.now(IST)
     queue = json.loads(QUEUE.read_text())
     rules = json.loads(RULES.read_text())
-    last = max(parse(e["when"]) for e in queue)
-    days = (last - now).total_seconds() / 86400
-    new = plan(queue, rules, now)
+    state_p = ROOT / "publisher/state.json"
+    new = plan(queue, rules, now, state=json.loads(state_p.read_text()) if state_p.exists() else {})
     if not new:
-        print(f"recycler: queue has {days:.0f} days of posts ahead (threshold {rules['min_days']}); nothing to add")
+        print(f"recycler: no gaps in the next {rules['min_days']} days; nothing to add")
         return
-    print(f"recycler: only {days:.0f} days ahead, adding {len(new)} entries "
-          f"({new[0]['when'][:10]} to {new[-1]['when'][:10]})" + (" (dry run)" if a.dry_run else ""))
+    days = sorted({e["when"][:10] for e in new})
+    print(f"recycler: filling {len(days)} day(s) with gaps ({days[0]} to {days[-1]}), adding {len(new)} entries"
+          + (" (dry run)" if a.dry_run else ""))
     for e in new:
         print("  ", e["when"][:16], e["id"], "+".join(e["networks"]))
     if not a.dry_run:
