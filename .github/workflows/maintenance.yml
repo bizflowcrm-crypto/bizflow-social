@@ -1,0 +1,67 @@
+name: Daily health check and queue refill
+
+on:
+  schedule:
+    - cron: "15 3 * * *"   # 08:45 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+# same group as the publisher so the two never run (and commit) at the same time
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+
+      - name: Refill the queue with evergreen posts if it is running low
+        run: python3 publisher/recycle.py
+
+      - name: Save the queue
+        run: |
+          git config user.name "bizflow-publisher"
+          git config user.email "publisher@users.noreply.github.com"
+          git add publisher/queue.json
+          git diff --cached --quiet && exit 0
+          git commit -m "publisher: recycle evergreen posts into the queue [skip ci]"
+          git pull --rebase -q origin "${GITHUB_REF_NAME}"
+          git push -q origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Health check
+        id: health
+        continue-on-error: true
+        env:
+          IG_USER_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID || secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN || secrets.IG_ACCESS_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python3 publisher/health.py
+
+      - name: Open or close the alert issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: Social automation needs attention
+        run: |
+          open=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title --jq "[.[] | select(.title==\"$TITLE\")][0].number // empty")
+          if [ "${{ steps.health.outcome }}" = "failure" ]; then
+            if [ -z "$open" ]; then gh issue create --title "$TITLE" --body-file health_report.md
+            else gh issue comment "$open" --body-file health_report.md; fi
+          elif [ -n "$open" ]; then
+            gh issue close "$open" --comment "Health check is green again."
+          fi
+
+      - name: Fail the run if the health check failed (so you get an email)
+        if: steps.health.outcome == 'failure'
+        run: exit 1
