@@ -105,12 +105,16 @@ def customer_names():
     return {n for n in names if n.lower() not in agreed}
 
 
-def existing_ids():
+def existing_ids(skip_specs=()):
+    """Ids already used in the queue and in posts/*.json. `skip_specs` are spec file names to ignore, so the spec
+    files written from the very file being processed do not count as duplicates of it."""
     ids = set()
     q = ROOT / "publisher/queue.json"
     if q.exists():
         ids |= {e["id"].split("~r")[0] for e in json.loads(q.read_text())}
     for f in (ROOT / "posts").glob("*.json"):
+        if f.name in skip_specs:
+            continue
         try:
             d = json.loads(f.read_text())
         except ValueError:
