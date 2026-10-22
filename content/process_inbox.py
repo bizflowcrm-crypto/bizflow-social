@@ -28,7 +28,9 @@ def report(path, errs, warns):
 def load(path):
     text = pathlib.Path(path).read_text()
     header, posts, perr = il.parse(text)
-    errs, warns = il.check(header, posts, perr)
+    stem = pathlib.Path(path).stem
+    own = {f"inbox-{stem}-reels.json", f"inbox-{stem}-carousels.json"}   # specs this very file produced
+    errs, warns = il.check(header, posts, perr, taken=il.existing_ids(own))
     return header, posts, errs, warns
 
 
