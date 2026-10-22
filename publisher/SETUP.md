@@ -70,8 +70,9 @@ Page token that never expires and the Instagram account ID. Put them in the GitH
 
 ## Daily health check and queue refill (no action needed)
 `.github/workflows/maintenance.yml` runs every day at 08:45 IST.
-- **Refill** (`publisher/recycle.py`): when fewer than 14 days of posts remain, it adds a carousel (12:30, plus its Google
-  update at 14:00) and a Reel (19:00) per day, up to 28 days ahead, using evergreen posts that were used longest ago.
+- **Refill** (`publisher/recycle.py`): if any day in the next 14 days has no carousel or no Reel, it fills every such day
+  up to 28 days ahead (carousel 12:30, plus its Google update at 14:00; Reel 19:00) with evergreen posts. Posts that never
+  actually went out (expired or failed) are picked first, then the ones used longest ago.
   Recycled posts go to Instagram and Google only. Festival, seasonal and date-specific posts are never recycled; the
   rules are in `publisher/evergreen.json` (add an id there to stop it repeating).
 - **Health check** (`publisher/health.py`): Instagram token valid and not expiring within 10 days, Google token accepted,
