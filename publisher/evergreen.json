@@ -1,0 +1,30 @@
+{
+  "_note": "Rules for publisher/recycle.py. A post is recycled only if its id contains none of exclude_keywords and is not in exclude_ids. Add to these lists to stop a post from ever repeating.",
+  "min_days": 14,
+  "fill_days": 28,
+  "exclude_keywords": [
+    "diwali",
+    "dasara",
+    "dhanteras",
+    "bhaubeej",
+    "chopda",
+    "deepavali",
+    "navratri",
+    "festival",
+    "new-year",
+    "newyear",
+    "year-",
+    "december",
+    "wedding",
+    "winter",
+    "seasonal",
+    "rain",
+    "padwa",
+    "gst-rate-change"
+  ],
+  "exclude_ids": [
+    "nd-reel-02-stock-count",
+    "nd-car-05-thank-you-msgs",
+    "nd-car-01-family-business"
+  ]
+}

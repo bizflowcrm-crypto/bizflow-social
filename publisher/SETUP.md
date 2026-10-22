@@ -67,3 +67,14 @@ fails (you get an email) when a token is rejected, and it does not use up a post
 To fix it for good: run `python3 publisher/ig_token.py APP_ID APP_SECRET SHORT_LIVED_TOKEN` on your computer. It prints a
 Page token that never expires and the Instagram account ID. Put them in the GitHub secrets `INSTAGRAM_ACCESS_TOKEN` and
 `INSTAGRAM_ACCOUNT_ID`, then run the workflow with mode `verify`.
+
+## Daily health check and queue refill (no action needed)
+`.github/workflows/maintenance.yml` runs every day at 08:45 IST.
+- **Refill** (`publisher/recycle.py`): when fewer than 14 days of posts remain, it adds a carousel (12:30, plus its Google
+  update at 14:00) and a Reel (19:00) per day, up to 28 days ahead, using evergreen posts that were used longest ago.
+  Recycled posts go to Instagram and Google only. Festival, seasonal and date-specific posts are never recycled; the
+  rules are in `publisher/evergreen.json` (add an id there to stop it repeating).
+- **Health check** (`publisher/health.py`): Instagram token valid and not expiring within 10 days, Google token accepted,
+  days of posts left, posts due but not going out, failed posts. If anything needs attention the run fails (GitHub emails you)
+  and an issue called "Social automation needs attention" is opened; it closes itself when everything is green again.
+- Run it by hand any time: Actions > "Daily health check and queue refill" > Run workflow.
