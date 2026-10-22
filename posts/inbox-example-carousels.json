@@ -1,0 +1,121 @@
+{
+ "week": "example",
+ "posts": [
+  {
+   "id": "ex-car-01-shop-checklist",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "Save करा 🔖",
+     "title": "दुकान उघडताना\nरोज हे\n[[5 गोष्टी]]",
+     "body": "तपासा 👇"
+    },
+    {
+     "kind": "list",
+     "theme": "light",
+     "kicker": "रोज सकाळी",
+     "title": "5 गोष्टी",
+     "items": [
+      "कालचा [[हिशोब]] बघा",
+      "[[Stock]] ची यादी पाहा",
+      "आजची [[उधारी]] फोन",
+      "[[Cash]] आणि चिल्लर तयार",
+      "[[Printer]] आणि paper भरा"
+     ]
+    },
+    {
+     "kind": "chips",
+     "theme": "dark",
+     "kicker": "BizFlow मध्ये",
+     "title": "सकाळचा\n[[आढावा]] सोपा",
+     "body": "कालचा हिशोब आणि stock\nएका नजरेत.",
+     "chips": [
+      "Reports",
+      "Stock",
+      "उधारी"
+     ]
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "आजपासून",
+     "title": "रोज\n[[5 मिनिटं]]",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "दुकान उघडताना घाई असते, पण या 5 गोष्टी तपासल्या तर दिवस सुरळीत जातो ☀️\n\n1️⃣ कालचा हिशोब बघा\n2️⃣ Stock ची यादी पाहा\n3️⃣ आजची उधारी फोन\n4️⃣ Cash आणि चिल्लर तयार\n5️⃣ Printer आणि paper भरा\n\nयापैकी कोणती गोष्ट तुम्ही रोज तपासता? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #dukandar #checklist #smallbusinessindia #marathibusiness #sangamner",
+   "youtube_title": "दुकान उघडताना रोज तपासायच्या 5 गोष्टी | BizFlow #shorts",
+   "youtube_tags": [
+    "dukandar",
+    "checklist",
+    "smallbusinessindia",
+    "bizflow"
+   ],
+   "youtube_description": "दुकान उघडताना घाई असते, पण या 5 गोष्टी तपासल्या तर दिवस सुरळीत जातो ☀️\n\n1️⃣ कालचा हिशोब बघा\n2️⃣ Stock ची यादी पाहा\n3️⃣ आजची उधारी फोन\n4️⃣ Cash आणि चिल्लर तयार\n5️⃣ Printer आणि paper भरा\n\nयापैकी कोणती गोष्ट तुम्ही रोज तपासता? 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#dukandar #checklist #smallbusinessindia #bizflow #marathi #shorts",
+   "gbp_text": "दुकान उघडताना घाई असते, पण या 5 गोष्टी तपासल्या तर दिवस सुरळीत जातो ☀️\n\n1️⃣ कालचा हिशोब बघा\n2️⃣ Stock ची यादी पाहा\n3️⃣ आजची उधारी फोन\n4️⃣ Cash आणि चिल्लर तयार\n5️⃣ Printer आणि paper भरा\n\nFree demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या."
+  },
+  {
+   "id": "ex-car-02-udhaar-habit",
+   "slides": [
+    {
+     "kind": "cover",
+     "theme": "dark",
+     "kicker": "Save करा 🔖",
+     "title": "उधारी वसुलीचे\n[[3 नम्र]]\nमार्ग",
+     "body": "खात्रीने पैसे येतील 👇"
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "1",
+     "title": "बिल [[आठवण]]\nम्हणून पाठवा",
+     "body": "WhatsApp वर बिल आणि\nबाकी रक्कम."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "2",
+     "title": "[[तारीख]] ठरवून\nघ्या",
+     "body": "“शुक्रवारी देतो”\nअसं नक्की ठरवा."
+    },
+    {
+     "kind": "point",
+     "theme": "light",
+     "num": "3",
+     "title": "वेळेवर देणाऱ्याचं\n[[कौतुक]] करा",
+     "body": "धन्यवाद message,\nपुढच्या खरेदीला प्रोत्साहन."
+    },
+    {
+     "kind": "chat",
+     "theme": "dark",
+     "kicker": "आठवण message",
+     "title": "नम्र\n[[संदेश]]",
+     "bubbles": [
+      {
+       "text": "नमस्कार 🙏 तुमच्या खात्यातली बाकी रक्कम तुम्हाला कळवत आहे. सोयीने द्या, धन्यवाद!",
+       "time": "10:30"
+      }
+     ]
+    },
+    {
+     "kind": "cta",
+     "theme": "accent",
+     "kicker": "पैसे वेळेवर",
+     "title": "उधारी\n[[वसूल]]",
+     "body": "Call करा किंवा DEMO comment करा."
+    }
+   ],
+   "caption": "उधारी मागायला संकोच वाटतो? 😅 नम्रपणे पण पक्की वसुली करण्याचे 3 मार्ग:\n\n1️⃣ बिल आठवण म्हणून पाठवा\n2️⃣ तारीख ठरवून घ्या\n3️⃣ वेळेवर देणाऱ्याचं कौतुक करा\n\nतुम्ही उधारी कशी वसूल करता? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #udhaar #accountflow #dukandar #marathibusiness #sangamner",
+   "youtube_title": "उधारी वसूल करायचे 3 नम्र मार्ग | BizFlow #shorts",
+   "youtube_tags": [
+    "udhaar",
+    "accountflow",
+    "dukandar",
+    "bizflow"
+   ],
+   "youtube_description": "उधारी मागायला संकोच वाटतो? 😅 नम्रपणे पण पक्की वसुली करण्याचे 3 मार्ग:\n\n1️⃣ बिल आठवण म्हणून पाठवा\n2️⃣ तारीख ठरवून घ्या\n3️⃣ वेळेवर देणाऱ्याचं कौतुक करा\n\nतुम्ही उधारी कशी वसूल करता? 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#udhaar #accountflow #dukandar #bizflow #marathi #shorts",
+   "gbp_text": "\n\nFree demo साठी call करा किंवा bizflowindia.cloud ला भेट द्या."
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "week": "example",
+ "reels": [
+  {
+   "id": "ex-reel-01-bill-lost",
+   "scenes": [
+    {
+     "kind": "big",
+     "theme": "dark",
+     "tag": "Customer म्हणतो 🙂",
+     "text": "“भाऊ, ते [[बिल]]\nहरवलं”",
+     "dur": 2.6
+    },
+    {
+     "kind": "mid",
+     "theme": "light",
+     "emoji": "📒",
+     "text": "वहीची पानं [[उलटतोय]]…\n[[उलटतोय]] 😅",
+     "dur": 2.6
+    },
+    {
+     "kind": "big",
+     "theme": "accent",
+     "tag": "BizFlow मध्ये",
+     "text": "बिल [[WhatsApp]] वर,\nलगेच [[सापडतं]] ✅",
+     "dur": 2.8
+    },
+    {
+     "kind": "mid",
+     "theme": "light",
+     "emoji": "😊",
+     "text": "Customer [[खुश]],\nतुम्ही [[निवांत]]",
+     "dur": 2.6
+    },
+    {
+     "kind": "cta",
+     "theme": "dark",
+     "text": "बिल हरवत नाही\n[[BizFlow]]",
+     "dur": 3.0
+    }
+   ],
+   "caption": "Customer: “भाऊ, ते बिल हरवलं” 🙂 दुकानदार वहीची पानं उलटतोय… 📒😅\n\nBizFlow वाले: “तुमच्या WhatsApp वर आहे की!” बिल थेट customer च्या WhatsApp वर, कधीच हरवत नाही ✅\n\nबिल हरवणारा customer तुमच्या ओळखीत आहे का? Tag करा 😂👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #whatsapp #gstbilling #dukandar #marathireels #sangamner",
+   "youtube_title": "बिल हरवलं? 😅 WhatsApp वर बिल कधीच हरवत नाही | BizFlow #shorts",
+   "youtube_tags": [
+    "whatsapp",
+    "gstbilling",
+    "dukandar",
+    "bizflow"
+   ],
+   "youtube_description": "Customer: “भाऊ, ते बिल हरवलं” 🙂 दुकानदार वहीची पानं उलटतोय… 📒😅\n\nBizFlow वाले: “तुमच्या WhatsApp वर आहे की!” बिल थेट customer च्या WhatsApp वर, कधीच हरवत नाही ✅\n\nबिल हरवणारा customer तुमच्या ओळखीत आहे का? Tag करा 😂👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#whatsapp #gstbilling #dukandar #bizflow #marathi #shorts"
+  },
+  {
+   "id": "ex-reel-02-stock-low",
+   "scenes": [
+    {
+     "kind": "big",
+     "theme": "dark",
+     "tag": "रोजचा त्रास 😬",
+     "text": "सगळ्यात जास्त चालणारा\nमाल [[संपला]]!",
+     "dur": 2.6
+    },
+    {
+     "kind": "mid",
+     "theme": "light",
+     "emoji": "🚶",
+     "text": "Customer [[दुसऱ्या]]\nदुकानात गेला",
+     "dur": 2.6
+    },
+    {
+     "kind": "big",
+     "theme": "accent",
+     "tag": "BizFlow मध्ये",
+     "text": "Stock [[समोर]],\nमाल [[आधीच]] मागवा ✅",
+     "dur": 2.8
+    },
+    {
+     "kind": "cta",
+     "theme": "dark",
+     "text": "Stock चा हिशोब\n[[BizFlow]] मध्ये",
+     "dur": 3.0
+    }
+   ],
+   "caption": "सगळ्यात जास्त चालणारा माल संपला… आणि customer दुसऱ्या दुकानात गेला 😬\n\nBizFlow मध्ये stock रोज समोर, माल संपायच्या आधीच कळतं आणि वेळेवर मागवता येतो ✅\n\nतुमच्या दुकानात सगळ्यात आधी काय संपतं? 👇\n\n📞 8888567870 | Free demo\n\n#bizflow #bizflowindia #stock #retailflow #dukandar #marathireels #sangamner",
+   "youtube_title": "माल संपला हे आधी कळलं तर? 🤔 Stock रोज समोर | BizFlow #shorts",
+   "youtube_tags": [
+    "stock",
+    "retailflow",
+    "dukandar",
+    "bizflow"
+   ],
+   "youtube_description": "सगळ्यात जास्त चालणारा माल संपला… आणि customer दुसऱ्या दुकानात गेला 😬\n\nBizFlow मध्ये stock रोज समोर, माल संपायच्या आधीच कळतं आणि वेळेवर मागवता येतो ✅\n\nतुमच्या दुकानात सगळ्यात आधी काय संपतं? 👇\n\n📞 8888567870 वर free demo बुक करा\n🌐 bizflowindia.cloud\n\n#stock #retailflow #dukandar #bizflow #marathi #shorts"
+  }
+ ]
+}
