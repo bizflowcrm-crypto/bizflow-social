@@ -51,8 +51,15 @@ cta | आजपासून | रोज // [[5 मिनिटं]]
 === carousel ex-car-02-udhaar-habit
 title: उधारी वसूल करायचे 3 नम्र मार्ग
 tags: udhaar, accountflow, dukandar
-intro: उधारी मागायला संकोच वाटतो? 😅 नम्रपणे पण पक्की वसुली करण्याचे 3 मार्ग:
-outro: तुम्ही उधारी कशी वसूल करता? 👇
+# No list slide in this carousel, so it needs a full caption: (otherwise the tips would be missing from the post).
+caption:
+उधारी मागायला संकोच वाटतो? 😅 नम्रपणे पण पक्की वसुली करण्याचे 3 मार्ग:
+
+1️⃣ बिल आठवण म्हणून पाठवा
+2️⃣ तारीख ठरवून घ्या
+3️⃣ वेळेवर देणाऱ्याचं कौतुक करा
+
+तुम्ही उधारी कशी वसूल करता? 👇
 slides:
 cover | Save करा 🔖 | उधारी वसुलीचे // [[3 नम्र]] // मार्ग | खात्रीने पैसे येतील 👇
 point | 1 | बिल [[आठवण]] // म्हणून पाठवा | WhatsApp वर बिल आणि // बाकी रक्कम.

@@ -56,8 +56,9 @@ day after the last queued post. Lines starting with `# ` are ignored. In any tex
 Rule for slide titles: do not put an English word containing p, y, g, q or j on a line directly above a Marathi line (it
 clips). Put such a word on the last line of the title, or write it in Marathi.
 
-For a carousel give `intro:` (1 to 2 sentences) and `outro:` (one question). The numbered list in the caption and the
-Google update text are created automatically from the `list` slide. Add `google:` only to override that text.
+For a carousel with a `list` slide give `intro:` (1 to 2 sentences) and `outro:` (one question). For a carousel without a
+`list` slide (only `point` or `chat` slides) give a full `caption:` instead, with the points written out as 1️⃣ 2️⃣ 3️⃣ lines. With a `list` slide, the numbered list in the caption and the
+Google update text are created automatically. Add `google:` only to override that text.
 
 ## Two complete examples (copy this layout exactly)
 

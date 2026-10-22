@@ -232,6 +232,9 @@ def check(header, posts, parse_errors, taken=None, names=None):
                     if DESCENDER.search(re.sub(r"[^A-Za-z ]", " ", a)) and DEVANAGARI.search(b):
                         E(no, f"title line '{a}' has a Latin letter with a tail (p, y, g, q, j) directly above a Marathi line, "
                               "which clips. Move that word to the last line or write it in Marathi.")
+            if rows and not any(r[1][0].lower() == "list" for r in rows) and "caption" not in f:
+                E(L, f"{i}: no 'list' slide, so the caption would have only the intro and question. "
+                     "Add a full 'caption:' (the tips or points written out), or include a list slide.")
             if rows and rows[0][1][0].lower() != "cover":
                 E(rows[0][0], "the first slide must be 'cover'.")
             if rows and rows[-1][1][0].lower() != "cta":
