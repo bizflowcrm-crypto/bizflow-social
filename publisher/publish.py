@@ -147,6 +147,9 @@ def main():
             if s.get("status") in ("posted", "expired") or s.get("attempts", 0) >= MAX_ATTEMPTS:
                 continue
             fn, need = NETWORKS[net]
+            if net == "youtube" and not (ROOT / p["video"]).exists():
+                print(f"skip  {p['id']} youtube: no Short video file for this post")
+                continue
             missing = [k for k in need if not os.environ.get(k)]
             if missing and not a.dry_run:
                 print(f"skip  {p['id']} {net}: secrets not set ({', '.join(missing)})")

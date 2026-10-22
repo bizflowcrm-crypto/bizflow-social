@@ -3,7 +3,7 @@
 Usage: python3 build.py posts/2026-w41.json
 Outputs JPGs to media/<post-id>/NN.jpg
 """
-import json, sys, pathlib, html, shutil, subprocess
+import os, json, sys, pathlib, html, shutil, subprocess
 from playwright.sync_api import sync_playwright
 from brand import VARS, BG_DARK, BG_ACCENT, logo, data_uri
 
@@ -134,7 +134,7 @@ def main(spec_path):
                 page.wait_for_timeout(250)
                 page.screenshot(path=str(out / f"{i+1:02d}.jpg"), type="jpeg", quality=92)
             print(post["id"], n, "slides")
-            if n < 2: continue
+            if n < 2 or os.environ.get("MAKE_SHORTS", "0") != "1": continue   # Shorts only when YouTube is in use (MAKE_SHORTS=1)
             # 9:16 video version (media/<id>/short.mp4 + cover.jpg) for YouTube Shorts
             tmp = out / "_tall"; tmp.mkdir(exist_ok=True)
             page.set_viewport_size({"width": 1080, "height": 1920})

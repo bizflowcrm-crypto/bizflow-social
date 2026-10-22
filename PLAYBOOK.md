@@ -208,3 +208,7 @@ YouTube channel **bizflowcrm** (`UChYqT-_8_HN-H1aZIkOW9Hw`; never the BizFlow PO
 Metricool's free quota is used up, so posts now go out through `.github/workflows/publish.yml`
 (every 15 min) from `publisher/queue.json`. To schedule: `python3 publisher/enqueue.py <spec> --start
 <date> --slots <times>`, commit and push the queue. Setup and secrets: `publisher/SETUP.md`.
+
+## Making content without Claude credits
+Any chatbot can write a month of content with `content/PROMPT.md`; drop the reply into `content/inbox/` and the
+"Make content from a file" workflow checks, renders and queues it. See `content/README.md`.

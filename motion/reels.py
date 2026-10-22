@@ -336,7 +336,10 @@ def main(spec_path, only):
     for reel in spec["reels"]:
         if only and reel["id"] not in only: continue
         build(reel, work)
-    shutil.rmtree(work, ignore_errors=True)
+        for ext in (".html", ".wav"):                       # remove only this reel's temp files, so parallel runs
+            (work / f"{reel['id']}{ext}").unlink(missing_ok=True)   # never delete each other's work
+    try: work.rmdir()                                       # succeeds only when nobody else is still using it
+    except OSError: pass
 
 
 if __name__ == "__main__":

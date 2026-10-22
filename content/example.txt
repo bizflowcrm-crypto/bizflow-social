@@ -1,0 +1,62 @@
+# Example content file. Copy this layout. Lines starting with "# " are notes and are ignored.
+# File header (all optional): first posting day, and the time of each post in IST.
+# If start: is left out, posting continues from the day after the last queued post.
+start: 2027-01-05
+carousel_time: 12:30
+google_time: 14:00
+reel_time: 19:00
+
+=== reel ex-reel-01-bill-lost
+title: बिल हरवलं? 😅 WhatsApp वर बिल कधीच हरवत नाही
+tags: whatsapp, gstbilling, dukandar
+caption:
+Customer: “भाऊ, ते बिल हरवलं” 🙂 दुकानदार वहीची पानं उलटतोय… 📒😅
+
+BizFlow वाले: “तुमच्या WhatsApp वर आहे की!” बिल थेट customer च्या WhatsApp वर, कधीच हरवत नाही ✅
+
+बिल हरवणारा customer तुमच्या ओळखीत आहे का? Tag करा 😂👇
+scenes:
+big | Customer म्हणतो 🙂 | “भाऊ, ते [[बिल]] // हरवलं”
+mid | 📒 | वहीची पानं [[उलटतोय]]… // [[उलटतोय]] 😅
+accent | BizFlow मध्ये | बिल [[WhatsApp]] वर, // लगेच [[सापडतं]] ✅
+mid | 😊 | Customer [[खुश]], // तुम्ही [[निवांत]]
+cta | बिल हरवत नाही // [[BizFlow]]
+
+=== reel ex-reel-02-stock-low
+title: माल संपला हे आधी कळलं तर? 🤔 Stock रोज समोर
+tags: stock, retailflow, dukandar
+caption:
+सगळ्यात जास्त चालणारा माल संपला… आणि customer दुसऱ्या दुकानात गेला 😬
+
+BizFlow मध्ये stock रोज समोर, माल संपायच्या आधीच कळतं आणि वेळेवर मागवता येतो ✅
+
+तुमच्या दुकानात सगळ्यात आधी काय संपतं? 👇
+scenes:
+big | रोजचा त्रास 😬 | सगळ्यात जास्त चालणारा // माल [[संपला]]!
+mid | 🚶 | Customer [[दुसऱ्या]] // दुकानात गेला
+accent | BizFlow मध्ये | Stock [[समोर]], // माल [[आधीच]] मागवा ✅
+cta | Stock चा हिशोब // [[BizFlow]] मध्ये
+
+=== carousel ex-car-01-shop-checklist
+title: दुकान उघडताना रोज तपासायच्या 5 गोष्टी
+tags: dukandar, checklist, smallbusinessindia
+intro: दुकान उघडताना घाई असते, पण या 5 गोष्टी तपासल्या तर दिवस सुरळीत जातो ☀️
+outro: यापैकी कोणती गोष्ट तुम्ही रोज तपासता? 👇
+slides:
+cover | Save करा 🔖 | दुकान उघडताना // रोज हे // [[5 गोष्टी]] | तपासा 👇
+list | रोज सकाळी | 5 गोष्टी | कालचा [[हिशोब]] बघा ; [[Stock]] ची यादी पाहा ; आजची [[उधारी]] फोन ; [[Cash]] आणि चिल्लर तयार ; [[Printer]] आणि paper भरा
+chips | BizFlow मध्ये | सकाळचा // [[आढावा]] सोपा | कालचा हिशोब आणि stock // एका नजरेत. | Reports, Stock, उधारी
+cta | आजपासून | रोज // [[5 मिनिटं]]
+
+=== carousel ex-car-02-udhaar-habit
+title: उधारी वसूल करायचे 3 नम्र मार्ग
+tags: udhaar, accountflow, dukandar
+intro: उधारी मागायला संकोच वाटतो? 😅 नम्रपणे पण पक्की वसुली करण्याचे 3 मार्ग:
+outro: तुम्ही उधारी कशी वसूल करता? 👇
+slides:
+cover | Save करा 🔖 | उधारी वसुलीचे // [[3 नम्र]] // मार्ग | खात्रीने पैसे येतील 👇
+point | 1 | बिल [[आठवण]] // म्हणून पाठवा | WhatsApp वर बिल आणि // बाकी रक्कम.
+point | 2 | [[तारीख]] ठरवून // घ्या | “शुक्रवारी देतो” // असं नक्की ठरवा.
+point | 3 | वेळेवर देणाऱ्याचं // [[कौतुक]] करा | धन्यवाद message, // पुढच्या खरेदीला प्रोत्साहन.
+chat | आठवण message | नम्र // [[संदेश]] | नमस्कार 🙏 तुमच्या खात्यातली बाकी रक्कम तुम्हाला कळवत आहे. सोयीने द्या, धन्यवाद! @ 10:30
+cta | पैसे वेळेवर | उधारी // [[वसूल]]

@@ -83,6 +83,20 @@ def check_google():
             "and make sure the Google app is published, not in Testing mode.")
 
 
+def check_repo_size():
+    repo, tok = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GITHUB_TOKEN")
+    if not repo or not tok:
+        return
+    try:
+        r = requests.get(f"https://api.github.com/repos/{repo}", headers={"Authorization": f"Bearer {tok}"}, timeout=30)
+        mb = r.json()["size"] / 1024
+    except Exception:
+        return
+    lvl = "FAIL" if mb > 4500 else "WARN" if mb > 1500 else "OK"
+    add(lvl, "Repository size", f"{mb:,.0f} MB (GitHub recommends staying under 1,000 MB and never passing 5,000 MB)."
+        + (" Time to move media to a separate rewritten branch (see content/README.md)." if lvl != "OK" else ""))
+
+
 def check_queue_and_posting(now):
     queue = json.loads((ROOT / "publisher/queue.json").read_text())
     state_p = ROOT / "publisher/state.json"
@@ -125,6 +139,7 @@ def main():
     check_instagram(now)
     check_google()
     check_queue_and_posting(now)
+    check_repo_size()
     bad = [r for r in rows if r[0] in ("WARN", "FAIL")]
     icon = {"OK": "✅", "INFO": "ℹ️", "WARN": "⚠️", "FAIL": "❌"}
     out = [f"# Social automation health, {now.astimezone(IST):%d %b %Y %H:%M} IST", "",
