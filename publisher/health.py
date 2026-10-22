@@ -52,7 +52,8 @@ def check_instagram(now):
                 left.append((label, (dt.datetime.fromtimestamp(ts, dt.timezone.utc) - now).total_seconds() / 86400))
         soon = [(l, x) for l, x in left if x < WARN_DAYS]
         if soon:
-            return add("WARN", "Instagram token", "Expires soon: " + ", ".join(f"{l} in {x:.0f} days" for l, x in soon)
+            when = lambda x: f"{x * 24:.0f} hours" if x < 2 else f"{x:.0f} days"
+            return add("WARN", "Instagram token", "Expires soon: " + ", ".join(f"{l} in {when(x)}" for l, x in soon)
                        + ". Make a new token (publisher/SETUP.md) before then.")
         return add("OK", "Instagram token", "valid, " + (", ".join(f"{l} expires in {x:.0f} days" for l, x in left) if left else "does not expire"))
     # debug_token not available for this token type: at least check the token works
