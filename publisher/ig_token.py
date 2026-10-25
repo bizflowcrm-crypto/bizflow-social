@@ -9,9 +9,10 @@ permissions instagram_basic, instagram_content_publish, pages_show_list, pages_r
 
 It prints, for each Facebook Page that has an Instagram business account, the account ID and a Page
 token. A Page token made from a long-lived user token never expires. Save them as the GitHub secrets
-INSTAGRAM_ACCOUNT_ID and INSTAGRAM_ACCESS_TOKEN.
+INSTAGRAM_ACCOUNT_ID and INSTAGRAM_ACCESS_TOKEN (main account), or, for several Pages, use the JSON it prints
+at the end for the secret ACCOUNTS_SECRETS (see publisher/SETUP.md, 'More accounts').
 """
-import sys
+import json, re, sys
 import requests
 
 G = "https://graph.facebook.com/v21.0"
@@ -30,6 +31,7 @@ def main(app_id, secret, short):
                     client_secret=secret, fb_exchange_token=short)["access_token"]
     pages = get("me/accounts", access_token=long_user, fields="name,access_token,instagram_business_account")["data"]
     found = 0
+    snippet = {}
     for p in pages:
         ig = p.get("instagram_business_account")
         if not ig:
@@ -41,6 +43,11 @@ def main(app_id, secret, short):
         print(f"  INSTAGRAM_ACCOUNT_ID  = {ig['id']}")
         print(f"  INSTAGRAM_ACCESS_TOKEN = {p['access_token']}")
         print(f"  token expires: {'never' if exp == 0 else exp}")
+        snippet[re.sub(r"[^a-z0-9]+", "-", p["name"].lower()).strip("-") or ig["id"]] = {"ig_user_id": ig["id"], "ig_token": p["access_token"]}
+    if found > 1 or found == 1:
+        print("\nFor several accounts, put this JSON in the GitHub secret ACCOUNTS_SECRETS (rename the keys to match "
+              "publisher/accounts.json; merge with any other accounts already in the secret):")
+        print(json.dumps(snippet, indent=1))
     if not found:
         sys.exit("No Facebook Page with a linked Instagram business account was found for this token. "
                  "Check the permissions and that @bizflowindia is linked to a Page.")

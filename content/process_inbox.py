@@ -13,6 +13,9 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import inbox_lib as il
 
+sys.path.insert(0, str(il.ROOT / "publisher"))
+import accounts
+
 ROOT = il.ROOT
 
 
@@ -96,19 +99,21 @@ def main():
         return
     # stage queue
     q = json.loads((ROOT / "publisher/queue.json").read_text())
+    account = header.get("account", (0, accounts.default()))[1]
     start = header.get("start", (0, ""))[1]
     if not start:
-        last = max(dt.datetime.fromisoformat(e["when"]) for e in q)
+        mine = [e for e in q if accounts.of(e) == account]
+        last = max(dt.datetime.fromisoformat(e["when"]) for e in mine) if mine else dt.datetime.now()
         start = (last.date() + dt.timedelta(days=1)).isoformat()
     t = lambda k, d: header.get(k, (0, d))[1]
-    enq = [sys.executable, str(ROOT / "publisher/enqueue.py")]
+    enq = [sys.executable, str(ROOT / "publisher/enqueue.py"), "--account", account]
     if cars:
         subprocess.run(enq + [str(cp), "--start", start, "--slots", t("carousel_time", "12:30"), "--gbp-slot", t("google_time", "14:00")], check=True, cwd=ROOT)
     if reels:
         subprocess.run(enq + [str(rp), "--start", start, "--slots", t("reel_time", "19:00")], check=True, cwd=ROOT)
     done = ROOT / "content/done"; done.mkdir(exist_ok=True)
     shutil.move(str(path), str(done / path.name))
-    print(f"queued from {start}; archived to content/done/{path.name}")
+    print(f"queued for account '{account}' from {start}; archived to content/done/{path.name}")
 
 
 if __name__ == "__main__":

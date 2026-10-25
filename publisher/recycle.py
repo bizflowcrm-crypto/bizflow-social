@@ -11,6 +11,9 @@ Run daily by .github/workflows/maintenance.yml.
 """
 import argparse, copy, datetime as dt, json, pathlib, sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import accounts
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUEUE, RULES = ROOT / "publisher/queue.json", ROOT / "publisher/evergreen.json"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
@@ -31,6 +34,14 @@ def evergreen(base, rules):
 
 
 def plan(queue, rules, now, min_days=None, fill_days=None, state=None):
+    """Per account (each account recycles only its own posts). Returns the new entries of all accounts."""
+    new = []
+    for acct in accounts.names():
+        new += plan_account(acct, [e for e in queue if accounts.of(e) == acct], rules, now, min_days, fill_days, state)
+    return new
+
+
+def plan_account(acct, queue, rules, now, min_days=None, fill_days=None, state=None):
     """Returns the new queue entries (possibly none). Fills every day in the next `fill_days` days that has no
     carousel or no Reel, but only acts when a gap falls within the next `min_days` days."""
     min_days = rules.get("min_days", 14) if min_days is None else min_days
@@ -65,7 +76,7 @@ def plan(queue, rules, now, min_days=None, fill_days=None, state=None):
         last_used[b] = max(last_used.get(b, ""), used)
     pools = {k: [b for b, e in first.items() if e["kind"] == k and evergreen(b, rules)] for k in ("carousel", "reel")}
     if not pools["carousel"] or not pools["reel"]:
-        print("recycler: no evergreen posts to recycle", file=sys.stderr)
+        print(f"recycler: account '{acct}' has no evergreen posts to recycle", file=sys.stderr)
         return []
     count = {}
     for e in queue:
