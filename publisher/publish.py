@@ -6,18 +6,21 @@ each network is posted once. A network whose secrets are not set yet is skipped,
 goes out on a later run once the secrets exist (unless it is more than MAX_LATE_HOURS late).
 
 Usage: python3 publisher/publish.py [--dry-run] [--now 2026-10-13T11:00:00+05:30]
-Secrets (env): IG_USER_ID IG_ACCESS_TOKEN | YT_CLIENT_ID YT_CLIENT_SECRET YT_REFRESH_TOKEN |
-               GBP_LOCATION (e.g. accounts/123/locations/456; uses the same Google token)
+Accounts: every queue entry has an `account` (default: the one in publisher/accounts.json); the credentials of each
+account come from publisher/accounts.py (the ACCOUNTS_SECRETS secret, or for the default account the older variables
+IG_USER_ID IG_ACCESS_TOKEN | YT_CLIENT_ID YT_CLIENT_SECRET YT_REFRESH_TOKEN | GBP_LOCATION).
 """
 import argparse, datetime as dt, json, os, pathlib, sys, time
 import requests
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import accounts
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 QUEUE, STATE = ROOT / "publisher/queue.json", ROOT / "publisher/state.json"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 GRAPH = "https://graph.facebook.com/v21.0"
 QUIET_START, QUIET_END = 0, 7  # no posting from 00:00 to 07:00 IST; manual runs set IGNORE_QUIET_HOURS
-MAX_POSTS_PER_RUN = int(os.environ.get("MAX_POSTS_PER_RUN", "1"))  # a post = all its networks; late posts trickle out
+MAX_POSTS_PER_RUN = int(os.environ.get("MAX_POSTS_PER_RUN", "1"))  # per account; a post = all its networks; late posts trickle out
 MAX_LATE_HOURS = float(os.environ.get("MAX_LATE_HOURS", "168"))  # 7 days
 MAX_ATTEMPTS = 3
 REPO = os.environ.get("GITHUB_REPOSITORY", "bizflowcrm-crypto/bizflow-social")
@@ -58,8 +61,8 @@ def ig_wait(cid, token):
     raise RuntimeError("Instagram processing timed out")
 
 
-def post_instagram(p):
-    uid, token = os.environ["IG_USER_ID"], os.environ["IG_ACCESS_TOKEN"]
+def post_instagram(p, c):
+    uid, token = c["ig_user_id"], c["ig_token"]
 
     def create(params):
         return check(requests.post(f"{GRAPH}/{uid}/media", data={**params, "access_token": token}, timeout=120))["id"]
@@ -78,14 +81,14 @@ def post_instagram(p):
 
 
 # ---------- Google (YouTube + Business Profile share one OAuth refresh token) ----------
-def google_token():
+def google_token(c):
     r = requests.post("https://oauth2.googleapis.com/token", data={
-        "client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
-        "refresh_token": os.environ["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"}, timeout=60)
+        "client_id": c["yt_client_id"], "client_secret": c["yt_client_secret"],
+        "refresh_token": c["yt_refresh_token"], "grant_type": "refresh_token"}, timeout=60)
     return check(r)["access_token"]
 
 
-def post_youtube(p):
+def post_youtube(p, c):
     f = ROOT / p["video"]
     title = p["youtube"]["title"]
     if "#shorts" not in title.lower():
@@ -93,7 +96,7 @@ def post_youtube(p):
     meta = {"snippet": {"title": title[:100], "description": p["youtube"].get("description") or p["caption"],
                         "tags": p["youtube"].get("tags", []), "categoryId": "22"},
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}}
-    h = {"Authorization": f"Bearer {google_token()}", "Content-Type": "application/json; charset=UTF-8",
+    h = {"Authorization": f"Bearer {google_token(c)}", "Content-Type": "application/json; charset=UTF-8",
          "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(f.stat().st_size)}
     r = requests.post("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
                       headers=h, data=json.dumps(meta), timeout=60)
@@ -104,21 +107,17 @@ def post_youtube(p):
     return {"id": vid, "url": f"https://www.youtube.com/shorts/{vid}"}
 
 
-def post_gmb(p):
-    loc = os.environ["GBP_LOCATION"]
+def post_gmb(p, c):
+    loc = c["gbp_location"]
     body = {"languageCode": "mr", "topicType": "STANDARD", "summary": p["gbp_text"][:1500],
             "media": [{"mediaFormat": "PHOTO", "sourceUrl": media_url(p["gbp_image"])}]}
     j = check(requests.post(f"https://mybusiness.googleapis.com/v4/{loc}/localPosts",
-                            headers={"Authorization": f"Bearer {google_token()}"}, json=body, timeout=120))
+                            headers={"Authorization": f"Bearer {google_token(c)}"}, json=body, timeout=120))
     return {"id": j.get("name", ""), "url": j.get("searchUrl", "")}
 
 
-GOOGLE = ["YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN"]
-NETWORKS = {
-    "instagram": (post_instagram, ["IG_USER_ID", "IG_ACCESS_TOKEN"]),
-    "youtube": (post_youtube, GOOGLE),
-    "gmb": (post_gmb, GOOGLE + ["GBP_LOCATION"]),
-}
+NETWORKS = {"instagram": post_instagram, "youtube": post_youtube, "gmb": post_gmb}
+PROVIDER = {"instagram": "instagram", "youtube": "google", "gmb": "google"}   # a rejected token blocks its provider only
 
 
 def main():
@@ -132,59 +131,67 @@ def main():
         return
     queue = json.loads(QUEUE.read_text())
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
-    done = 0
-    auth_error = None
+    done = {}            # account -> posts attempted this run
+    blocked = {}         # (account, provider) -> why its token was rejected; the others carry on
+    known = set(accounts.names())
     for p in sorted(queue, key=lambda p: p["when"]):
-        if done >= MAX_POSTS_PER_RUN:
-            break
+        acct = accounts.of(p)
+        if acct not in known:
+            print(f"skip  {p['id']}: unknown account '{acct}' (add it to publisher/accounts.json)")
+            continue
+        if done.get(acct, 0) >= MAX_POSTS_PER_RUN:
+            continue
         when = parse_when(p["when"])
         if when > now:
             continue
         st = state.get(p["id"], {})
+        creds = accounts.creds(acct)
         tried = False
         for net in p["networks"]:
             s = st.get(net, {})
             if s.get("status") in ("posted", "expired") or s.get("attempts", 0) >= MAX_ATTEMPTS:
                 continue
-            fn, need = NETWORKS[net]
+            if (acct, PROVIDER[net]) in blocked:
+                continue
             if net == "youtube" and not (ROOT / p["video"]).exists():
                 print(f"skip  {p['id']} youtube: no Short video file for this post")
                 continue
-            missing = [k for k in need if not os.environ.get(k)]
+            missing = accounts.missing(acct, net)
             if missing and not a.dry_run:
-                print(f"skip  {p['id']} {net}: secrets not set ({', '.join(missing)})")
+                print(f"skip  {p['id']} {net}: account '{acct}' has no {', '.join(missing)}")
                 continue
             if (now - when).total_seconds() > MAX_LATE_HOURS * 3600:
                 state.setdefault(p["id"], {})[net] = {"status": "expired", "at": now.isoformat()}
                 print(f"late  {p['id']} {net}: more than {MAX_LATE_HOURS:g}h late, marked expired")
                 continue
-            print(f"post  {p['id']} -> {net}" + (" (dry run)" if a.dry_run else ""))
+            print(f"post  {p['id']} -> {acct}/{net}" + (" (dry run)" if a.dry_run else ""))
             tried = True
             if a.dry_run:
                 continue
             try:
-                res = fn(p)
+                res = NETWORKS[net](p, creds)
                 state.setdefault(p["id"], {})[net] = {"status": "posted", "at": now.isoformat(), **res}
                 print(f"  ok  {res.get('url') or res.get('id')}")
             except AuthError as e:
-                auth_error = f"{net}: {e}"
-                print(f"  AUTH ERROR {auth_error}", file=sys.stderr)
-                break
+                blocked[(acct, PROVIDER[net])] = str(e)
+                print(f"  AUTH ERROR {acct}/{net}: {e}", file=sys.stderr)
+                tried = False      # nothing was used up, so this account may try another post's other networks
             except Exception as e:
                 state.setdefault(p["id"], {})[net] = {"status": "failed", "attempts": s.get("attempts", 0) + 1,
                                                       "error": str(e)[:500], "at": now.isoformat()}
                 print(f"  FAILED {e}", file=sys.stderr)
-        done += tried
-        if auth_error:
-            break
+        if tried:
+            done[acct] = done.get(acct, 0) + 1
     if not a.dry_run:
         STATE.write_text(json.dumps(state, indent=1, ensure_ascii=False) + "\n")
-    if auth_error:
-        print(f"STOPPED: the {auth_error.split(':')[0]} token was rejected, so nothing was posted and no attempts were used. "
-              "Create a new long-lived token and update the GitHub secret (see publisher/SETUP.md, 'Token expired').", file=sys.stderr)
+    if blocked:
+        for (acct, prov), why in blocked.items():
+            print(f"STOPPED for account '{acct}': its {prov} token was rejected, so nothing was posted for it and no attempts were used. "
+                  "Create a new long-lived token and update the GitHub secret (see publisher/SETUP.md, 'Token expired').", file=sys.stderr)
+        print(f"other accounts carried on: {sum(done.values())} post(s) attempted")
         sys.exit(1)
     failed = [(i, n) for i, s in state.items() for n, v in s.items() if v.get("status") == "failed"]
-    print(f"done: {done} attempted, {len(failed)} failed so far")
+    print(f"done: {sum(done.values())} attempted, {len(failed)} failed so far")
     if any(state[i][n].get("attempts", 0) >= MAX_ATTEMPTS for i, n in failed):
         sys.exit(1)
 

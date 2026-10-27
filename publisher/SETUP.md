@@ -79,3 +79,25 @@ Page token that never expires and the Instagram account ID. Put them in the GitH
   days of posts left, posts due but not going out, failed posts. If anything needs attention the run fails (GitHub emails you)
   and an issue called "Social automation needs attention" is opened; it closes itself when everything is green again.
 - Run it by hand any time: Actions > "Daily health check and queue refill" > Run workflow.
+
+## More accounts (several Instagram pages and YouTube channels)
+One workflow manages all of them. Each account is a short name in `publisher/accounts.json`; every queue entry has an
+`account` (entries without one belong to the default account, `bizflow`). Each account posts only with its own keys, has its own
+queue, recycler and health check, and posts one item per run, so a rejected token pauses only that account.
+
+1. **Add the name** in `publisher/accounts.json`, e.g. `"pos": {"label": "BizFlow POS (Instagram @..., YouTube ...)"}`.
+2. **Instagram:** the page must be a Business or Creator account linked to a Facebook Page you administer (or be added as a tester
+   on your Meta app). Generate the user token as in section 1 and run `python3 publisher/ig_token.py APP_ID APP_SECRET TOKEN`: it
+   lists every Page with a linked Instagram account and prints a JSON block to paste in the secret.
+3. **YouTube / Google Business:** run `python3 publisher/google_token.py CLIENT_ID CLIENT_SECRET` once per channel and pick that
+   channel on Google's screen. Each Google Cloud project allows about 6 uploads a day, so give each channel its own project (free)
+   if they post daily. Every project needs its own audit before Shorts go public.
+4. **Put all keys in one secret `ACCOUNTS_SECRETS`** (Settings > Secrets > Actions), JSON, only the keys you have:
+   ```
+   {"pos": {"ig_user_id": "...", "ig_token": "...",
+            "yt_client_id": "...", "yt_client_secret": "...", "yt_refresh_token": "...", "gbp_location": "accounts/1/locations/2"}}
+   ```
+   The default account keeps working with the old secrets (`INSTAGRAM_*`, `YT_*`, `GBP_LOCATION`); `ACCOUNTS_SECRETS` can also override it.
+5. **Check:** Actions > "Publish scheduled posts" > mode `verify` shows every account's Instagram username and YouTube channel.
+6. **Content:** start the content file with `account: pos` (see content/README.md); or `python3 publisher/enqueue.py SPEC --account pos ...`.
+   Post ids must be unique across all accounts. The new account's first posts start the day after its own last queued post.

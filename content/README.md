@@ -31,3 +31,8 @@ Media is committed to git, and git keeps history, so deleting files later does n
 - The recycler re-uses the evergreen posts, so you do not need new media every month.
 - The daily health check warns when the repository passes 1.5 GB. If that ever happens, the fix is to keep media on a separate
   branch that is rewritten each month (ask Claude to set it up), not to delete files.
+
+## Several accounts
+Add `account: pos` as the first header line of the content file to queue it for another account listed in
+`publisher/accounts.json` (without it, the main account is used). Each account has its own posting calendar. Use a separate
+chatbot prompt per account (copy PROMPT.md and change the brand facts and voice). Setup: publisher/SETUP.md, 'More accounts'.

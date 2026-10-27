@@ -2,6 +2,7 @@
 and content/PROMPT.md), and expand it into the specs build.py and motion/reels.py read.
 
 Format sketch:
+    account: pos                 (file header: which account posts this file, default: the main one)
     start: 2027-01-05            (file header: first posting day, optional slot times)
     === reel nd-reel-slug
     title: ...
@@ -22,7 +23,7 @@ from lib import reel, carousel, cover, lst, chips, chat, point, cta
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KEYS = ("title", "tags", "caption", "intro", "outro", "google", "scenes", "slides")
-HEADER_KEYS = ("start", "reel_time", "carousel_time", "google_time")
+HEADER_KEYS = ("account", "start", "reel_time", "carousel_time", "google_time")
 SCENE_COLS = {"big": 3, "mid": 3, "accent": 3, "cta": 2}
 SLIDE_COLS = {"cover": 4, "list": 4, "chips": (5, 6), "point": 4, "chat": 4, "cta": 3}
 BANNED = [r"guarantee", r"100\s?%", r"\bno\.?\s?1\b", r"number one", r"best in", r"cheapest", r"lowest price",
@@ -55,7 +56,7 @@ def parse(text):
             if m and m.group(1).lower() in HEADER_KEYS:
                 header[m.group(1).lower()] = (no, m.group(2).strip())
             elif line.strip():
-                errors.append((no, "Text before the first '===' heading. File header lines are start:, reel_time:, carousel_time:, google_time:."))
+                errors.append((no, "Text before the first '===' heading. File header lines are account:, start:, reel_time:, carousel_time:, google_time:."))
             continue
         m = re.match(r"^(\w+)\s*:\s*(.*)$", line)
         if m and m.group(1).lower() in KEYS:
@@ -141,6 +142,10 @@ def check(header, posts, parse_errors, taken=None, names=None):
                     W(no, f"start: {v} is not in the future; posts due in the past are skipped or posted late.")
             except ValueError:
                 E(no, f"start: must be a date like 2027-01-05, got '{v}'.")
+        elif k == "account":
+            known = json.loads((ROOT / "publisher/accounts.json").read_text())["accounts"]
+            if v not in known:
+                E(no, f"account: '{v}' is not in publisher/accounts.json (known: {', '.join(known)}).")
         elif not re.fullmatch(r"\d{2}:\d{2}", v):
             E(no, f"{k}: must be a time like 12:30, got '{v}'.")
     if not posts:
